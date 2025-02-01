@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2>${service.name}</h2>
                     <p>Description: ${service.description}</p>
                     <p>Hourly Rate: $${service.hourly_rate}/hr</p>
-                    <p>Rating: ${service.rating}/5</p>
-                    <button class="book-btn">Book Now</button>
                 `;
                 container.appendChild(box);
             });
