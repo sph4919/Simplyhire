@@ -38,7 +38,7 @@ app.post('/login', (req, res) => {
 
         if (results.length > 0) {
             res.status(200).send('Login successful');
-            res.sendFile(path.join(__dirname, '../main.html'));
+            res.sendFile(path.join( __dirname, 'main.html'));
         } else {
             res.status(401).send('Invalid credentials');
         }
