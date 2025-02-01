@@ -57,6 +57,7 @@ function validatePassword(password) {
 		else
         {
 			console.log("Validation scuccessfull.");
+			window.location.href = "main.html"; 
 		}
 
 
