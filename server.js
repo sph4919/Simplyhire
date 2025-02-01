@@ -29,6 +29,9 @@ app.post('/login', (req, res) => {
     const { email, password } = req.body;
     const query = 'SELECT * FROM user WHERE email = ? AND password = ?';
 
+    console.log('Query:', query, [email, password]);
+    
+
     db.query(query, [email, password], (err, results) => {
         if (err) {
             console.error('Error querying the database:', err);
@@ -40,8 +43,7 @@ app.post('/login', (req, res) => {
            
             res.sendFile(path.join( __dirname, 'main.html'));
         } else {
-            console.log(email);
-            console.log(password);
+           
             res.status(401).send('Invalid credentials');
         }
     });
