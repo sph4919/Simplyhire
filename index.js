@@ -26,9 +26,7 @@ async function login(event) {
     // } else {
     //     alert("Invalid credentials. Please try again.");
     // }
-
-
-
+    }
 }
 
 document.getElementById('user-form').addEventListener('submit', login);
