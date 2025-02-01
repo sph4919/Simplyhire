@@ -80,6 +80,21 @@ app.post('/signup', (req, res) => {
 });
 
 
+
+//main redirection
+// Serve static files from the "public" directory
+app.use(express.static('public'));
+
+// Redirect based on service type
+app.get('/service/:type', (req, res) => {
+    const serviceType = req.params.type;
+    res.redirect(`https://category.html/${serviceType}`);
+});
+
+
+
+
+
 // Additional routes can be added here
 
 const port = 3000;
