@@ -32,16 +32,14 @@ app.post('/servicelogin', (req, res) => {
             res.status(500).send('Server error');
         } else {
             if (results.length > 0) {
-                res.json({ message: 'Login successful', email });
+                // Redirect to serviceLogin.html on successful login
+                res.redirect('/serviceLogin.html');
             } else {
                 res.status(401).send('Invalid credentials');
             }
         }
     });
 });
-
-
-
 
 
 
