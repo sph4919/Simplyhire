@@ -27,7 +27,7 @@ db.connect((err) => {
 // Login route
 app.post('/servicelogin', (req, res) => {
     const { email, password } = req.body;
-    const query = 'SELECT * FROM user WHERE email = ? AND password = ?';
+    const query = 'SELECT * FROM  WHERE email = ? AND password = ?';
 
     console.log('Query:', query, [email, password]);
     

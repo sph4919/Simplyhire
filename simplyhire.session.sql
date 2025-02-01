@@ -34,3 +34,9 @@ SHOW CREATE TABLE serviceagent;
 
 ALTER TABLE serviceagent
 DROP FOREIGN KEY serviceagent_ibfk_1;
+
+ALTER TABLE serviceagent
+ADD COLUMN email VARCHAR(255),
+ADD COLUMN password VARCHAR(255);
+
+SELECT * FROM serviceagent;
