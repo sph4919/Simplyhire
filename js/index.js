@@ -19,6 +19,16 @@ async function login(event) {
 
     const result = await response.text();
     alert(result);
+
+    if (response.ok && result.success) {
+        alert("Login Successful!");
+        window.location.href = "main.html";  // ✅ Redirect to main.html
+    } else {
+        alert("Invalid credentials. Please try again.");
+    }
+
+
+
 }
 
 document.getElementById('user-form').addEventListener('submit', login);
