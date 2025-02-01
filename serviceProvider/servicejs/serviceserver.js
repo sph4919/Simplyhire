@@ -49,26 +49,26 @@ app.post('/servicelogin', (req, res) => {
 
 //for signup request
 
-app.post('/servicesignup', (req, res) => {
-    const { name, email, password } = req.body;
-    const query = 'INSERT INTO user (name, email, password) VALUES (?, ?, ?)';
+// app.post('/servicesignup', (req, res) => {
+//     const { name, email, password } = req.body;
+//     const query = 'INSERT INTO user (name, email, password) VALUES (?, ?, ?)';
 
-    db.query(query, [name, email, password], (err, results) => {
-        if (err) {
-            console.error('Error querying the database:', err);
-            res.status(500).send('Error querying the database');
-            return;
-        }
+//     db.query(query, [name, email, password], (err, results) => {
+//         if (err) {
+//             console.error('Error querying the database:', err);
+//             res.status(500).send('Error querying the database');
+//             return;
+//         }
 
-        if (results.affectedRows > 0) {
-            // Successfully inserted user
-            res.status(201).send('User created successfully');
-        } else {
-            // If user creation fails, send a 400 Bad Request
-            res.status(400).send('Failed to create user');
-        }
-    });
-});
+//         if (results.affectedRows > 0) {
+//             // Successfully inserted user
+//             res.status(201).send('User created successfully');
+//         } else {
+//             // If user creation fails, send a 400 Bad Request
+//             res.status(400).send('Failed to create user');
+//         }
+//     });
+// });
 
 
 // Additional routes can be added here
