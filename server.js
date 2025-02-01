@@ -39,9 +39,11 @@ app.post('/login', (req, res) => {
             return;
         }
         
+        console.log(results.length)
         if (results.length > 0) {
            
-            res.sendFile(path.join( __dirname, 'main.html'));
+            // res.sendFile(path.join( __dirname, 'main.html'));
+
         } else {
            
             res.status(401).send('Invalid credentials');
