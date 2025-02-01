@@ -21,3 +21,16 @@ INSERT INTO user (userid, email, password, job_id, name)
 VALUES (1, 'patelsugnay49@gmail.com', 'qwertyu', 1, 'sugnay');
 
 SELECT * FROM user;
+
+DELETE FROM user
+WHERE email = 'nirjar000@gmail.com';
+
+ALTER TABLE user
+DROP COLUMN job_id;
+
+
+
+SHOW CREATE TABLE serviceagent;
+
+ALTER TABLE serviceagent
+DROP FOREIGN KEY serviceagent_ibfk_1;
