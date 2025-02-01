@@ -43,32 +43,6 @@ app.post('/servicelogin', (req, res) => {
 
 
 
-// Login route
-app.post('/servicelogin', (req, res) => {
-    const { email, password } = req.body;
-    const query = 'SELECT * FROM  WHERE email = ? AND password = ?';
-
-    console.log('Query:', query, [email, password]);
-    
-
-    db.query(query, [email, password], (err, results) => {
-        if (err) {
-            console.error('Error querying the database:', err);
-            res.status(500).send('Error querying the database');
-            return;
-        }
-        
-        if (results.length > 0) {
-           
-            res.sendFile(path.join( __dirname, 'dashboard.html'));
-        } else {
-           
-            res.status(401).send('Invalid credentials');
-        }
-    });
-});
-
-
 
 
 
