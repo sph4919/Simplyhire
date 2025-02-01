@@ -50,10 +50,7 @@ app.post('/login', (req, res) => {
 });
 
 
-const port = 3000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+
 
 
 
@@ -81,7 +78,7 @@ app.post('/signup', (req, res) => {
 
 // Additional routes can be added here
 
-
+const port = 3000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
