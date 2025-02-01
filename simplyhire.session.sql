@@ -40,3 +40,7 @@ ADD COLUMN email VARCHAR(255),
 ADD COLUMN password VARCHAR(255);
 
 SELECT * FROM serviceagent;
+
+INSERT INTO serviceagent (name, service_type, current_charges, job_description, email, password)
+VALUES ('John Doe', 'plumbing', 20, 'I am the best', 'johndoe@example.com', 'password123');
+

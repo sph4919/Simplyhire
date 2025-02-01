@@ -1,5 +1,5 @@
 function validateEmail(email) {
-    let emailRegex = /^\w+\d+[@]\w+[.]\w{2,3}$/ig;
+    let emailRegex = /^\w+[@]\w+[.]\w{2,3}$/ig;
     if (emailRegex.test(email.value)) {
 
         return true;
