@@ -35,11 +35,13 @@ app.post('/login', (req, res) => {
             res.status(500).send('Error querying the database');
             return;
         }
-
+        
         if (results.length > 0) {
            
             res.sendFile(path.join( __dirname, 'main.html'));
         } else {
+            console.log(email);
+            console.log(password);
             res.status(401).send('Invalid credentials');
         }
     });
