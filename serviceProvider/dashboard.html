@@ -6,20 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Notifications</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
+            /* font-family: Arial, sans-serif;
             background: #f4f4f4;
             text-align: center;
-            padding: 20px;
+            padding: 20px; */
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
         }
 
         .dashboard {
-            background: white;
+            /* background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             max-width: 400px;
-            margin: auto;
+            margin: auto; */
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            max-width: 450px;
+            width: 100%;
+            padding: 30px;
+            animation: fadeIn 0.5s ease-in-out;
         }
 
         .notification {
@@ -47,7 +67,7 @@
     <script>
         const notifications = [
             { customer: "Alice", jobTitle: "Plumber Required", jobDetails: "Fixing kitchen sink leakage", location: "Los Angeles", jobLink: "#" },
-            { customer: "Bob", jobTitle: "Electrician Needed", jobDetails: "Rewiring the house", location: "New York", jobLink: "#" }
+            { customer: "Bob", jobTitle: "Plumber Required", jobDetails: "Fixing a broken pipe for sink", location: "New York", jobLink: "#" },
         ];
 
         const notificationsList = document.getElementById("notifications-list");
