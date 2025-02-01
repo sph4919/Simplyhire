@@ -1,28 +1,43 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Import CORS
-const path = require('path');
-
 const app = express();
-app.use(bodyParser.json());
-app.use(cors()); // Enable CORS for all routes
 
-// Database connection
+
+app.use(bodyParser.json());
+
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Sugnay@2003',
-    database: 'server'
+    password: 'password',
+    database: 'your_database_name'
 });
 
 db.connect((err) => {
-    if (err) {
-        console.error('Error connecting to the database:', err);
-        return;
-    }
+    if (err) throw err;
     console.log('Connected to the MySQL database');
 });
+
+app.post('/servicelogin', (req, res) => {
+    const { email, password } = req.body;
+    const query = "SELECT * FROM serviceagent WHERE email = ? AND password = ?";
+    
+    db.query(query, [email, password], (err, results) => {
+        if (err) {
+            console.error('Error querying the database:', err);
+            res.status(500).send('Server error');
+        } else {
+            if (results.length > 0) {
+                res.json({ message: 'Login successful', email });
+            } else {
+                res.status(401).send('Invalid credentials');
+            }
+        }
+    });
+});
+
+
+
 
 // Login route
 app.post('/servicelogin', (req, res) => {
