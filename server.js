@@ -81,7 +81,16 @@ app.post('/signup', (req, res) => {
 
 
 
+app.use(express.static(path.join(__dirname, 'public')));
 
+// Fetch snow blower services from the database
+app.get('/services/snowblower', (req, res) => {
+    const query = "SELECT name, description, hourly_rate FROM snowblower_services";
+    db.query(query, (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
+});
 
 
 
