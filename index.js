@@ -21,8 +21,8 @@ async function login(event) {
     alert(result);
 
     if (response.ok && result.success) {
-        alert("Login Successful!");
-        window.location.href = "main.html";  // ✅ Redirect to main.html
+       
+        window.location.href = "main.html";  
     } else {
         alert("Invalid credentials. Please try again.");
     }
