@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dashboard {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .notification {
+            background: #e3e3e3;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .job-link {
+            display: block;
+            margin-top: 10px;
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        <h1>Job Notifications</h1>
+        <div id="notifications-list"></div>
+    </div>
+    <script>
+        const notifications = [
+            { customer: "Alice", jobTitle: "Plumber Required", jobDetails: "Fixing kitchen sink leakage", location: "Los Angeles", jobLink: "#" },
+            { customer: "Bob", jobTitle: "Electrician Needed", jobDetails: "Rewiring the house", location: "New York", jobLink: "#" }
+        ];
+
+        const notificationsList = document.getElementById("notifications-list");
+
+        notifications.forEach(notification => {
+            const notificationCard = document.createElement("div");
+            notificationCard.classList.add("notification");
+            notificationCard.innerHTML = `<h2>${notification.jobTitle}</h2>
+                                         <p><strong>Customer:</strong> ${notification.customer}</p>
+                                         <p><strong>Details:</strong> ${notification.jobDetails}</p>
+                                         <p><strong>Location:</strong> ${notification.location}</p>
+                                         <a href="${notification.jobLink}" class="job-link">View Job</a>`;
+            notificationsList.appendChild(notificationCard);
+        });
+    </script>
+</body>
+
+</html>

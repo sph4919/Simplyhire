@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="signup.css">
+    <script src="../js/eventhandler.js"></script>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            max-width: 450px;
+            width: 100%;
+            padding: 30px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .user-signup {
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            border-color: #6a11cb;
+            outline: none;
+        }
+
+        select {
+            appearance: none;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        button {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+        }
+
+        .login-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .login-link a {
+            color: #6a11cb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="user-signup">
+            <h2>Service Provider Sign Up</h2>
+            <form id="signupform" action="index.html">
+                <label for="user-name">Name:</label>
+                <input type="text" id="user-name-signup" name="user-name" placeholder="Enter your name" required>
+
+                <label for="user-email">Email:</label>
+                <input type="email" id="user-email-signup" name="user-email" placeholder="Enter your email" required>
+
+                <label for="user-password">Password:</label>
+                <input type="password" id="user-password-signup" name="user-password" placeholder="Enter your password" required>
+
+                <label for="job-id">Select Job:</label>
+                <select name="job-id" id="job-id">
+                    <option value="pumbling">Plumbing</option>
+                    <option value="painting">Painting</option>
+                    <option value="Carpenting">Carpenting</option>
+                    <option value="snow-blower">Snow Blower</option>
+                    <option value="Electrical-work">Electrical work</option>
+                    <option value="AC-repair">AC Repair</option>
+                    <option value="Washer-repair">Washer Repair</option>
+                </select>
+                <textarea name="" id=""placeholder="add job description here"></textarea>
+                <label for="per-hour-rate">Rate(/hr)</label>
+                <input type="number" id="per-hour-rate" name="per-hour-rate" placeholder="Enter per hour working rate" required>
+
+                <button type="submit" >Sign Up</button>
+            </form>
+            <div class="login-link">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/signup.js"></script>
+</body>
+
+</html>
