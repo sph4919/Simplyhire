@@ -49,7 +49,39 @@ app.post('/login', (req, res) => {
     });
 });
 
+
 const port = 3000;
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
+
+
+//for signup request
+
+app.post('/signup', (req, res) => {
+    const { name, email, password } = req.body;
+    const query = 'INSERT INTO user (name, email, password) VALUES (?, ?, ?)';
+
+    db.query(query, [name, email, password], (err, results) => {
+        if (err) {
+            console.error('Error querying the database:', err);
+            res.status(500).send('Error querying the database');
+            return;
+        }
+        if (results.length > 0) {
+           
+            res.sendFile(path.join( __dirname, 'index.html'));
+        } else {
+           
+            res.status(401).send('Invalid credentials');
+        }
+    });
+});
+
+// Additional routes can be added here
+
+port = 3000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
