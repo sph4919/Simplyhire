@@ -1,84 +1,46 @@
-/* index.css */
+/* Style for the navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+}
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+.navbar ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-.container {
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 400px;
-    width: 100%;
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
-.signup {
-    text-align: right;
-    padding: 10px;
-}
-
-.signup-btn a {
+.navbar ul li a, .service-btn a {
+    color: white;
     text-decoration: none;
-    color: #ffffff;
-    background-color: #007bff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px;
 }
 
-.signup-btn a:hover {
-    background-color: #0056b3;
-}
-
-.user-login {
-    padding: 20px;
-}
-
-h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    color: #555;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button {
-    background-color: #5cb85c;
-    color: #fff;
+.service-btn {
+    background-color: #4CAF50; /* Green */
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #4cae4c;
+.service-btn a {
+    color: white;
+}
+
+.service-btn:hover {
+    background-color: #45a049;
 }
