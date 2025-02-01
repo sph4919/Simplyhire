@@ -81,7 +81,7 @@ app.post('/signup', (req, res) => {
 
 // Additional routes can be added here
 
-const npport = 3001;
-app.listen(npport, () => {
-    console.log(`Server running on port ${npport}`);
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
