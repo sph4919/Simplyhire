@@ -26,8 +26,8 @@ function validatePassword(password) {
 
 function validateindexuser(event) {
 
-    let email = document.getElementById("user-email");
-    let pwd = document.getElementById("user-password");
+    let email = document.getElementById("service-email");
+    let pwd = document.getElementById("service-password");
     let formIsValid = true;
 
 
