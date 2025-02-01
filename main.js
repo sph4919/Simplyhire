@@ -8,7 +8,7 @@ app.use(express.static('public'));
 // Redirect based on service type
 app.get('/service/:type', (req, res) => {
     const serviceType = req.params.type;
-    res.redirect(`https://category.html/${serviceType}`);
+    res.redirect(`http://category.html/${serviceType}`);
 });
 
 app.listen(port, () => {
