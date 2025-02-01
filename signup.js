@@ -2,33 +2,39 @@
 let signup = document.getElementById("signupform");
 signup.addEventListener("submit",validatesignupUser)
 
-async function login(event) {
-    event.preventDefault();
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent default form submission
 
     const name = document.getElementById('user-name-signup').value;
     const email = document.getElementById('user-email-signup').value;
     const password = document.getElementById('user-password-signup').value;
 
-    const response = await fetch('http://localhost:3000/signup', {
+    // Send the POST request to the server
+    fetch('http://localhost:3000/signup', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({name, email, password })
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            password: password,
+        }),
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Signup successful');
+            window.location.href = 'index.html'; // Redirect after successful signup
+        } else {
+            alert('Signup failed');
+            return response.text(); // Get the error message
+        }
+    })
+    .then(errorMsg => {
+        console.error('Error:', errorMsg);
+    })
+    .catch(error => {
+        console.error('Error during signup:', error);
+        alert('Error during signup');
     });
-
-    const result = await response.text();
-    alert(result);
-
-    if (response.ok && result.success) {
-       
-        // window.location.href = "main.html";  
-    } else {
-        alert("Invalid credentials. Please try again.");
-    }
-
-
-
-}
-
-document.getElementById('signupform').addEventListener('submit', login);
+});

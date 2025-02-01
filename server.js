@@ -66,15 +66,17 @@ app.post('/signup', (req, res) => {
             res.status(500).send('Error querying the database');
             return;
         }
-        if (results.length > 0) {
-           
-            res.sendFile(path.join( __dirname, 'index.html'));
+
+        if (results.affectedRows > 0) {
+            // Successfully inserted user
+            res.status(201).send('User created successfully');
         } else {
-           
-            res.status(401).send('Invalid credentials');
+            // If user creation fails, send a 400 Bad Request
+            res.status(400).send('Failed to create user');
         }
     });
 });
+
 
 // Additional routes can be added here
 
