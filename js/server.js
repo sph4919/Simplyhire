@@ -1,0 +1,48 @@
+const express = require('express');
+const mysql = require('mysql');
+const bodyParser = require('body-parser');
+
+const app = express();
+app.use(bodyParser.json());
+
+// Database connection
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Sugnay@2003',
+    database: 'server'
+});
+
+db.connect((err) => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
+    }
+    console.log('Connected to the MySQL database');
+});
+
+// Login route
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    const query = `SELECT * FROM user WHERE email = ${email} AND password = ${password}`;
+
+    db.query(query, [email, password], (err, results) => {
+        if (err) {
+            console.error('Error querying the database:', err);
+            res.status(500).send('Error querying the database');
+            return;
+        }
+
+        if (results.length > 0) {
+            res.status(200).send('Login successful');
+            res.sendFile(path.join(__dirname, 'public', 'main.html'));
+        } else {
+            res.status(401).send('Invalid credentials');
+        }
+    });
+});
+
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
