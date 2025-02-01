@@ -161,8 +161,11 @@
     </div>
     <script>
         const notifications = [
-            { customer: "Alice", jobTitle: "Plumber Required", jobDetails: "Fixing kitchen sink leakage", location: "Los Angeles", jobLink: "#" },
-            { customer: "Bob", jobTitle: "Plumber Required", jobDetails: "Fixing a broken pipe for sink", location: "New York", jobLink: "#" },
+            { customer: "Alice", jobTitle: "Plumber Required", jobDetails: "Fixing kitchen sink leakage", location: "Los Angeles", jobLink: "#",offer: "$100" },
+            { customer: "Bob", jobTitle: "Plumber Required", jobDetails: "Fixing a broken pipe for sink", location: "New York", jobLink: "#",offer:"$70" }, 
+            { customer: "Charlie", jobTitle: "Plumber Required", jobDetails: "Fixing a broken pipe", location: "San Francisco", jobLink: "#",offer:"$50" },
+            { customer: "David", jobTitle: "Plumber Required", jobDetails: "Fixing a broken shower", location: "Chicago", jobLink: "#",offer:"$30" }
+            
         ];
 
         const notificationsList = document.getElementById("notifications-list");
@@ -174,7 +177,8 @@
                                          <p><strong>Customer:</strong> ${notification.customer}</p>
                                          <p><strong>Details:</strong> ${notification.jobDetails}</p>
                                          <p><strong>Location:</strong> ${notification.location}</p>
-                                         <a href="${notification.jobLink}" class="job-link">View Job</a>`;
+                                         <p><strong>Offer:</strong> ${notification.offer}</p>
+                                         <a href="${notification.Accept}" class="job-link">Accept</a> <a class ="job-link"href=""> Ignore </a>`;
             notificationsList.appendChild(notificationCard);
         });
     </script>
