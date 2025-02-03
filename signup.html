@@ -5,23 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
     <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="eventhandler.js"></script>
 </head>
 <body>
     <div class="container">
+        <!-- Welcome Message -->
+        <div class="welcome-message">
+            <h1>Welcome to Simpleyhire!</h1>
+            <p>Join us to discover the best services in your city.</p>
+        </div>
+
+        <!-- Sign Up Form -->
         <div class="user-signup">
             <h2>User Sign Up</h2>
-            <form  id="signupform" action="index.html">
+            <form id="signupform" action="index.html">
                 <label for="user-name">Name:</label>
-                <input type="text" id="user-name-signup" name="user-name" ><br>
+                <input type="text" id="user-name-signup" name="user-name" placeholder="Enter your name" required><br>
                 <label for="user-email">Email:</label>
-                <input type="email" id="user-email-signup" name="user-email" required><br>
+                <input type="email" id="user-email-signup" name="user-email" placeholder="Enter your email" required><br>
                 <label for="user-password">Password:</label>
-                <input type="password" id="user-password-signup" name="user-password" required><br>
+                <input type="password" id="user-password-signup" name="user-password" placeholder="Enter your password" required><br>
                 <button type="submit">Sign Up</button>
             </form>
         </div>
-
     </div>
     <script src="signup.js"></script>
 </body>
