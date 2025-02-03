@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Notifications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 20px;
+            background-color: #333;
+            color: white;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar a,
+        .navbar button {
+            margin-left: 20px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            color: white;
+            border: none;
+            background: none;
+            font-size: 16px;
+        }
+
+        .navbar a:hover,
+        .navbar button:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+
+        .navbar a:active,
+        .navbar button:active {
+            transform: translateY(0);
+        }
+
+        .dashboard {
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            margin-top: 70px; /* To account for the fixed navbar */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .notification {
+            background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .notification:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .job-link:hover {
+            color: #6a11cb;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2575fc;
+        }
+
+        p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .notification {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        #logout{
+            margin: 0;
+            padding: 0px 10px 0px 5px; 
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="profile.html" id="edit-profile">Edit Profile</a>
+        <button id="logout" aria-label="Logout"><a href="serviceLogin.html">Logout</a></button>
+    </nav>
+    <div class="dashboard">
+        <h1>Job Notifications</h1>
+        <div id="notifications-list"></div>
+    </div>
+    <script>
+        const notifications = [
+            { customer: "Alice", jobTitle: "Plumber Required", jobDetails: "Fixing kitchen sink leakage", location: "Los Angeles", jobLink: "#",offer: "$100" },
+            { customer: "Bob", jobTitle: "Plumber Required", jobDetails: "Fixing a broken pipe for sink", location: "New York", jobLink: "#",offer:"$70" }, 
+            { customer: "Charlie", jobTitle: "Plumber Required", jobDetails: "Fixing a broken pipe", location: "San Francisco", jobLink: "#",offer:"$50" },
+            { customer: "David", jobTitle: "Plumber Required", jobDetails: "Fixing a broken shower", location: "Chicago", jobLink: "#",offer:"$30" }
+            
+        ];
+
+        const notificationsList = document.getElementById("notifications-list");
+
+        notifications.forEach(notification => {
+            const notificationCard = document.createElement("div");
+            notificationCard.classList.add("notification");
+            notificationCard.innerHTML = `<h2>${notification.jobTitle}</h2>
+                                         <p><strong>Customer:</strong> ${notification.customer}</p>
+                                         <p><strong>Details:</strong> ${notification.jobDetails}</p>
+                                         <p><strong>Location:</strong> ${notification.location}</p>
+                                         <p><strong>Offer:</strong> ${notification.offer}</p>
+                                         <a href="${notification.Accept}" class="job-link">Accept</a> <a class ="job-link"href=""> Ignore </a>`;
+            notificationsList.appendChild(notificationCard);
+        });
+    </script>
+</body>
+
+</html>
