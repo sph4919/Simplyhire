@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Simpler blue gradient background */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Service Provider Heading */
+.service-heading {
+    font-size: 2rem;
+    color: black; /* White color for the heading to contrast with the new background */
+    margin-bottom: 0.5rem;
+}
+
+/* Company Tagline */
+.tagline {
+    font-size: 1.2rem;
+    color: black; /* Light gray for the tagline */
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Signup Button */
+.signup-btn {
+    margin-bottom: 1.5rem;
+}
+
+.signup-btn a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.signup-btn a:hover {
+    color: #ccc; /* Lighter color on hover */
+    text-decoration: underline;
+}
+
+/* Login Form */
+.user-login h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.user-login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-login label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.user-login input {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.user-login input:focus {
+    border-color: #6a11cb; /* Blue border on focus to match the background */
+    outline: none;
+}
+
+.user-login button {
+    padding: 0.8rem;
+    background-color: #2575fc; /* Use gradient colors for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-login button:hover {
+    background-color: #6a11cb; /* Darker blue on hover */
+}
+
+/* Additional Styles (Optional) */
+
+/* Adjust link styles inside the container */
+.container a {
+    color: #2575fc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.container a:hover {
+    color: #6a11cb;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .service-heading {
+        font-size: 1.5rem;
+    }
+
+    .user-login h2 {
+        font-size: 1.2rem;
+    }
+}
