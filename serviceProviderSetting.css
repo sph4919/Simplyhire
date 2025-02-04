@@ -28,7 +28,7 @@ body {
     z-index: 1000;
 }
 
-.navbar a {
+.navbar div a {
     margin-left: 20px;
     cursor: pointer;
     padding: 8px 12px;
@@ -40,12 +40,12 @@ body {
     font-size: 16px;
 }
 
-.navbar a:hover {
+.navbar div a:hover {
     background-color: #555;
     transform: translateY(-2px);
 }
 
-.navbar a:active {
+.navbar div a:active {
     transform: translateY(0);
 }
 
@@ -61,48 +61,77 @@ body {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-.contact-info {
+.profile-block {
     background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
     padding: 20px;
     margin: 15px 0;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-info:hover {
+.profile-block:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.manage-block {
+    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manage-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.manage-button, .logout-button {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.manage-button:hover, .logout-button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.manage-button:active, .logout-button:active {
+    transform: translateY(0);
 }
 
 h1 {
     margin-bottom: 20px;
     font-size: 24px;
+    color: #333;
     text-align: center;
-    color: wheat;
-    font-size: 35px;
 }
 
 h2 {
     font-size: 20px;
     margin-bottom: 10px;
     color: #2575fc;
-    text-align: center;
-    font-size: 30px;
-
 }
 
-p.helpline {
-    margin: 5px 0;
-    color: wheat;
-    font-size: 25px;
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 p {
     margin: 5px 0;
-    color: #333;
-    font-size: 25px;
-    text-align: center;
+    color: #555;
 }
 
 @keyframes fadeIn {
@@ -116,7 +145,7 @@ p {
     }
 }
 
-.contact-info {
+.manage-block {
     animation: slideIn 0.5s ease-out;
 }
 
@@ -129,9 +158,4 @@ p {
         opacity: 1;
         transform: translateX(0);
     }
-}
-
-#logout {
-    margin: 0;
-    padding: 0px 10px 0px 5px;
 }
