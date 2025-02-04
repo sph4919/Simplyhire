@@ -89,9 +89,9 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.manage-button, .logout-button {
+.manage-button, .logout-button, .change-rate-button {
     display: inline-block;
-    margin: 10px 5px;
+    margin-top: 10px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -101,13 +101,22 @@ body {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.manage-button:hover, .logout-button:hover {
+.manage-button:hover, .logout-button:hover, .change-rate-button:hover {
     background-color: #555;
     transform: translateY(-2px);
 }
 
-.manage-button:active, .logout-button:active {
+.manage-button:active, .logout-button:active, .change-rate-button:active {
     transform: translateY(0);
+}
+
+input[type="number"] {
+    width: 60%; /* Adjust the width as needed */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
 }
 
 h1 {
@@ -145,7 +154,7 @@ p {
     }
 }
 
-.manage-block {
+.main {
     animation: slideIn 0.5s ease-out;
 }
 

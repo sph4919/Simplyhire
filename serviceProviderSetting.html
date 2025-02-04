@@ -21,12 +21,23 @@
         </div>
         <div class="manage-block">
             <h3>Manage Subscription</h3>
-            <button class="manage-button" >Manage Subscription</button>
+            <button class="manage-button">Manage Subscription</button>
             <br>
-            <button class="logout-button" >Logout</button>
+            <button class="logout-button">Logout</button>
+            <br><br>
+            <div class="hourly-rate-block">
+                <h3>Change Hourly Rate</h3>
+                <input type="number" id="hourly-rate" placeholder="Enter new hourly rate">
+                <br>
+                <button class="change-rate-button" onclick="changeHourlyRate()">Change</button>
+            </div>
         </div>
     </main>
-
-  
+    <script>
+        function changeHourlyRate() {
+            const newRate = document.getElementById('hourly-rate').value;
+            alert(`Hourly Rate changed to $${newRate}`);
+        }
+    </script>
 </body>
 </html>

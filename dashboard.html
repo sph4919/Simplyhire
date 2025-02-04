@@ -16,7 +16,7 @@
         </div>
         <!-- Navigation Links -->
         <div class="nav-links">
-            <a href="profile.html" id="edit-profile">Edit Profile</a>
+            <a href="serviceProviderSetting.html"edit-profile">Edit Profile</a>
             <a href="index.html" id="logout" aria-label="Logout">Logout</a>
         </div>
     </nav>
@@ -29,11 +29,11 @@
     </div>
     <script>
         const notifications = [
-            { customer: "Alice", jobTitle: "Plumber Required", jobDetails: "Fixing kitchen sink leakage", location: "Los Angeles", jobLink: "#" },
-            { customer: "Bob", jobTitle: "Plumber Required", jobDetails: "Fixing a broken pipe for sink", location: "New York", jobLink: "#" },
-            { customer: "Charlie", jobTitle: "Carpenter Needed", jobDetails: "Repairing door frame", location: "Chicago", jobLink: "#" },
-            { customer: "Diana", jobTitle: "Electrician Required", jobDetails: "Install new lighting fixtures", location: "Houston", jobLink: "#" },
-            { customer: "Edward", jobTitle: "HVAC Service", jobDetails: "Air conditioning maintenance", location: "Phoenix", jobLink: "#" },
+            { customer: "Alice", jobTitle: "Plumber Required", jobDetails: "Fixing kitchen sink leakage", location: "Los Angeles" },
+            { customer: "Bob", jobTitle: "Plumber Required", jobDetails: "Fixing a broken pipe for sink", location: "New York" },
+            { customer: "Charlie", jobTitle: "Carpenter Needed", jobDetails: "Repairing door frame", location: "Chicago" },
+            { customer: "Diana", jobTitle: "Electrician Required", jobDetails: "Install new lighting fixtures", location: "Houston" },
+            { customer: "Edward", jobTitle: "HVAC Service", jobDetails: "Air conditioning maintenance", location: "Phoenix" },
         ];
 
         const notificationsList = document.getElementById("notifications-list");
@@ -50,10 +50,14 @@
                 <p><strong>Customer:</strong> ${notification.customer}</p>
                 <p><strong>Details:</strong> ${notification.jobDetails}</p>
                 <p><strong>Location:</strong> ${notification.location}</p>
-                <a href="${notification.jobLink}" class="job-link">View Job</a>
+                <button class="accept-button" onclick="acceptApplication()">Accept the Application</button>
             `;
             notificationsList.appendChild(notificationCard);
         });
+
+        function acceptApplication() {
+            alert("Application Accepted!");
+        }
     </script>
 </body>
 
