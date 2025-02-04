@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 20px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar div a {
+    margin-left: 20px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    color: white;
+    background: none;
+    font-size: 16px;
+}
+
+.navbar div a:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.navbar div a:active {
+    transform: translateY(0);
+}
+
+.main {
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    margin-top: 70px; /* To account for the fixed navbar */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.profile-box {
+    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.profile-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.appointment-button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.appointment-button:active {
+    transform: translateY(0);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #2575fc;
+}
+
+p {
+    margin: 5px 0;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
