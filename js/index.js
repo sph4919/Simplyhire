@@ -4,29 +4,29 @@ userlogin.addEventListener("submit",validateindexuser)
 
 
 
-async function login(event) {
-    event.preventDefault();
-    const email = document.getElementById('user-email').value;
-    const password = document.getElementById('user-password').value;
+// async function login(event) {
+//     event.preventDefault();
+//     const email = document.getElementById('user-email').value;
+//     const password = document.getElementById('user-password').value;
 
-    const response = await fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-    });
+//     const response = await fetch('http://localhost:3000/login', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ email, password })
+//     });
 
-    const result = await response.text();
-    alert(result);
+//     const result = await response.text();
+//     alert(result);
 
-    if (response.ok && result.success) {
+//     if (response.ok && result.success) {
        
-        // window.location.href = "main.html";  
-    // } else {
-    //     alert("Invalid credentials. Please try again.");
-    // }
-    }
-}
+//         // window.location.href = "main.html";  
+//     // } else {
+//     //     alert("Invalid credentials. Please try again.");
+//     // }
+//     }
+// }
 
-document.getElementById('user-form').addEventListener('submit', login);
+// document.getElementById('user-form').addEventListener('submit', login);
