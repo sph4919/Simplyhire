@@ -9,6 +9,38 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative; /* Added for absolute positioning */
+}
+
+/* UserLogin Button Styles */
+.userlogin {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    
+}
+
+.userlogin button {
+    padding: 0.5rem 1rem;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 30px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.userLoginpage
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+.userlogin button:hover {
+    background-color: #6a11cb;
 }
 
 /* Container Styles */
@@ -26,14 +58,14 @@ body {
 /* Service Provider Heading */
 .service-heading {
     font-size: 2rem;
-    color: black; /* White color for the heading to contrast with the new background */
+    color: black; /* Black color for the heading to contrast with the new background */
     margin-bottom: 0.5rem;
 }
 
 /* Company Tagline */
 .tagline {
     font-size: 1.2rem;
-    color: black; /* Light gray for the tagline */
+    color: black; /* Black color for the tagline */
     font-weight: bold;
     margin-bottom: 1.5rem;
 }
