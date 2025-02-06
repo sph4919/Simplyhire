@@ -56,12 +56,81 @@ function validatePassword(password) {
 		}
 		else
         {
+			window.alert("validation success by js")
 			console.log("Validation scuccessfull.");
-			window.location.href = "main.html"; 
+			
 		}
 
 
 }
+
+
+function validateName(name) {
+   
+    let nameRegex= /^\w+[\D]$/ig;
+	if (nameRegex.test(name.value))
+		{
+			
+			return true;
+		}
+		else
+		{
+			
+			return false;
+		}
+}
+
+
+
+
+
+function validatesignupUser(event)
+{
+        let name = document.getElementById("user-name-signup")
+		let email = document.getElementById("user-email-signup");
+		let pwd = document.getElementById("user-password-signup");
+		let formIsValid = true;
+		
+
+		if (!validateName(name)) 
+		{
+				window.alert("Invalid name")
+				formIsValid = false;
+		} 
+	
+		if (!validateEmail(email)) 
+        {
+			window.alert("Invalid user email")
+			formIsValid = false;
+		} 
+		
+		if (!validatePassword(pwd)) 
+		{
+            window.alert("Set invalid password")
+			formIsValid = false;
+		} 
+		if(!formIsValid)
+        {
+			event.preventDefault();
+		}
+		else
+        {
+			console.log("Validation scuccessfull.");
+			window.alert("sign up success by js")
+		}
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -97,61 +166,6 @@ function validatePassword(password) {
 
 
 }
-
-
-function validateName(name) {
-   
-    let nameRegex= /^\w+[\D]$/ig;
-	if (nameRegex.test(name.value))
-		{
-			
-			return true;
-		}
-		else
-		{
-			
-			return false;
-		}
-}
-
-
-function validatesignupUser(event)
-{
-        let name = document.getElementById("user-name-signup")
-		let email = document.getElementById("user-email-signup");
-		let pwd = document.getElementById("user-password-signup");
-		let formIsValid = true;
-		
-
-		if (!validateName(name)) 
-		{
-				window.alert("Invalid name")
-				formIsValid = false;
-		} 
-	
-		if (!validateEmail(email)) 
-        {
-			window.alert("Invalid user email")
-			formIsValid = false;
-		} 
-		
-		if (!validatePassword(pwd)) 
-		{
-            window.alert("Set invalid password")
-			formIsValid = false;
-		} 
-		if(!formIsValid)
-        {
-			event.preventDefault();
-		}
-		else
-        {
-			console.log("Validation scuccessfull.");
-		}
-
-
-}
-
 
 
 
