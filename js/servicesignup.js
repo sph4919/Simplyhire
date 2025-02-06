@@ -1,4 +1,4 @@
 let signup = document.getElementById("service-signupform");
-signup.addEventListener("submit",validatesignupUser);
+signup.addEventListener("submit",validateservicesignup);
 
 

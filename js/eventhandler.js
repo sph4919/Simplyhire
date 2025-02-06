@@ -13,7 +13,7 @@ function validateEmail(email) {
 	}
 }
 
-// Function to validate password using regex
+
 function validatePassword(password) {
    
     let passwordRegex= /^\w{6,}[^\s]$/ig;
@@ -31,7 +31,7 @@ function validatePassword(password) {
 
 
 
- function validateindexuser(event)
+ function validateloginuser(event)
 {
 
 		let email = document.getElementById("user-email");
@@ -63,6 +63,40 @@ function validatePassword(password) {
 
 }
 
+
+
+
+
+ function servicevalidateloginuser(event)
+{
+
+		let email = document.getElementById("service-user-email");
+		let pwd = document.getElementById("service-user-password");
+		let formIsValid = true;
+		
+	
+		if (!validateEmail(email)) 
+        {
+			window.alert("Wrong user email")
+			formIsValid = false;
+		} 
+		
+		if (!validatePassword(pwd)) 
+		{
+            window.alert("Wrong user password")
+			formIsValid = false;
+		} 
+		if(!formIsValid)
+        {
+			event.preventDefault();
+		}
+		else
+        {
+			console.log("Validation scuccessfull.");x 
+		}
+
+
+}
 
 
 function validateName(name) {
@@ -97,13 +131,13 @@ function validatesignupUser(event)
 	
 		if (!validateEmail(email)) 
         {
-			window.alert("Wrong user email")
+			window.alert("Invalid user email")
 			formIsValid = false;
 		} 
 		
 		if (!validatePassword(pwd)) 
 		{
-            window.alert("Wrong user password")
+            window.alert("Set invalid password")
 			formIsValid = false;
 		} 
 		if(!formIsValid)

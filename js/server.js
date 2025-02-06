@@ -1,101 +1,101 @@
-const express = require('express');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const cors = require('cors'); // Import CORS
-const path = require('path');
+// const express = require('express');
+// const mysql = require('mysql');
+// const bodyParser = require('body-parser');
+// const cors = require('cors'); // Import CORS
+// const path = require('path');
 
-const app = express();
-app.use(bodyParser.json());
-app.use(cors()); // Enable CORS for all routes
+// const app = express();
+// app.use(bodyParser.json());
+// app.use(cors()); // Enable CORS for all routes
 
-// Database connection
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Sugnay@2003',
-    database: 'server'
-});
+// // Database connection
+// const db = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'Sugnay@2003',
+//     database: 'server'
+// });
 
-db.connect((err) => {
-    if (err) {
-        console.error('Error connecting to the database:', err);
-        return;
-    }
-    console.log('Connected to the MySQL database');
-});
+// db.connect((err) => {
+//     if (err) {
+//         console.error('Error connecting to the database:', err);
+//         return;
+//     }
+//     console.log('Connected to the MySQL database');
+// });
 
-// Login route
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    const query = 'SELECT * FROM user WHERE email = ? AND password = ?';
+// // Login route
+// app.post('/login', (req, res) => {
+//     const { email, password } = req.body;
+//     const query = 'SELECT * FROM user WHERE email = ? AND password = ?';
 
-    console.log('Query:', query, [email, password]);
+//     console.log('Query:', query, [email, password]);
     
 
-    db.query(query, [email, password], (err, results) => {
-        if (err) {
-            console.error('Error querying the database:', err);
-            res.status(500).send('Error querying the database');
-            return;
-        }
+//     db.query(query, [email, password], (err, results) => {
+//         if (err) {
+//             console.error('Error querying the database:', err);
+//             res.status(500).send('Error querying the database');
+//             return;
+//         }
         
-        console.log(results.length)
-        if (results.length > 0) {
+//         console.log(results.length)
+//         if (results.length > 0) {
            
-            // res.sendFile(path.join( __dirname, 'main.html'));
+//             // res.sendFile(path.join( __dirname, 'main.html'));
 
-        } else {
+//         } else {
            
-            res.status(401).send('Invalid credentials');
-        }
-    });
-});
+//             res.status(401).send('Invalid credentials');
+//         }
+//     });
+// });
 
 
 
 
 
 
-//for signup request
+// //for signup request
 
-app.post('/signup', (req, res) => {
-    const { name, email, password } = req.body;
-    const query = 'INSERT INTO user (name, email, password) VALUES (?, ?, ?)';
+// app.post('/signup', (req, res) => {
+//     const { name, email, password } = req.body;
+//     const query = 'INSERT INTO user (name, email, password) VALUES (?, ?, ?)';
 
-    db.query(query, [name, email, password], (err, results) => {
-        if (err) {
-            console.error('Error querying the database:', err);
-            res.status(500).send('Error querying the database');
-            return;
-        }
+//     db.query(query, [name, email, password], (err, results) => {
+//         if (err) {
+//             console.error('Error querying the database:', err);
+//             res.status(500).send('Error querying the database');
+//             return;
+//         }
 
-        if (results.affectedRows > 0) {
-            // Successfully inserted user
-            res.status(201).send('User created successfully');
-        } else {
-            // If user creation fails, send a 400 Bad Request
-            res.status(400).send('Failed to create user');
-        }
-    });
-});
-
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Fetch snow blower services from the database
-app.get('/services/snowblower', (req, res) => {
-    const query = "SELECT name, job_description AS description, current_charges AS hourly_rate, rating FROM serviceagent WHERE service_type = 'snowblower'";
-    db.query(query, (err, results) => {
-        if (err) throw err;
-        res.json(results);
-    });
-});
+//         if (results.affectedRows > 0) {
+//             // Successfully inserted user
+//             res.status(201).send('User created successfully');
+//         } else {
+//             // If user creation fails, send a 400 Bad Request
+//             res.status(400).send('Failed to create user');
+//         }
+//     });
+// });
 
 
+// app.use(express.static(path.join(__dirname, 'public')));
 
-// Additional routes can be added here
+// // Fetch snow blower services from the database
+// app.get('/services/snowblower', (req, res) => {
+//     const query = "SELECT name, job_description AS description, current_charges AS hourly_rate, rating FROM serviceagent WHERE service_type = 'snowblower'";
+//     db.query(query, (err, results) => {
+//         if (err) throw err;
+//         res.json(results);
+//     });
+// });
 
-const port = 3000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+
+
+// // Additional routes can be added here
+
+// const port = 3000;
+// app.listen(port, () => {
+//     console.log(`Server running on port ${port}`);
+// });

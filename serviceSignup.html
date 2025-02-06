@@ -14,15 +14,15 @@
     <div class="container">
         <div class="user-signup">
             <h2>Service Provider Sign Up</h2>
-            <form id="signupform-service" action="serviceLogin.html">
+            <form id="service-signupform" action="serviceLogin.html">
                 <label for="user-name">Name:</label>
-                <input type="text" id="user-name-service" name="user-name" placeholder="Enter your name" required>
+                <input type="text" id="service-user-name" name="user-name" placeholder="Enter your name">
 
                 <label for="user-email">Email:</label>
-                <input type="email" id="user-email-service" name="user-email" placeholder="Enter your email" required>
+                <input type="email" id="service-user-email" name="user-email" placeholder="Enter your email" >
 
                 <label for="user-password">Password:</label>
-                <input type="password" id="user-password-service" name="user-password" placeholder="Enter your password" required>
+                <input type="password" id="service-user-password" name="user-password" placeholder="Enter your password" >
 
                 <label for="job-id">Select Job:</label>
                 <select name="job-id" id="job-id-service">
@@ -34,9 +34,9 @@
                     <option value="AC-repair">AC Repair</option>
                     <option value="Washer-repair">Washer Repair</option>
                 </select>
-                <textarea name="description" id="description-service"placeholder="add job description here"></textarea>
+                <textarea name="description" id="service-description"placeholder="add job description here"></textarea>
                 <label for="per-hour-rate">Rate(/hr)</label>
-                <input type="number" id="per-hour-rate-service" name="per-hour-rate" placeholder="Enter per hour working rate" required>
+                <input type="number" id="per-hour-rate-service" name="per-hour-rate" placeholder="Enter per hour working rate">
 
                 <button type="submit">Sign Up</button>
             </form>
@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    <script src="servicejs/servicesignup.js"></script>
+    <script src="js/servicesignup.js"></script>
 </body>
 
 </html>
