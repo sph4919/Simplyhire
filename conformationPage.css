@@ -1,0 +1,59 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Simpler blue gradient background */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Confirmation Container Styles */
+.confirmation-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Heading Styles */
+.confirmation-container h1 {
+    font-size: 2rem;
+    color: #333; /* Darker color for the heading */
+    margin-bottom: 1rem;
+}
+
+/* Paragraph Styles */
+.confirmation-container p {
+    font-size: 1.2rem;
+    color: #333; /* Darker color for the paragraph */
+    margin-bottom: 1.5rem;
+}
+
+/* Back Button Styles */
+.confirmation-container button {
+    padding: 0.8rem 1.5rem;
+    background-color: #2575fc; /* Use gradient colors for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.confirmation-container button:hover {
+    background-color: #6a11cb; /* Darker blue on hover */
+}
+
+.goback
+{
+    text-decoration: none;
+    color : white;
+    font-size: 25px;
+}

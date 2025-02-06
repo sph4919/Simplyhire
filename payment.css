@@ -151,3 +151,10 @@ h2 {
         transform: translateX(0);
     }
 }
+
+.paymentbutton
+{
+    text-decoration: none;
+    color:#ddd;
+    font-size : 22px;
+}
