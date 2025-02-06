@@ -141,3 +141,12 @@ p {
         transform: translateX(0);
     }
 }
+
+
+.appointmentlink
+{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    
+}

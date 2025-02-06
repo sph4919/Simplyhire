@@ -124,18 +124,6 @@ function validatesignupUser(event)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
  function servicevalidateloginuser(event)
 {
 
@@ -161,11 +149,76 @@ function validatesignupUser(event)
 		}
 		else
         {
-			console.log("Validation scuccessfull.");x 
+			console.log("Validation scuccessfull.");
+			window.alert("sign up success by js")
 		}
 
 
 }
 
 
+function validateDescription(description)
+{
+	let descRegex= /\b(\w+\b\W*){10,}/ig;
+	if (descRegex.test(description.value))
+		{
+			
+			return true;
+		}
+		else
+		{
+			
+			return false;
+		}
+}
 
+
+
+
+
+function servicevalidatesignup(event)
+{
+	    let name = document.getElementById("service-user-name")
+		let email = document.getElementById("service-user-email");
+		let pwd = document.getElementById("service-user-password");
+		let description = document.getElementById("service-description");
+
+		let formIsValid = true;
+		
+
+		if (!validateName(name)) 
+			{
+				window.alert("Wrong Name")
+				formIsValid = false;
+			} 
+	
+		if (!validateEmail(email)) 
+        {
+			window.alert("Wrong user email")
+			formIsValid = false;
+		} 
+		
+		if (!validatePassword(pwd)) 
+		{
+            window.alert("Wrong user password")
+			formIsValid = false;
+		} 
+		if (!validateDescription(description)) 
+		{
+			window.alert("Plz provide long description....")
+			formIsValid = false;
+		} 
+	
+
+		if(!formIsValid)
+        {
+			event.preventDefault();
+		}
+		else
+        {
+			console.log("Validation scuccessfull.");
+			window.alert("sign up success by js")
+		}
+
+
+}
