@@ -1,0 +1,54 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.14">
+  <diagram name="Page-1" id="pE3Ul7rIoGeAJ3xYgi61">
+    <mxGraphModel dx="1281" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="i6UQCIvBRodN34JvX3rF-19" value="User" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="100" width="270" height="250" as="geometry" />
+        </mxCell>
+        <object label="&lt;font style=&quot;font-size: 18px;&quot;&gt;+Name&lt;br&gt;&lt;br&gt;+Email&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;+userid&amp;nbsp; primary key&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;+ password&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" id="i6UQCIvBRodN34JvX3rF-20">
+          <mxCell style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;rotation=0;" vertex="1" parent="i6UQCIvBRodN34JvX3rF-19">
+            <mxGeometry y="50" width="270" height="200" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="i6UQCIvBRodN34JvX3rF-22" value="ServiceAgents" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="430" width="270" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="i6UQCIvBRodN34JvX3rF-23" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;+ Name&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;+ email&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;+provider id primary key&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;+ service_type&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;+job descriptions&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;+ stars&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;+ current charges&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;+ password&lt;/span&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="i6UQCIvBRodN34JvX3rF-22">
+          <mxGeometry y="50" width="270" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="i6UQCIvBRodN34JvX3rF-24" value="request" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="210" width="280" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="i6UQCIvBRodN34JvX3rF-25" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;+requet id priamry key&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;+ user name&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;+Description&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;+Service provider name&lt;br&gt;+status&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="i6UQCIvBRodN34JvX3rF-24">
+          <mxGeometry y="50" width="280" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="i6UQCIvBRodN34JvX3rF-27" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=1;rounded=0;exitX=1.002;exitY=0.385;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.027;entryY=0.292;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="i6UQCIvBRodN34JvX3rF-20" target="i6UQCIvBRodN34JvX3rF-25">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="230" y="216.20000000000005" as="sourcePoint" />
+            <mxPoint x="510" y="216" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="562.98" y="260" />
+              <mxPoint x="410" y="220" />
+              <mxPoint x="400" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i6UQCIvBRodN34JvX3rF-29" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;startArrow=ERmany;rounded=0;exitX=0.996;exitY=0.356;exitDx=0;exitDy=0;exitPerimeter=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;entryX=0.015;entryY=0.693;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="i6UQCIvBRodN34JvX3rF-23" target="i6UQCIvBRodN34JvX3rF-25">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="140" y="570" as="sourcePoint" />
+            <mxPoint x="680" y="530" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="550" y="520" />
+              <mxPoint x="560" y="610" />
+              <mxPoint x="540" y="510" />
+              <mxPoint x="760" y="450" />
+              <mxPoint x="540" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
