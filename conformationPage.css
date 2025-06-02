@@ -1,59 +1,111 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
+
+/* conformationPage.css */
+
+/* Color Palette */
+:root {
+    --primary-color: #28a745;
+    --primary-hover: #218838;
+    --background-light: #f0f2f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --subtext-color: #555555;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Simpler blue gradient background */
-    color: #fff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-/* Confirmation Container Styles */
+/* Confirmation Container */
 .confirmation-container {
-    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--card-background);
+    padding: 2rem 1.5rem;
+    max-width: 500px;
+    width: 90%;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 12px var(--shadow-color);
     text-align: center;
-    backdrop-filter: blur(10px);
 }
 
-/* Heading Styles */
+/* Heading */
 .confirmation-container h1 {
     font-size: 2rem;
-    color: #333; /* Darker color for the heading */
+    color: var(--primary-color);
     margin-bottom: 1rem;
+    position: relative;
 }
 
-/* Paragraph Styles */
+.confirmation-container h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Paragraph */
 .confirmation-container p {
-    font-size: 1.2rem;
-    color: #333; /* Darker color for the paragraph */
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: var(--subtext-color);
+    margin: 1.25rem 0 1.5rem;
 }
 
-/* Back Button Styles */
+/* Button */
 .confirmation-container button {
-    padding: 0.8rem 1.5rem;
-    background-color: #2575fc; /* Use gradient colors for buttons */
-    color: #fff;
+    background-color: var(--primary-color);
     border: none;
-    border-radius: 25px; /* Rounded button */
-    font-size: 1rem;
+    border-radius: var(--radius);
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .confirmation-container button:hover {
-    background-color: #6a11cb; /* Darker blue on hover */
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
-.goback
-{
+.confirmation-container button a.goback {
+    display: inline-block;
+    color: #ffffff;
     text-decoration: none;
-    color : white;
-    font-size: 25px;
+    font-weight: 600;
+    font-size: 1rem;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .confirmation-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .confirmation-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .confirmation-container p {
+        font-size: 0.95rem;
+    }
+
+    .confirmation-container button {
+        width: 100%;
+        padding: 0.65rem 1rem;
+    }
+}
+
