@@ -1,170 +1,234 @@
+/* serviceProviderSetting.css */
+
+/* Color Palette */
+:root {
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --accent-color: #FFB400;
+    --background-light: #f0f2f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --subtext-color: #555555;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+    --button-radius: 4px;
+}
+
+/* Global Styles */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
     min-height: 100vh;
-    color: #333;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--card-background);
+    box-shadow: 0 2px 6px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar {
     display: flex;
-    justify-content: flex-end;
-    padding: 15px 20px;
-    background-color: #333;
-    color: white;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 2rem;
 }
 
-.navbar div a {
-    margin-left: 20px;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.navbar a {
     text-decoration: none;
-    color: white;
-    background: none;
-    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-right: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--button-radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar div a:hover {
-    background-color: #555;
-    transform: translateY(-2px);
+.navbar a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
 
-.navbar div a:active {
-    transform: translateY(0);
-}
-
+/* Main Container */
 .main {
-    background-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    overflow: hidden;
-    max-width: 500px;
-    width: 100%;
-    padding: 30px;
-    margin-top: 70px; /* To account for the fixed navbar */
-    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex-wrap: wrap;
 }
 
+/* Profile Block */
 .profile-block {
-    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
+    background-color: var(--card-background);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 12px var(--shadow-color);
+    padding: 2rem 1.5rem;
+    flex: 1 1 250px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.profile-block h2 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    position: relative;
 }
 
+.profile-block h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Manage Block */
 .manage-block {
-    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--card-background);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 12px var(--shadow-color);
+    padding: 2rem 1.5rem;
+    flex: 1 1 450px;
 }
 
-.manage-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.manage-block h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
 }
 
-.manage-button, .logout-button, .change-rate-button {
+.manage-block h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin-top: 0.4rem;
+    border-radius: 2px;
+}
+
+/* Buttons */
+.manage-button,
+.logout-button,
+.change-rate-button {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
-    color: white;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: var(--button-radius);
+    padding: 0.6rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 0.5rem;
+    text-align: center;
 }
 
-.manage-button:hover, .logout-button:hover, .change-rate-button:hover {
-    background-color: #555;
+.manage-button:hover,
+.logout-button:hover,
+.change-rate-button:hover {
+    background-color: var(--primary-hover);
     transform: translateY(-2px);
 }
 
-.manage-button:active, .logout-button:active, .change-rate-button:active {
-    transform: translateY(0);
+/* Logout Button Specific */
+.logout-button {
+    background-color: var(--accent-color);
+    margin-top: 1rem;
 }
 
-input[type="number"] {
-    width: 60%; /* Adjust the width as needed */
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 16px;
+.logout-button:hover {
+    background-color: darken(var(--accent-color), 10%);
 }
 
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-    text-align: center;
+/* Hourly Rate Block */
+.hourly-rate-block {
+    margin-top: 1.5rem;
 }
 
-h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #2575fc;
+.hourly-rate-block input[type="number"] {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--button-radius);
+    background-color: #fafafa;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
+.hourly-rate-block input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
-p {
-    margin: 5px 0;
-    color: #555;
+/* Section Spacing */
+.manage-block > *:not(:first-child) {
+    margin-top: 1rem;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .manage-block,
+    .profile-block {
+        width: 100%;
+        max-width: 600px;
     }
 }
 
-.main {
-    animation: slideIn 0.5s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem 1rem;
     }
-    to {
-        opacity: 1;
-        transform: translateX(0);
+
+    .navbar a {
+        margin-right: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .profile-block h2 {
+        font-size: 1.5rem;
+    }
+
+    .manage-block h3 {
+        font-size: 1.25rem;
+    }
+
+    .manage-button,
+    .logout-button,
+    .change-rate-button {
+        width: 100%;
+        padding: 0.6rem;
+        font-size: 0.95rem;
+    }
+
+    .hourly-rate-block input[type="number"] {
+        padding: 0.5rem;
+        font-size: 0.95rem;
     }
 }
