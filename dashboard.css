@@ -1,146 +1,202 @@
+/* dashboard.css */
+
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Color Palette */
+:root {
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --accent-color: #FFA500;
+    --background-light: #f0f2f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --subtext-color: #555555;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+}
+
+/* Global Styles */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #333;
-    margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Navbar */
 .navbar {
+    background-color: var(--card-background);
+    box-shadow: 0 2px 6px var(--shadow-color);
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color: #2575fc;
-    padding: 10px 20px;
-    position: fixed;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
     top: 0;
-    width: 100%;
-    z-index: 1000;
+    z-index: 100;
 }
 
-.navbar .logo img {
-    height: 50px;
+.logo {
+    /* Placeholder styling for logo container */
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    margin-right: 0.75rem;
 }
 
-.navbar .nav-links {
+.nav-links {
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
-.navbar .nav-links a,
-.navbar .nav-links button {
-    margin-left: 20px;
-    color: #fff;
+.nav-links a {
     text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    border: none;
-    background: none;
-    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar .nav-links a:hover,
-.navbar .nav-links button:hover {
-    text-decoration: underline;
+.nav-links a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
 
+/* Dashboard Container */
 .dashboard {
+    flex: 1;
     max-width: 800px;
-    margin: 100px auto 20px; /* Centered and adjusted for navbar height */
-    padding: 0 20px;
-}
-
-#notification-count {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    color : white;
-    font-size: 25px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 0 1rem;
     text-align: center;
 }
 
+.dashboard h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.dashboard h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Notification Counter */
+#notification-count {
+    font-size: 1rem;
+    color: var(--subtext-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Notifications List */
 #notifications-list {
-    max-height: 60vh;
-    overflow-y: auto;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-
-
-#notifications-list::-webkit-scrollbar {
-    display: none; /* Hide the scrollbar */
-}
-
-
+/* Individual Notification Card */
 .notification {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    animation: slideIn 0.5s ease-out;
-}
-
-.notification:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-background);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    padding: 1.5rem;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.notification:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
 .notification h2 {
-    margin: 0 0 10px 0;
-    font-size: 20px;
-    color: #333;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
 }
 
 .notification p {
-    margin: 5px 0;
-    color: #555;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin: 0.3rem 0;
 }
 
+/* Accept Button */
 .accept-button {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
-    color: white;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
 }
 
 .accept-button:hover {
-    background-color: #555;
+    background-color: darken(var(--accent-color), 10%);
     transform: translateY(-2px);
 }
 
-.accept-button:active {
-    transform: translateY(0);
-}
-
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: whitesmoke;
-    text-align: center;
-    font-size: 40px;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard h1 {
+        font-size: 1.75rem;
     }
-    to {
-        opacity: 1;
-        transform: translateX(0);
+
+    #notification-count {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+    }
+
+    .dashboard {
+        margin: 1rem auto;
+        width: 95%;
+    }
+
+    .notification h2 {
+        font-size: 1.1rem;
+    }
+
+    .accept-button {
+        width: 100%;
+        text-align: center;
     }
 }
