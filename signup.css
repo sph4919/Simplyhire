@@ -1,151 +1,183 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
+/* signup.css */
+
+/* Color Palette */
+:root {
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --accent-color: #FFA500;
+    --background-light: #f0f2f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --subtext-color: #555555;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #fff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    padding: 2rem 1rem;
 }
 
-/* Container Styles */
+/* Container */
 .container {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    background-color: var(--card-background);
     width: 100%;
-    max-width: 400px;
-    animation: fadeIn 1s ease-in-out;
+    max-width: 900px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 12px var(--shadow-color);
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Welcome Message Styles */
+/* Welcome Message */
 .welcome-message {
-    margin-bottom: 30px;
-    animation: slideIn 1s ease-in-out;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    flex: 1 1 300px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .welcome-message h1 {
-    font-size: 1.8em;
-    color: #333;
-    margin-bottom: 10px;
-    animation: textPop 1.5s ease-in-out;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .welcome-message p {
-    font-size: 1em;
-    color: #555;
-    animation: textPop 1.5s ease-in-out;
+    font-size: 1rem;
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* Sign Up Form */
+.user-signup {
+    flex: 1 1 300px;
+    padding: 2rem 1.5rem;
+    text-align: center;
 }
 
-@keyframes textPop {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+.user-signup h2 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.user-signup h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
 }
 
 /* Form Styles */
-.user-signup h2 {
-    color: #333;
-    margin-bottom: 25px;
-    font-size: 2em;
-    font-weight: 600;
-}
-
-.user-signup form {
+#signupform {
     display: flex;
     flex-direction: column;
-}
-
-.user-signup label {
-    color: #555;
-    margin-bottom: 8px;
     text-align: left;
-    font-size: 0.9em;
-    font-weight: 500;
+    margin-top: 1rem;
 }
 
-.user-signup input {
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1em;
-    outline: none;
+#signupform label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--subtext-color);
+}
+
+#signupform input[type="text"],
+#signupform input[type="email"],
+#signupform input[type="password"] {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    background-color: #fafafa;
+    color: var(--text-color);
+    margin-bottom: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.user-signup input:focus {
-    border-color: #6a11cb;
-    box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+#signupform input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
-.user-signup button {
-    background: #2575fc;
+/* Sign Up Button */
+#signupform button {
+    background-color: var(--primary-color);
+    color: #ffffff;
     border: none;
-    padding: 12px;
-    color: #fff;
-    font-size: 1em;
+    border-radius: var(--radius);
+    padding: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 0.5rem;
 }
 
-.user-signup button:hover {
-    background: #6a11cb;
-    transform: scale(1.05);
+#signupform button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
-/* Animation for Button */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
     }
-    50% {
-        transform: scale(1.05);
+    .welcome-message,
+    .user-signup {
+        flex: 1 1 100%;
     }
-    100% {
-        transform: scale(1);
+    .welcome-message {
+        padding: 1.5rem 1rem;
+    }
+    .user-signup {
+        padding: 1.5rem 1rem;
     }
 }
 
-.user-signup button:active {
-    animation: pulse 0.3s ease;
+@media (max-width: 480px) {
+    .welcome-message h1 {
+        font-size: 1.5rem;
+    }
+    .welcome-message p,
+    .user-signup p {
+        font-size: 0.95rem;
+    }
+    .user-signup h2 {
+        font-size: 1.5rem;
+    }
+    #signupform input[type="text"],
+    #signupform input[type="email"],
+    #signupform input[type="password"] {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.95rem;
+    }
+    #signupform button {
+        width: 100%;
+        padding: 0.65rem;
+        font-size: 0.95rem;
+    }
 }
