@@ -1,160 +1,185 @@
+/* payment.css */
+
+/* Color Palette */
+:root {
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --accent-color: #FFB400;
+    --background-light: #f0f2f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --subtext-color: #555555;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+}
+
+/* Global Styles */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
     min-height: 100vh;
-    color: #333;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--card-background);
+    box-shadow: 0 2px 6px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar {
     display: flex;
-    justify-content: flex-end;
-    padding: 15px 20px;
-    background-color: #333;
-    color: white;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 2rem;
 }
 
-.navbar div a {
-    margin-left: 20px;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.navbar a {
     text-decoration: none;
-    color: white;
-    background: none;
-    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-right: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar div a:hover {
-    background-color: #555;
-    transform: translateY(-2px);
+.navbar a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
 
-.navbar div a:active {
-    transform: translateY(0);
-}
-
+/* Main Section */
 .main {
-    background-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    overflow: hidden;
-    max-width: 500px;
-    width: 100%;
-    padding: 30px;
-    margin-top: 70px; /* To account for the fixed navbar */
-    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
 }
 
+/* Payment Block */
 .payment-block {
-    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
+    background-color: var(--card-background);
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 12px var(--shadow-color);
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.payment-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.payment-block h2 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+    position: relative;
 }
 
-label {
+.payment-block h2::after {
+    content: '';
     display: block;
-    margin: 10px 0 5px;
-    font-size: 16px;
-    color: #333;
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin-top: 0.5rem;
+    border-radius: 2px;
 }
 
-input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 5px 0 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 16px;
+/* Form Styles */
+#payment-form {
+    display: flex;
+    flex-direction: column;
 }
 
+#payment-form label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--subtext-color);
+    transition: color 0.3s ease;
+}
+
+#payment-form input[type="text"] {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    background-color: #fafafa;
+    color: var(--text-color);
+    margin-bottom: 1.25rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#payment-form input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* Submit Button */
 .pay-button {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--card-background);
     border: none;
-    border-radius: 5px;
-    color: white;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: var(--radius);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-   
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
 .pay-button:hover {
-    background-color: #555;
+    background-color: var(--primary-hover);
     transform: translateY(-2px);
 }
 
-.pay-button:active {
-    transform: translateY(0);
-}
-
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-}
-
-h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #2575fc;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.main {
-    animation: slideIn 0.5s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.paymentbutton
-{
+.pay-button a.paymentbutton {
+    color: var(--card-background);
     text-decoration: none;
-    color:#ddd;
-    font-size : 22px;
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .payment-block {
+        padding: 1.75rem 1rem;
+        margin: 1rem;
+    }
+
+    .navbar {
+        padding: 0.75rem 1rem;
+    }
+
+    .navbar a {
+        margin-right: 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-block {
+        padding: 1.5rem 0.75rem;
+        margin: 0.5rem;
+    }
+
+    .payment-block h2 {
+        font-size: 1.5rem;
+    }
+
+    .pay-button {
+        width: 100%;
+    }
 }
