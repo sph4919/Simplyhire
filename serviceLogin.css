@@ -1,157 +1,219 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Simpler blue gradient background */
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative; /* Added for absolute positioning */
+/* serviceLogin.css */
+
+/* Color Palette */
+:root {
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --accent-color: #FFA500;
+    --background-light: #f0f2f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --subtext-color: #555555;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --radius: 8px;
 }
 
-/* UserLogin Button Styles */
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* UserLogin Button (Top) */
 .userlogin {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    
+    width: 100%;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 6px var(--shadow-color);
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .userlogin button {
-    padding: 0.5rem 1rem;
-    background-color: black;
-    color: #fff;
+    background-color: var(--primary-color);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 30px;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-}
-
-.userLoginpage
-{
-    text-decoration: none;
-    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .userlogin button:hover {
-    background-color: #6a11cb;
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
-/* Container Styles */
+.userlogin a.userLoginpage {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Main Container */
 .container {
-    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
+    background-color: var(--card-background);
+    max-width: 500px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 12px var(--shadow-color);
     text-align: center;
-    backdrop-filter: blur(10px);
 }
 
-/* Service Provider Heading */
+/* Service Heading */
 .service-heading {
     font-size: 2rem;
-    color: black; /* Black color for the heading to contrast with the new background */
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
+    position: relative;
 }
 
-/* Company Tagline */
+.service-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Tagline */
 .tagline {
-    font-size: 1.2rem;
-    color: black; /* Black color for the tagline */
-    font-weight: bold;
+    font-size: 1rem;
+    color: var(--subtext-color);
     margin-bottom: 1.5rem;
 }
 
-/* Signup Button */
-.signup-btn {
+/* Signup Section */
+.signup {
     margin-bottom: 1.5rem;
+}
+
+.signup-btn {
+    display: inline-block;
 }
 
 .signup-btn a {
+    background-color: var(--accent-color);
+    color: #ffffff;
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .signup-btn a:hover {
-    color: #ccc; /* Lighter color on hover */
-    text-decoration: underline;
+    background-color: darken(var(--accent-color), 10%);
+    transform: translateY(-2px);
 }
 
-/* Login Form */
+/* Provider Login Card */
+.user-login {
+    text-align: left;
+}
+
 .user-login h2 {
     font-size: 1.5rem;
-    color: #333;
+    color: var(--primary-color);
     margin-bottom: 1rem;
+    position: relative;
 }
 
-.user-login form {
+.user-login h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}
+
+/* Form Styles */
+#user-form {
     display: flex;
     flex-direction: column;
 }
 
-.user-login label {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 0.5rem;
-    text-align: left;
+#user-form label {
+    font-weight: 600;
+    color: var(--subtext-color);
+    margin-bottom: 0.3rem;
+    margin-top: 0.75rem;
 }
 
-.user-login input {
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+#user-form input[type="email"],
+#user-form input[type="password"] {
+    width: 100%;
+    padding: 0.6rem 1rem;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    background-color: #fafafa;
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.user-login input:focus {
-    border-color: #6a11cb; /* Blue border on focus to match the background */
+#user-form input:focus {
     outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
-.user-login button {
-    padding: 0.8rem;
-    background-color: #2575fc; /* Use gradient colors for buttons */
-    color: #fff;
+/* Login Button */
+#user-form button {
+    background-color: var(--primary-color);
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--radius);
+    padding: 0.75rem;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.user-login button:hover {
-    background-color: #6a11cb; /* Darker blue on hover */
+#user-form button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
-/* Additional Styles (Optional) */
-
-/* Adjust link styles inside the container */
-.container a {
-    color: #2575fc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.container a:hover {
-    color: #6a11cb;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
+/* Responsive Adjustments */
+@media (max-width: 768px) {
     .container {
+        margin: 1.5rem auto;
+        padding: 1.5rem 1rem;
+    }
+
+    .service-heading {
+        font-size: 1.75rem;
+    }
+
+    .tagline {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        margin: 1rem auto;
         padding: 1rem;
     }
 
@@ -159,7 +221,19 @@ body {
         font-size: 1.5rem;
     }
 
-    .user-login h2 {
-        font-size: 1.2rem;
+    .signup-btn a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    #user-form input[type="email"],
+    #user-form input[type="password"] {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    #user-form button {
+        padding: 0.65rem;
+        font-size: 0.95rem;
     }
 }
