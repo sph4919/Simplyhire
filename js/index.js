@@ -1,5 +1,5 @@
 
 let userlogin = document.getElementById("user-form");
-userlogin.addEventListener("submit",validateloginuser)
+userlogin.addEventListener("submit",validateUserLogin)
 
 

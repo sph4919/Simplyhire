@@ -1,4 +1,3 @@
-
 function validateEmail(email) {
     let emailRegex =  /^(\w+|\d+)[@]\w+[.]\w{2,3}$/ig;
     if (emailRegex.test(email.value))
@@ -31,7 +30,7 @@ function validatePassword(password) {
 
 
 
- function validateloginuser(event)
+ function validateUserLogin(event)
 {
 
 		let email = document.getElementById("user-email");
@@ -50,15 +49,15 @@ function validatePassword(password) {
             window.alert("Wrong user password")
 			formIsValid = false;
 		} 
+
+		fe
 		if(!formIsValid)
         {
 			event.preventDefault();
 		}
 		else
         {
-			window.alert("validation success by js")
 			console.log("Validation scuccessfull.");
-			
 		}
 
 
@@ -83,44 +82,74 @@ function validateName(name) {
 
 
 
-
-function validatesignupUser(event)
+async function validateUserSignup(event)
 {
-        let name = document.getElementById("user-name-signup")
-		let email = document.getElementById("user-email-signup");
-		let pwd = document.getElementById("user-password-signup");
+	    event.preventDefault();
+        let userName = document.getElementById("user-name-signup")
+		let userEmail = document.getElementById("user-email-signup");
+		let userPassword = document.getElementById("user-password-signup");
 		let formIsValid = true;
-		
 
-		if (!validateName(name)) 
+		if (!validateName(userName)) 
 		{
-				window.alert("Invalid name")
-				formIsValid = false;
+			window.alert("Invalid name")
+			formIsValid = false;
 		} 
 	
-		if (!validateEmail(email)) 
+		if (!validateEmail( userEmail)) 
         {
 			window.alert("Invalid user email")
 			formIsValid = false;
 		} 
 		
-		if (!validatePassword(pwd)) 
+		if (!validatePassword(userPassword )) 
 		{
             window.alert("Set invalid password")
 			formIsValid = false;
 		} 
+
 		if(!formIsValid)
         {
+			console.log("invalid info for signUp");
 			event.preventDefault();
 		}
 		else
         {
-			console.log("Validation scuccessfull.");
-			window.alert("sign up success by js")
-		}
+		  let name = userName.value;
+		  let email =userEmail.value;
+		  let password = userPassword.value;
+		
+			 try 
+			 {
+               const res = await fetch('http://localhost:3000/api/signup',
+		      {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, password })
+              });
 
-
+                const result = await res.json();
+				console.log(result);
+                if (res.status == 201)
+				  {
+                   alert("Signup successful!");
+				   console.log("Validation scuccessfull.");
+				   window.location.href = "../index.html";
+                  }
+				 else 
+				   {
+				   alert("Error: " + result.message);
+                   }
+             } 
+			 catch (err) 
+			 {
+                console.error("Fetch error:", err);
+                alert("Server error");
+             }
+        };
+			
 }
+
 
 
 
