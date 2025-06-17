@@ -118,23 +118,25 @@ async function validateUserSignup(event)
 		  let name = userName.value;
 		  let email =userEmail.value;
 		  let password = userPassword.value;
-		
+           
+
+        let userBool = false;
 			 try 
 			 {
-               const res = await fetch('http://localhost:3000/api/signup',
+               const res = await fetch('http://localhost:3000/api/check',
 		      {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, password })
+                body: JSON.stringify({email})
               });
 
                 const result = await res.json();
 				console.log(result);
                 if (res.status == 201)
 				  {
-                   alert("Signup successful!");
-				   console.log("Validation scuccessfull.");
+                   alert("User already exits");
 				   window.location.href = "../index.html";
+				   userBool = true;
                   }
 				 else 
 				   {
@@ -146,6 +148,41 @@ async function validateUserSignup(event)
                 console.error("Fetch error:", err);
                 alert("Server error");
              }
+
+
+
+
+             if(userBool==false)
+			 {
+		
+		     try 
+			   {
+                const res = await fetch('http://localhost:3000/api/signup',
+		        {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ name, email, password })
+                });
+
+                const result = await res.json();
+				console.log(result);
+                 if (res.status == 201)
+				  {
+                   alert("Signup successful!");
+				   console.log("Validation scuccessfull.");
+				   window.location.href = "../index.html";
+                  }
+				else 
+				   {
+				   alert("Error: " + result.message);
+                   }
+               } 
+			 catch (err) 
+			   {
+                console.error("Fetch error:", err);
+                alert("Server error");
+               }
+			 } 
         };
 			
 }
