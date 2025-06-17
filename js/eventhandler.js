@@ -30,36 +30,65 @@ function validatePassword(password) {
 
 
 
- function validateUserLogin(event)
+ async function validateUserLogin(event)
 {
-
-		let email = document.getElementById("user-email");
-		let pwd = document.getElementById("user-password");
+        event.preventDefault();
+		let UserEmail = document.getElementById("user-email");
+		let UserPassword = document.getElementById("user-password");
 		let formIsValid = true;
+
+		let email = UserEmail.value;
+		let password = UserPassword.value;
 		
 	
-		if (!validateEmail(email)) 
+		if (!validateEmail(UserEmail)) 
         {
 			window.alert("Wrong user email")
 			formIsValid = false;
 		} 
 		
-		if (!validatePassword(pwd)) 
+		if (!validatePassword(UserPassword)) 
 		{
             window.alert("Wrong user password")
 			formIsValid = false;
 		} 
 
-		fe
 		if(!formIsValid)
         {
 			event.preventDefault();
 		}
 		else
         {
-			console.log("Validation scuccessfull.");
-		}
+			
+		     try 
+			   {
+                const res = await fetch('http://localhost:3000/api/userLogin',
+		        {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({email, password })
+                });
 
+                const result = await res.json();
+				console.log(result);
+                 if (res.status == 201)
+				  {
+                   alert("Login successful! with correct creds");
+				   console.log("Validation scuccessfull.");
+				   window.location.href = "../main.html";
+                  }
+				else 
+				   {
+				   alert("Error: " + result.message + "Incorrect emial and password");
+                   }
+               } 
+			 catch (err) 
+			   {
+                console.error("Fetch error:", err);
+                alert("Server error");
+               }
+			 
+        };
 
 }
 
