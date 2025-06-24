@@ -10,21 +10,17 @@
 
 <body>
     <nav class="navbar">
-        <!-- Company Logo -->
         <div class="logo">
-           
+
         </div>
-        <!-- Navigation Links -->
         <div class="nav-links">
-            <a href="serviceProviderSetting.html"edit-profile">Edit Profile</a>
+            <a href="serviceProviderSetting.html">Edit Profile</a>
             <a href="index.html" id="logout" aria-label="Logout">Logout</a>
         </div>
     </nav>
     <div class="dashboard">
         <h1>Job Notifications</h1>
-        <!-- Notification Counter -->
         <div id="notification-count">You have <span id="notification-number"></span> new notifications</div>
-        <!-- Notifications List -->
         <div id="notifications-list"></div>
     </div>
     <script>
@@ -39,7 +35,6 @@
         const notificationsList = document.getElementById("notifications-list");
         const notificationNumber = document.getElementById("notification-number");
 
-        // Update notification counter
         notificationNumber.textContent = notifications.length;
 
         notifications.forEach(notification => {
@@ -57,5 +52,4 @@
 
     </script>
 </body>
-
 </html>
