@@ -100,22 +100,6 @@ header {
     margin-top: 2rem;
 }
 
-.profile-box h2 {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.profile-box p {
-    font-size: 1rem;
-    color: var(--subtext-color);
-    margin: 0.75rem 0;
-}
-
-/* Emphasized Labels */
-.profile-box p strong {
-    color: var(--text-color);
-}
 
 /* Appointment Button */
 .appointment-button {

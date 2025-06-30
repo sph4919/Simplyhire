@@ -7,7 +7,6 @@ userlogin.addEventListener("submit",sendAutenReq);
 async function sendAutenReq(event)
  {
   event.preventDefault();
-  console.log("clicked");
   let UserEmail = document.getElementById("user-email");
   let UserPassword = document.getElementById("user-password");
   let email = UserEmail.value;
@@ -19,6 +18,7 @@ async function sendAutenReq(event)
 		     {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          credentials: 'include', 
           body: JSON.stringify({email, password})
           });
 
@@ -32,7 +32,7 @@ async function sendAutenReq(event)
         }
 				else 
 				   {
-				   alert("Error: " + result.message + "Incorrect emial and password");
+				   alert("Error: " + result.message + "Incorrect email and password");
            }
        } 
 			  catch (err) 

@@ -1,23 +1,43 @@
 document.addEventListener('DOMContentLoaded', fetchServies);
 
+
 async function fetchServies()
 {
-    const serviceCards = document.querySelectorAll('.service-card');
+   
 
 
   try
    {
-      const res = await fetch(`http://localhost:3000/api/mainFetch`);
-      let data = res.json();
+     
+       const res = await fetch('http://localhost:3000/api/mainFetch', {
+      method: 'GET',
+      credentials: 'include',  
+      mode: 'cors'              
+    });
+
+      let data = await res.json();
       console.log(data);
-      const card = document.getElementById('card');
-      card.setAttribute("data-servicetype",data);
-      const name = document.getElementById('serviceName');
-      const description = document.getElementById('serviceDescription');
-    
-      name.value = data.something;
-      description.value = data.something;
-      
+
+
+    const serviceContainer = document.getElementById('container');
+
+
+       for(let i=0; i< data.length;i++)
+       {
+          const card = document.createElement("div");
+          card.classList.add("service-card");
+          const h2 = document.createElement('h2');
+          h2.classList.add("type-heading");
+          h2.innerHTML = data[i].service_type;
+          const p = document.createElement('p');
+          p.classList.add("type-description");
+          p.innerHTML = data[i].service_description;
+          card.append(h2, p);
+          let serviceName = h2.innerHTML;
+          card.addEventListener('click',event => toTheProviderlist(serviceName,event))
+          serviceContainer.append(card);
+
+       }
 
    }
   catch(err)
@@ -25,10 +45,12 @@ async function fetchServies()
     console.log(err);
    } 
 
-    serviceCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const serviceType = this.getAttribute('data-servicetype');
-            window.location.href = `providerlist.html?servicetype=${serviceType}`;
-        });
-    });
+    
 };
+
+function toTheProviderlist(serviceName)
+{
+
+    window.location.href = `../providerlist.html?servicetype=${encodeURIComponent(serviceName)}`;
+
+}

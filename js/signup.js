@@ -92,6 +92,7 @@ async function validateUserSignup(event)
                const res = await fetch('http://localhost:3000/api/check',
 		      {
                 method: 'POST',
+				credentials:'include',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({email})
               });

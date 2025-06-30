@@ -1,0 +1,62 @@
+
+const params = new URLSearchParams(window.location.search);
+const personalName = params.get('providerName');  
+console.log(personalName);
+
+document.addEventListener('DOMContentLoaded', fetchServies);
+
+let clickedButton = document.getElementById("createReqButton");
+clickedButton.addEventListener('click',event => toTheRequest(personalName,event));
+
+
+
+async function fetchServies()
+{
+    
+  try
+   {
+     
+      const res = await fetch(`http://localhost:3000/api/providerInfoFetch/${personalName}`, {
+      method: 'GET',
+      credentials: 'include',  
+      mode: 'cors'              
+    });
+
+      let data = await res.json();
+      console.log(data);
+
+
+    const profileContainer = document.getElementById('profileBox');
+
+          const h2name = document.createElement('h2');
+          h2name.classList.add("personalName");
+          h2name.innerHTML = data[0].name;
+          const ptype = document.createElement('p');
+          ptype.classList.add("personaljobtype");
+          ptype.innerHTML = data[0].job_type;
+          const pdescrip = document.createElement('p');
+          pdescrip.classList.add("personaldescription");
+          pdescrip.innerHTML = data[0].description;
+          const spanRate = document.createElement('span');
+          spanRate.classList.add("personaldescription");
+          spanRate.innerHTML = "$" + data[0].rate;
+          profileContainer.append(h2name, ptype,pdescrip,spanRate);
+
+
+   }
+  catch(err)
+   {
+    console.log(err);
+   } 
+
+    
+};
+
+
+
+function toTheRequest(personalName)
+{
+     console.log("clicked");
+    window.location.href = `../request.html?providerName=${encodeURIComponent(personalName)}`;
+
+}
