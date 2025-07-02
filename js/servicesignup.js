@@ -1,211 +1,97 @@
-let signup = document.getElementById("service-signupform");
-signup.addEventListener("submit",serviceValidateSignup);
- 
+document.addEventListener('DOMContentLoaded', () => {
+  const form  = document.getElementById('service-signupform');
+  const nameI = document.getElementById('service-user-name');
+  const emailI= document.getElementById('service-user-email');
+  const passI = document.getElementById('service-user-password');
+  const jobI  = document.getElementById('job-id-service');
+  const shortI= document.getElementById('short-description');
+  const descI = document.getElementById('service-description');
+  const rateI = document.getElementById('per-hour-rate-service');
 
-function validateDescription(description)
-{
-	let descRegex= /\b(\w+\b\W*){10,}/ig;
-	if (descRegex.test(description.value))
-		{
-			
-			return true;
-		}
-		else
-		{
-			
-			return false;
-		}
-}
+  // Load services into the job dropdown
+  (async function listServices() {
+    try {
+      const r = await fetch('http://localhost:3000/api/listServices');
+      const data = await r.json();
+      data.forEach(svc => {
+        const opt = document.createElement('option');
+        opt.value = svc.service_type;
+        opt.textContent = svc.service_type;
+        jobI.append(opt);
+      });
+    } catch (e) {
+      console.error('Could not load services', e);
+    }
+  })();
 
-function validateEmail(email)
- {
-    let emailRegex =  /^(\w+|\d+)[@]\w+[.]\w{2,3}$/ig;
-    if (emailRegex.test(email.value))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
 
-function validatePassword(password) {
-   
-    let passwordRegex= /^\w{6,}[^\s]$/ig;
-	if (passwordRegex.test(password.value))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-}
+    // Basic client-side validations
+    if (!/^[A-Za-z ]+$/.test(nameI.value)) {
+      return alert('Please enter a valid name');
+    }
+    if (!/^\S+@\S+\.\S+$/.test(emailI.value)) {
+      return alert('Please enter a valid email');
+    }
+    if (passI.value.length < 6) {
+      return alert('Password must be at least 6 chars');
+    }
+    if (descI.value.trim().split(/\s+/).length < 10) {
+      return alert('Description must be at least 10 words');
+    }
 
+    const payload = {
+      name:             nameI.value.trim(),
+      email:            emailI.value.trim(),
+      password:         passI.value,
+      type:             jobI.value,
+      shortDescription: shortI.value.trim(),
+      description:      descI.value.trim(),
+      rate:             Number(rateI.value)
+    };
 
-
-function validateName(name) {
-   
-    let nameRegex= /^[A-Za-z ]+$/ig;
-	if (nameRegex.test(name.value))
-		{
-			
-			return true;
-		}
-		else
-		{
-			
-			return false;
-		}
-}
-
-
-async function serviceValidateSignup(event)
-{
-		event.preventDefault();
-	    let serviceName = document.getElementById("service-user-name")
-		let serviceEmail = document.getElementById("service-user-email");
-		let servicePassword = document.getElementById("service-user-password");
-		let serviceJobtype = document.getElementById("job-id-service");
-		let serviceDescription = document.getElementById("service-description");
-		let serviceRate = document.getElementById("per-hour-rate-service");
-		let serviceShortDescription = document.getElementById("short-description");
-	
-		
-		let formIsValid = true;
-		
-
-		if (!validateName(serviceName)) 
-			{
-				window.alert("Wrong Name")
-				formIsValid = false;
-			} 
-	
-		if (!validateEmail(serviceEmail)) 
+    try {
+      // 1) Check if email exists
+      const check = await fetch(
+        'http://localhost:3000/api/serviceSignUpCheck',
         {
-			window.alert("Wrong user email")
-			formIsValid = false;
-		} 
-		
-		if (!validatePassword(servicePassword)) 
-		{
-            window.alert("Wrong user password")
-			formIsValid = false;
-		} 
-		if (!validateDescription(serviceDescription)) 
-		{
-			window.alert("Plz provide long description....")
-			formIsValid = false;
-		} 
-	
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: payload.email })
+        }
+      );
 
-		if(!formIsValid)
+      if (check.status === 409) {
+        alert('Email already registered. Redirecting to login…');
+        return window.location.href = '/serviceLogin.html';
+      }
+      if (!check.ok) {
+        const err = await check.json();
+        return alert(`Error ${check.status}: ${err.message}`);
+      }
+
+      // 2) Sign up
+      const signup = await fetch(
+        'http://localhost:3000/api/serviceSignup',
         {
-			event.preventDefault();
-		}
-		else
-        {
-			let userBool = false;
-			let name = serviceName.value;
-			let email = serviceEmail.value;
-			let password = servicePassword.value;
-			let type = serviceJobtype.value;
-			let description = serviceDescription.value;
-			let rate = serviceRate.value;
-			let shortDescription = serviceShortDescription.value;
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }
+      );
 
-			 try 
-			 {
-               const res = await fetch('http://localhost:3000/api/serviceSignUpCheck',
-		      {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({email})
-              });
-
-                const result = await res.json();
-				console.log(result);
-                if (res.status == 201)
-				  {
-                   alert("/Service User already exits");
-				   window.location.href = "../serviceLogin.html";
-				   userBool = true;
-                  }
-				 else 
-				   {
-				   alert("Error: " + result.message);
-                   }
-             } 
-			 catch (err) 
-			 {
-                console.error("Fetch error:", err);
-                alert("Server error");
-             }
-
-
-             if(userBool==false)
-			 {
-		
-		     try 
-			   {
-                const res = await fetch('http://localhost:3000/api/serviceSignup',
-		        {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({name,email,password,type,description,rate,shortDescription})  });
-
-                const result = await res.json();
-                 if (res.status == 201)
-				  {
-				   console.log("Validation scuccessfull.");
-				   window.location.href = "../serviceDashboard.html";
-                  }
-				else 
-				   {
-				   alert("Error: " + result.message);
-                   }
-               } 
-			 catch (err) 
-			   {
-                console.error("Fetch error:", err);
-                alert("Server error");
-               }
-			 } 
-        };
-			
-}
-
-
-
-
-document.addEventListener("DOMContentLoaded",listServices);
-
-async function listServices()
-{
-
-            try 
-	         {
-               const res = await fetch('http://localhost:3000/api/listServices');
-                const data = await res.json();
-				console.log(data);
-				
- 
-				   const list = document.getElementById('job-id-service');
-                   for(let i=0; i< data.length;i++)
-                   {
-                     const listName = document.createElement("option");
-                     listName.classList.add("service-name");
-					 listName.innerHTML = data[i].service_type;
-                     list.append(listName);     
-                   }
-                  
-				
-             } 
-			 catch (err) 
-			 {
-                console.error("Fetch error:", err);
-             }
-
-	
-}
+      const result = await signup.json();
+      if (signup.status === 201) {
+        alert('Signup successful! Redirecting to login…');
+        window.location.href = '/serviceLogin.html';
+      } else {
+        alert(`Error ${signup.status}: ${result.message}`);
+      }
+    }
+    catch (err) {
+      console.error('Network error:', err);
+      alert('Server unreachable');
+    }
+  });
+});

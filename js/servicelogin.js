@@ -26,7 +26,7 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 				  {
                    alert("Login successful! with correct creds");
 				   console.log("Validation scuccessfull.");
-				   window.location.href = "../dashboard.html";
+				   window.location.href = "../userdashboard.html";
                   }
 				else 
 				   {

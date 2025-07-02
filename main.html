@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Services Provided</title>
-    <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script src="js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Services Provided</title>
+  <link rel="stylesheet" href="main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div>
-                <a href="userdashboard.html">Request Dashboard</a>
-            </div>
-        </nav>
-    </header>
-    <main class="main">
-        <h1 class="main-heading">Home Services Provided</h1>
-        <div class="service-container" id="container">
-           
-            
-        </div>
-    </main>
- 
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <span class="brand">Simpleyhire</span>
+      </div>
+      <div class="nav-right">
+        <a href="contact.html" class="nav-btn">Contact</a>
+        <a href="userdashboard.html" class="nav-btn">Dashboard</a>
+        <button class="logout-btn" id="logOut">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main class="main">
+    <h1 class="main-heading"> Household Solutions & Services
+</h1>
+    <div class="container" id="container">
+      <!-- Cards dynamically added from main.js -->
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
+  <script src="js/main.js"></script>
+
 </body>
 </html>

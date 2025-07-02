@@ -82,7 +82,7 @@ async function validateUserSignup(event)
 		else
         {
 		  let name = userName.value;
-		  let email =userEmail.value;
+		  let email = userEmail.value;
 		  let password = userPassword.value;
            
 
