@@ -1,0 +1,48 @@
+/* userdashboard.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  background-color: #004085;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.section-title {
+  margin: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+.request-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.request-card h2 {
+  margin: 0 0 0.5rem 0;
+  color: #004085;
+}
+
+.request-card p {
+  margin: 0.3rem 0;
+}

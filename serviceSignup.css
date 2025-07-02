@@ -1,185 +1,83 @@
-/* serviceSignup.css */
-
-/* Color Palette */
-:root {
-    --primary-color: #007BFF;
-    --primary-hover: #0056b3;
-    --accent-color: #FFB400;
-    --background-light: #f0f2f5;
-    --card-background: #ffffff;
-    --text-color: #333333;
-    --subtext-color: #555555;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --radius: 8px;
-}
-
-/* Global Styles */
-* {
-    box-sizing: border-box;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-light);
-    color: var(--text-color);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1rem;
-}
-
-/* Container */
 .container {
-    background-color: var(--card-background);
     width: 100%;
     max-width: 500px;
-    border-radius: var(--radius);
-    box-shadow: 0 6px 12px var(--shadow-color);
-    overflow: hidden;
-    padding: 2rem 1.5rem;
-}
-
-/* Sign Up Card */
-.user-signup {
-    text-align: center;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
 
 .user-signup h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    position: relative;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
 }
 
-.user-signup h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--accent-color);
-    margin: 0.5rem auto 0;
-    border-radius: 2px;
-}
-
-/* Form Styles */
-#service-signupform {
+form {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    margin-top: 1.5rem;
 }
 
-#service-signupform label {
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    color: var(--subtext-color);
-    margin-top: 1rem;
+label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
 }
 
-#service-signupform input[type="text"],
-#service-signupform input[type="email"],
-#service-signupform input[type="password"],
-#service-signupform input[type="number"],
-#service-signupform select,
-#service-signupform textarea {
-    width: 100%;
-    padding: 0.65rem 1rem;
-    font-size: 1rem;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    padding: 10px;
+    font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: var(--radius);
-    background-color: #fafafa;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-#service-signupform select {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4l6 6 6-6' stroke='%23777' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 12px;
-}
-
-#service-signupform textarea {
+textarea {
     resize: vertical;
-    min-height: 80px;
 }
 
-#service-signupform input:focus,
-#service-signupform select:focus,
-#service-signupform textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
-}
-
-/* Sign Up Button */
-#service-signupform button {
-    background-color: var(--primary-color);
-    color: #ffffff;
+button[type="submit"] {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007bff;
     border: none;
-    border-radius: var(--radius);
-    padding: 0.75rem;
-    font-size: 1rem;
-    font-weight: 600;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
     cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-#service-signupform button:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
-/* Login Link */
 .login-link {
-    margin-top: 1.25rem;
-    font-size: 0.95rem;
-    color: var(--subtext-color);
+    margin-top: 20px;
     text-align: center;
+    color: #333;
 }
 
 .login-link a {
-    color: var(--primary-color);
+    color: #007bff;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .login-link a:hover {
-    color: var(--primary-hover);
-    transform: translateY(-1px);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 480px) {
-    .container {
-        width: 100%;
-        padding: 1.5rem 1rem;
-    }
-
-    .user-signup h2 {
-        font-size: 1.75rem;
-    }
-
-    #service-signupform input[type="text"],
-    #service-signupform input[type="email"],
-    #service-signupform input[type="password"],
-    #service-signupform input[type="number"],
-    #service-signupform select,
-    #service-signupform textarea {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.95rem;
-    }
-
-    #service-signupform button {
-        width: 100%;
-        padding: 0.65rem;
-        font-size: 0.95rem;
-    }
+    text-decoration: underline;
 }

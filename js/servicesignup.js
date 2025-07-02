@@ -1,6 +1,6 @@
 let signup = document.getElementById("service-signupform");
 signup.addEventListener("submit",serviceValidateSignup);
-
+ 
 
 function validateDescription(description)
 {
@@ -70,9 +70,9 @@ async function serviceValidateSignup(event)
 		let serviceJobtype = document.getElementById("job-id-service");
 		let serviceDescription = document.getElementById("service-description");
 		let serviceRate = document.getElementById("per-hour-rate-service");
+		let serviceShortDescription = document.getElementById("short-description");
+	
 		
-		
-
 		let formIsValid = true;
 		
 
@@ -113,10 +113,11 @@ async function serviceValidateSignup(event)
 			let type = serviceJobtype.value;
 			let description = serviceDescription.value;
 			let rate = serviceRate.value;
+			let shortDescription = serviceShortDescription.value;
 
 			 try 
 			 {
-               const res = await fetch('http://localhost:3000/api/serviceSigUpCheck',
+               const res = await fetch('http://localhost:3000/api/serviceSignUpCheck',
 		      {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -152,15 +153,13 @@ async function serviceValidateSignup(event)
 		        {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({name,email,password,type,description,rate })  });
+                  body: JSON.stringify({name,email,password,type,description,rate,shortDescription})  });
 
                 const result = await res.json();
-				console.log(result);
                  if (res.status == 201)
 				  {
-                   alert("Serivce Signup successful!");
 				   console.log("Validation scuccessfull.");
-				   window.location.href = "../dashboard.html";
+				   window.location.href = "../serviceDashboard.html";
                   }
 				else 
 				   {
@@ -178,3 +177,35 @@ async function serviceValidateSignup(event)
 }
 
 
+
+
+document.addEventListener("DOMContentLoaded",listServices);
+
+async function listServices()
+{
+
+            try 
+	         {
+               const res = await fetch('http://localhost:3000/api/listServices');
+                const data = await res.json();
+				console.log(data);
+				
+ 
+				   const list = document.getElementById('job-id-service');
+                   for(let i=0; i< data.length;i++)
+                   {
+                     const listName = document.createElement("option");
+                     listName.classList.add("service-name");
+					 listName.innerHTML = data[i].service_type;
+                     list.append(listName);     
+                   }
+                  
+				
+             } 
+			 catch (err) 
+			 {
+                console.error("Fetch error:", err);
+             }
+
+	
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Service Provider Sign Up</title>
     <link rel="stylesheet" href="serviceSignup.css"> 
 </head>
 
@@ -13,30 +13,28 @@
         <div class="user-signup">
             <h2>Service Provider Sign Up</h2>
             <form id="service-signupform">
-                <label for="user-name">Name:</label>
-                <input type="text" id="service-user-name" name="user-name" placeholder="Enter your name">
+                <label for="user-name">First and Last Name:</label>
+                <input type="text" id="service-user-name" name="user-name" placeholder="Enter your name" >
 
                 <label for="user-email">Email:</label>
                 <input type="email" id="service-user-email" name="user-email" placeholder="Enter your email" >
 
                 <label for="user-password">Password:</label>
-                <input type="password" id="service-user-password" name="user-password" placeholder="Enter your password" >
+                <input type="password" id="service-user-password" name="user-password" placeholder="Enter your password">
 
                 <label for="job-id">Select Job:</label>
-                <select name="job-id" id="job-id-service">
-                    <option value="pumbling">plumbing</option>
-                    <option value="painting">painting</option>
-                    <option value="Carpenting">carpenting</option>
-                    <option value="snow-blower">snow-blower</option>
-                    <option value="Electrical-work">electricity</option>
-                    <option value="AC-repair">lawn-maintenance</option>
-                    <option value="Washer-repair">washer-dryer-repair</option>
-                    <option value="hvac-services">hvac-services</option>
-                    <option value="chimney-repair">chimney-repair</option>
+                <select name="job-id" id="job-id-service" >
+                   
                 </select>
-                <textarea name="description" id="service-description" placeholder="add job description here"></textarea>
-                <label for="per-hour-rate">Rate(/hr)</label>
-                <input type="number" id="per-hour-rate-service" name="per-hour-rate" placeholder="Enter per hour working rate">
+
+                <label for="short-description">Short Description:</label>
+                <input type="text" id="short-description" name="short-description" placeholder="E.g. Experienced electrician in NYC" >
+
+                <label for="service-description">Detailed Description:</label>
+                <textarea name="description" id="service-description" placeholder="Add job description here" rows="4" ></textarea>
+
+                <label for="per-hour-rate">Rate (/hr):</label>
+                <input type="number" id="per-hour-rate-service" name="per-hour-rate" placeholder="Enter hourly rate" >
 
                 <button type="submit">Sign Up</button>
             </form>
