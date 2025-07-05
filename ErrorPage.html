@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Session Error - SimplyHire</title>
+  <link rel="stylesheet" href="ErrorPage.css"/>
+</head>
+<body>
+  <!-- Particle background -->
+  <div id="particles-js"></div>
+
+  <div class="error-container">
+    <h1>Invalid Session</h1>
+    <p>Your session has expired or is invalid. Please log in again.</p>
+    <button onclick="redirectToHome()">Go to Home</button>
+  </div>
+
+  <script>
+    function redirectToHome() {
+      window.location.href = 'index.html';
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
+</body>
+</html>

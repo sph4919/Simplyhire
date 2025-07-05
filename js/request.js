@@ -1,4 +1,3 @@
--------------
 
 // Description: at least 10 words
 function validateDescription(text) {
@@ -48,7 +47,10 @@ async function findServiceProviderId() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ personalName })
     });
-
+ if(res.status == 401)
+        {
+          window.location.href = "/ErrorPage.html";
+        }
     const payload = await res.json();
 
     if (!res.ok) {

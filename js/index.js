@@ -25,15 +25,15 @@ async function sendAutenReq(event)
        const result = await res.json();
 			 console.log(result);
        if (res.status == 201)
-				{
-        alert("Login successful! with correct creds");
+		{
+       
 			  console.log("Validation scuccessfull.");
 			  window.location.href = "../main.html";
         }
-				else 
-				   {
-				   alert("Error: " + result.message + "Incorrect email and password");
-           }
+		else 
+		 {
+		  alert("Error: " + result.message + "Incorrect email and password");
+        }
        } 
 			  catch (err) 
 			   {

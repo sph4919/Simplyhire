@@ -21,7 +21,10 @@ async function fetchServies()
       credentials: 'include',  
       mode: 'cors'              
     });
-
+ if(res.status == 401)
+        {
+          window.location.href = "/ErrorPage.html";
+        }
       let data = await res.json();
       console.log(data);
 
