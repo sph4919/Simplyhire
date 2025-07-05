@@ -23,12 +23,10 @@ async function sendAutenReq(event)
           });
 
        const result = await res.json();
-			 console.log(result);
-       if (res.status == 201)
+       if (res.ok)
 		{
-       
-			  console.log("Validation scuccessfull.");
-			  window.location.href = "../main.html";
+             
+			  window.location.href = "/main.html";
         }
 		else 
 		 {
