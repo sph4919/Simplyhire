@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Provider Profile</title>
-    <link rel="stylesheet" href="profile.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Service Provider Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div>
-                <a href="main.html">Home</a>
-                <a href="providerlist.html">Provider List</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </nav>
-    </header>
-    <main class="main">
-        <h1 class="main-heading">Service Provider Profile</h1>
-        <div class="profile-box" id="profileBox">
-          
-        </div>
-        <button class="appointment-button" id="createReqButton">Book an Appointment</button>
-    </main>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <span class="brand">SimplyHire</span>
+      <div class="nav-links">
+        <a href="main.html" class="nav-btn">List of Service</a>
+        <a href="contact.html" class="nav-btn">Contact</a>
+        <button class="logout-btn" id="logOut">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main class="main">
+    <h1 class="main-heading">Service Provider Profile</h1>
+    <div class="profile-box" id="profileBox">
+      <!-- Dynamic content inserted via JS -->
+    </div>
+    <button class="appointment-button" id="createReqButton">Book an Appointment</button>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
   <script src="js/profile.js"></script>
 </body>
 </html>

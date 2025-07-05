@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Providers List</title>
-    <link rel="stylesheet" href="providerlist.css">
- 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Service Providers List</title>
+  <link rel="stylesheet" href="providerlist.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div>
-                <a href="index.html" class="homelink">Home</a>
-                <a href="contact.html" class="contactlink">Contact</a>
-            </div>
-        </nav>
-    </header>
-    <main class="main">
-        <h1 class="main-heading">Service Providers</h1>
-        <div class="provider-container" id="providerContainer">
-        </div>
-    </main>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <span class="brand">SimplyHire</span>
+      <div class="nav-links">
+        <a href="main.html" class="nav-btn">Services</a>
+        <a href="contact.html" class="nav-btn">Contact</a>
+        <button class="logout-btn" id="logOut">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main class="main">
+    <h1 class="main-heading">Service Providers</h1>
+    <div class="provider-container" id="providerContainer"></div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
+  <script src="js/providerlist.js"></script>
+
 </body>
-<script src="js/providerlist.js"></script>
 </html>

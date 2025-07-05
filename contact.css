@@ -1,137 +1,194 @@
+:root {
+  --primary-color: #1e90ff;
+  --primary-hover: #1c7ed6;
+  --accent-color: #ffc107;
+  --background-dark: #121212;
+  --card-background: rgba(30, 30, 30, 0.9);
+  --text-color: #eaeaea;
+  --subtext-color: #aaa;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --radius: 12px;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    color: #333;
+  font-family: 'Poppins', sans-serif;
+  background: var(--background-dark);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: 400% 400%;
+  animation: backgroundShift 20s ease infinite;
+}
+
+/* Particle Background */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
+header {
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .navbar {
-    display: flex;
-    justify-content: flex-end;
-    padding: 15px 20px;
-    background-color: #333;
-    color: white;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
-.navbar a {
-    margin-left: 20px;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-decoration: none;
-    color: white;
-    background: none;
-    font-size: 16px;
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
-.navbar a:hover {
-    background-color: #555;
-    transform: translateY(-2px);
+.nav-links {
+  display: flex;
+  gap: 1rem;
 }
 
-.navbar a:active {
-    transform: translateY(0);
+.nav-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
+.nav-btn:hover {
+  background: linear-gradient(135deg, var(--primary-hover), #ffb300);
+  transform: translateY(-2px);
+}
+
+/* Logout Button */
+.logout-btn {
+  background: none;
+  color: #ff4d4f;
+  border: 2px solid #ff4d4f;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #ff4d4f;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Main Section */
 .main {
-    background-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    overflow: hidden;
-    max-width: 500px;
-    width: 100%;
-    padding: 30px;
-    margin-top: 70px; /* To account for the fixed navbar */
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.contact-info {
-    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-background);
+  border-radius: var(--radius);
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  margin-top: 4rem;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
-    color: wheat;
-    font-size: 35px;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--primary-color);
 }
 
-h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #2575fc;
-    text-align: center;
-    font-size: 30px;
-
-}
-
-p.helpline {
-    margin: 5px 0;
-    color: wheat;
-    font-size: 25px;
-}
-
-p {
-    margin: 5px 0;
-    color: #333;
-    font-size: 25px;
-    text-align: center;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.helpline {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--subtext-color);
 }
 
 .contact-info {
-    animation: slideIn 0.5s ease-out;
+  background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  text-align: left;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.contact-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-#logout {
-    margin: 0;
-    padding: 0px 10px 0px 5px;
+.contact-info h2 {
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .main {
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .helpline {
+    font-size: 1rem;
+  }
+
+  .contact-info p {
+    font-size: 0.95rem;
+  }
 }

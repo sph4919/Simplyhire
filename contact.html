@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Home and Beyond Service</title>
-    <link rel="stylesheet" href="contact.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - SimplyHire</title>
+  <link rel="stylesheet" href="contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div>
-                <a href="main.html">Home</a>
-                <a href="settings.html">Settings</a>
-            </div>
-            
-        </nav>
-    </header>
-    <main>
-        <h1>Contact Us</h1>
-        <p class ="helpline">If you have any questions or need assistance, please feel free to contact us. We are here to help!</p>
-        <div class="contact-info">
-            <h2>SimplyHire</h2>
-            <p class="address"><strong>Address:</strong> 1234 Elm Street, Regina, SK, Canada</p>
-            <p class="address"><strong>Phone:</strong> (306) 123-4567</p>
-            <p class="address"><strong>Email:</strong> SimplyHire123@gmail.com</p>
-        </div>
-    </main>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <span class="brand">SimplyHire</span>
+      <div class="nav-links">
+        <a href="main.html" class="nav-btn">Home</a>
+        <a href="settings.html" class="nav-btn">Settings</a>
+        <button class="logout-btn" id="logOut">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <h1>Contact Us</h1>
+    <p class="helpline">If you have any questions or need assistance, please feel free to contact us. We are here to help!</p>
+
+    <div class="contact-info">
+      <h2>SimplyHire</h2>
+      <p><strong>Address:</strong> 1234 Elm Street, Regina, SK, Canada</p>
+      <p><strong>Phone:</strong> (306) 123-4567</p>
+      <p><strong>Email:</strong> SimplyHire123@gmail.com</p>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>

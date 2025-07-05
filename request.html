@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
-    <link rel="stylesheet" href="request.css">
-    <title>Job Request</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Request</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"/>
+  <link rel="stylesheet" href="request.css"/>
 </head>
 <body>
-    <div class="container">
-        <h2 class="service-heading">Request description</h2>
-        <textarea placeholder="Enter job description..." rows="6" id="reqDescription"></textarea>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
 
-        <h3>Address Information </h3>
-        <form>
-            <label for="street"><i class="fas fa-home"></i> Street Address</label>
-            <input type="text" id="street" name="street" placeholder="Enter street address">
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="main.html" class="nav-link">Service List</a>
+      </div>
+      <div class="nav-right">
+        <button class="logout-btn" id="logOut">Logout</button>
+      </div>
+    </nav>
+  </header>
 
-            <label for="city"><i class="fas fa-city"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="Enter city">
+  <!-- Form Container -->
+  <div class="container">
+    <h2 class="service-heading">Request Description</h2>
+    <textarea placeholder="Enter job description..." rows="6" id="reqDescription"></textarea>
 
-            <label for="state"><i class="fas fa-map-marked-alt"></i> State</label>
-            <input type="text" id="state" name="state" placeholder="Enter state">
+    <h3>Address Information</h3>
+    <form>
+      <label for="street"><i class="fas fa-home"></i> Street Address</label>
+      <input type="text" id="street" name="street" placeholder="Enter street address" />
 
-            <label for="zip"><i class="fas fa-envelope"></i> Zip Code</label>
-            <input type="text" id="zip" name="zip" placeholder="Enter zip code">
+      <label for="city"><i class="fas fa-city"></i> City</label>
+      <input type="text" id="city" name="city" placeholder="Enter city" />
 
-            <button type="submit" id="reqButton">Submit</button>
-        </form>
-    </div>
+      <label for="state"><i class="fas fa-map-marked-alt"></i> State</label>
+      <input type="text" id="state" name="state" placeholder="Enter state" />
 
+      <label for="zip"><i class="fas fa-envelope"></i> Zip Code</label>
+      <input type="text" id="zip" name="zip" placeholder="Enter zip code" />
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script  src="js/request.js"></script>>
+      <button type="submit" id="reqButton">Submit</button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
+  <script src="js/request.js"></script>
 </body>
 </html>

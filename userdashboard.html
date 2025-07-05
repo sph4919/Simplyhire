@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>User Dashboard - SimplyHire</title>
-  <link rel="stylesheet" href="userdashboard.css" />
+  <link rel="stylesheet" href="userdashboard.css"/>
 </head>
 <body>
+  <!-- Particle background -->
+  <div id="particles-js"></div>
+
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="navbar-title">SimplyHire</div>
+    <div class="navbar-actions">
+      <a href="main.html" class="nav-btn">List of Services </a>
+      <button id="logOut" class="nav-btn">Logout</button>
+    </div>
   </nav>
 
   <main>
-    <h1 class="section-title">Requests Created</h1>
-    <div class="request-list" id="reqContainer">
-   
-     
-    </div>
+    <h1 class="section-title">Your Requests</h1>
+    <div class="request-list" id="reqContainer"></div>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
   <script src="js/userdashboard.js"></script>
 </body>
 </html>

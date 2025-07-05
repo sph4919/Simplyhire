@@ -1,26 +1,67 @@
-/* userdashboard.css */
-
+/* Dark theme with particle background */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
 }
 
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+/* Navbar */
 .navbar {
-  background-color: #004085;
-  padding: 1rem;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 1rem 2rem;
+  color: #ffffff;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn{
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+
+}
+
+.nav-btn {
+  background-color: #333;
+  color: #00bcd4;
 }
 
 .section-title {
   margin: 2rem;
   font-size: 2rem;
   text-align: center;
-  color: #333;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
 }
 
 .request-list {
@@ -29,20 +70,25 @@ body {
   gap: 1.5rem;
   max-width: 800px;
   margin: 0 auto 2rem auto;
+  position: relative;
+  z-index: 2;
 }
 
+/* Card Styling */
 .request-card {
-  background-color: white;
+  background-color: #1e1e1e;
   border-radius: 8px;
   padding: 1rem 1.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+  border: 1px solid #333;
 }
 
 .request-card h2 {
   margin: 0 0 0.5rem 0;
-  color: #004085;
+  color: #00bcd4;
 }
 
 .request-card p {
   margin: 0.3rem 0;
+  color: #ccc;
 }
