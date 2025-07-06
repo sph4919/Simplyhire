@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
-    <link rel="stylesheet" href="serviceProviderSetting.css"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="serviceProviderSetting.css">
 </head>
 <body>
+  <!-- Colorful Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Page Content -->
+  <div class="overlay">
     <header>
-        <nav class="navbar">
-            <div>
-                <a href="main.html">Home</a>
-                <a href="contact.html">Contact Us</a>
-            </div>
-        </nav>
+      <nav class="navbar">
+        <div>
+          <a href="main.html">Home</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </nav>
     </header>
+
     <main class="main">
-        <div class="profile-block">
-            <h2>Name</h2>
+      <div class="profile-block">
+        <h2>Name</h2>
+      </div>
+
+      <div class="manage-block">
+        <div class="hourly-rate-block">
+          <h3>Change Hourly Rate</h3>
+          <input type="number" id="hourly-rate" placeholder="Enter new hourly rate" />
+          <button class="change-rate-button" onclick="changeHourlyRate()">Change</button>
         </div>
-        <div class="manage-block">
-            <div class="hourly-rate-block">
-                <h3>Change Hourly Rate</h3>
-                <input type="number" id="hourly-rate" placeholder="Enter new hourly rate">
-                <br>
-                <button class="change-rate-button" onclick="changeHourlyRate()">Change</button>
-            </div>
-        </div>
+      </div>
     </main>
-    <script>
-        function changeHourlyRate()
-         {
-            const newRate = document.getElementById('hourly-rate').value;
-            alert(`Hourly Rate changed to $${newRate}`);
-         }
-    </script>
+  </div>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-serviceConfig.js"></script>
+
+  <script>
+    function changeHourlyRate() {
+      const newRate = document.getElementById('hourly-rate').value;
+      alert(`Hourly Rate changed to $${newRate}`);
+    }
+  </script>
 </body>
 </html>

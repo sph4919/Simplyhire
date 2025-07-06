@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Provider Login</title>
-    <link rel="stylesheet" href="serviceLogin.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Service Provider Login</title>
+  <link rel="stylesheet" href="serviceLogin.css">
 </head>
-
 <body>
+  <!-- Colorful Particle Background -->
+  <div id="particles-js"></div>
 
+  <!-- Overlay content -->
+  <div class="overlay">
     <div class="userlogin">
-        <button type="button"><a href="index.html" class="userLoginpage">UserLogin</a></button>
+      <button type="button">
+        <a href="index.html" class="userLoginpage">UserLogin</a>
+      </button>
     </div>
-    
+
     <div class="container">
-        <h1 class="service-heading">Service Provider Interface</h1>
-        <p class="tagline">Your City, Your Service</p>
+      <h1 class="service-heading">Service Provider Interface</h1>
+      <p class="tagline">Your City, Your Service</p>
 
-        <div class="signup">
-            <div class="signup-btn">
-                <a href="serviceSignup.html">Sign Up</a>
-            </div>
+      <div class="signup">
+        <div class="signup-btn">
+          <a href="serviceSignup.html">Sign Up</a>
         </div>
+      </div>
 
-        <div class="user-login">
-            <h2>Provider Login</h2>
-            <form id="user-form" >
-                <label for="user-email">Email:</label>
-                <input type="email" id="service-user-email" name="user-email" placeholder="Enter your email" required>
+      <div class="user-login">
+        <h2>Provider Login</h2>
+        <form id="user-form">
+          <label for="user-email">Email:</label>
+          <input type="email" id="service-user-email" name="user-email" placeholder="Enter your email" required>
 
-                <label for="user-password">Password:</label>
-                <input type="password" id="service-user-password" name="user-password" placeholder="Enter your password" required>
+          <label for="user-password">Password:</label>
+          <input type="password" id="service-user-password" name="user-password" placeholder="Enter your password" required>
 
-                <button type="submit" id="serviceLogin">Login</button>
-            </form>
-        </div>
+          <button type="submit" id="serviceLogin">Login</button>
+        </form>
+      </div>
     </div>
-    <script src="js/servicelogin.js"></script>
-</body>
+  </div>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-serviceConfig.js"></script>
+  <script src="js/servicelogin.js"></script>
+</body>
 </html>

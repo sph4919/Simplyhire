@@ -8,40 +8,49 @@
   <script src="js/servicesignup.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <div class="user-signup">
-      <h2>Service Provider Sign Up</h2>
-      <form id="service-signupform">
-        <label for="service-user-name">Name:</label>
-        <input type="text" id="service-user-name" placeholder="Enter your name">
 
-        <label for="service-user-email">Email:</label>
-        <input type="email" id="service-user-email" placeholder="Enter your email">
+  <!-- Colorful Particle Background -->
+  <div id="particles-js"></div>
 
-        <label for="service-user-password">Password:</label>
-        <input type="password" id="service-user-password" placeholder="Enter your password">
+  <!-- Content Overlay -->
+  <div class="overlay">
+    <div class="container">
+      <div class="user-signup">
+        <h2>Service Provider Sign Up</h2>
+        <form id="service-signupform">
+          <label for="service-user-name">Name:</label>
+          <input type="text" id="service-user-name" placeholder="Enter your name">
 
-        <label for="job-id-service">Select Job:</label>
-        <select id="job-id-service"></select>
+          <label for="service-user-email">Email:</label>
+          <input type="email" id="service-user-email" placeholder="Enter your email">
 
-        <label for="short-description">Short Description:</label>
-        <input type="text" id="short-description" placeholder="E.g. Experienced electrician">
+          <label for="service-user-password">Password:</label>
+          <input type="password" id="service-user-password" placeholder="Enter your password">
 
-        <label for="service-description">Detailed Description:</label>
-        <textarea id="service-description" rows="4"
-                  placeholder="Add job description here"></textarea>
+          <label for="job-id-service">Select Job:</label>
+          <select id="job-id-service"></select>
 
-        <label for="per-hour-rate-service">Rate (/hr):</label>
-        <input type="number" id="per-hour-rate-service" placeholder="Enter hourly rate">
+          <label for="short-description">Short Description:</label>
+          <input type="text" id="short-description" placeholder="E.g. Experienced electrician">
 
-        <button type="submit">Sign Up</button>
-      </form>
+          <label for="service-description">Detailed Description:</label>
+          <textarea id="service-description" rows="4" placeholder="Add job description here"></textarea>
 
-      <p>
-        Already have an account?
-        <a href="/serviceLogin.html">Login here</a>
-      </p>
+          <label for="per-hour-rate-service">Rate (/hr):</label>
+          <input type="number" id="per-hour-rate-service" placeholder="Enter hourly rate">
+
+          <button type="submit">Sign Up</button>
+        </form>
+        <p class="login-link">
+          Already have an account?
+          <a href="/serviceLogin.html">Login here</a>
+        </p>
+      </div>
     </div>
   </div>
+
+  <!-- Particle Script -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-serviceConfig.js"></script> <!-- Reuse the same as login -->
 </body>
 </html>

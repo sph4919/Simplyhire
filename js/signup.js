@@ -89,7 +89,7 @@ async function validateUserSignup(event)
         let userBool = false;
 			 try 
 			 {
-               const res = await fetch('http://localhost:3000/user/check',
+               const res = await fetch('http://localhost:3000/api/check',
 		      {
                 method: 'POST',
 				credentials:'include',
@@ -124,7 +124,7 @@ async function validateUserSignup(event)
 		
 		     try 
 			   {
-                const res = await fetch('http://localhost:3000/user/signup',
+                const res = await fetch('http://localhost:3000/api/signup',
 		        {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },

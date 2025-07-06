@@ -1,202 +1,172 @@
-/* dashboard.css */
-
-/* Import Poppins font */
+/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Color Palette */
-:root {
-    --primary-color: #007BFF;
-    --primary-hover: #0056b3;
-    --accent-color: #FFA500;
-    --background-light: #f0f2f5;
-    --card-background: #ffffff;
-    --text-color: #333333;
-    --subtext-color: #555555;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --radius: 8px;
-}
-
-/* Global Styles */
+/* Base Reset */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-light);
-    color: var(--text-color);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
 }
 
 /* Navbar */
 .navbar {
-    background-color: var(--card-background);
-    box-shadow: 0 2px 6px var(--shadow-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
-    /* Placeholder styling for logo container */
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    margin-right: 0.75rem;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  width: 40px;
+  height: 40px;
+  background-color: #00d9ff;
+  border-radius: 50%;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    padding: 0.5rem 0.75rem;
-    border-radius: var(--radius);
-    transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  margin-left: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    background-color: var(--primary-color);
-    color: #ffffff;
+  background-color: #00bcd4;
+  color: #121212;
 }
 
-/* Dashboard Container */
+/* Dashboard */
 .dashboard {
-    flex: 1;
-    max-width: 800px;
-    width: 90%;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    text-align: center;
+  max-width: 900px;
+  width: 90%;
+  margin: 3rem auto;
+  text-align: center;
 }
 
 .dashboard h1 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    position: relative;
+  font-size: 2rem;
+  color: #00d9ff;
+  margin-bottom: 0.5rem;
 }
 
 .dashboard h1::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--accent-color);
-    margin: 0.5rem auto 0;
-    border-radius: 2px;
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ffb400;
+  margin: 0.5rem auto;
+  border-radius: 2px;
 }
 
-/* Notification Counter */
 #notification-count {
-    font-size: 1rem;
-    color: var(--subtext-color);
-    margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 2rem;
 }
 
 /* Notifications List */
 #notifications-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* Individual Notification Card */
+/* Notification Cards */
 .notification {
-    background-color: var(--card-background);
-    border-radius: var(--radius);
-    box-shadow: 0 4px 8px var(--shadow-color);
-    padding: 1.5rem;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .notification:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px var(--shadow-color);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 255, 255, 0.2);
 }
 
 .notification h2 {
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: #00ffc8;
+  margin-bottom: 0.5rem;
 }
 
 .notification p {
-    font-size: 0.95rem;
-    color: var(--text-color);
-    margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0.4rem 0;
 }
 
 /* Accept Button */
 .accept-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: #ffffff;
-    border: none;
-    border-radius: var(--radius);
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 1rem;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .accept-button:hover {
-    background-color: darken(var(--accent-color), 10%);
-    transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 134, 229, 0.4);
 }
 
-/* Responsive Adjustments */
+/* Responsive */
 @media (max-width: 768px) {
-    .dashboard h1 {
-        font-size: 1.75rem;
-    }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    #notification-count {
-        font-size: 0.95rem;
-    }
-}
+  .nav-links {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-links {
-        gap: 0.75rem;
-        margin-top: 0.5rem;
-    }
-
-    .dashboard {
-        margin: 1rem auto;
-        width: 95%;
-    }
-
-    .notification h2 {
-        font-size: 1.1rem;
-    }
-
-    .accept-button {
-        width: 100%;
-        text-align: center;
-    }
+  .dashboard h1 {
+    font-size: 1.5rem;
+  }
 }

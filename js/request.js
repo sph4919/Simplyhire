@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', findServiceProviderId);
 
 async function findServiceProviderId() {
   try {
-    const res = await fetch('http://localhost:3000/user/findServiceProviderId', {
+    const res = await fetch('http://localhost:3000/api/findServiceProviderId', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -105,7 +105,7 @@ async function toTheConformation(event) {
 
   // All validations passed – submit the request
   try {
-    const res = await fetch('http://localhost:3000/user/createRequest', {
+    const res = await fetch('http://localhost:3000/api/createRequest', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -138,7 +138,7 @@ if (reqBtn) {
 
 async function logOutFunction() {
   try {
-    const res = await fetch('http://localhost:3000/user/logout', {
+    const res = await fetch('http://localhost:3000/api/logout', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' }

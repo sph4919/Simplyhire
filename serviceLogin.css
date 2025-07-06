@@ -1,239 +1,166 @@
-/* serviceLogin.css */
-
-/* Color Palette */
-:root {
-    --primary-color: #007BFF;
-    --primary-hover: #0056b3;
-    --accent-color: #FFA500;
-    --background-light: #f0f2f5;
-    --card-background: #ffffff;
-    --text-color: #333333;
-    --subtext-color: #555555;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --radius: 8px;
-}
-
-/* Global Styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* Overlay + Particle Base */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-light);
-    color: var(--text-color);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0d0d0d;
+  overflow: hidden;
+  color: #fff;
+  position: relative;
 }
 
-/* UserLogin Button (Top) */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top User Login Button */
 .userlogin {
-    width: 100%;
-    background-color: var(--card-background);
-    box-shadow: 0 2px 6px var(--shadow-color);
-    padding: 0.75rem 1rem;
-    display: flex;
-    justify-content: flex-start;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem 2rem;
 }
 
 .userlogin button {
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: var(--radius);
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .userlogin button:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .userlogin a.userLoginpage {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
 }
 
-/* Main Container */
+/* Container Card */
 .container {
-    background-color: var(--card-background);
-    max-width: 500px;
-    width: 90%;
-    margin: 2rem auto;
-    padding: 2rem 1.5rem;
-    border-radius: var(--radius);
-    box-shadow: 0 6px 12px var(--shadow-color);
-    text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
 }
 
-/* Service Heading */
 .service-heading {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    position: relative;
+  font-size: 2.2rem;
+  color: #00d9ff;
+  margin-bottom: 0.5rem;
 }
 
 .service-heading::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--accent-color);
-    margin: 0.5rem auto 0;
-    border-radius: 2px;
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ff416c;
+  margin: 0.5rem auto;
+  border-radius: 2px;
 }
 
-/* Tagline */
 .tagline {
-    font-size: 1rem;
-    color: var(--subtext-color);
-    margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 1.5rem;
 }
 
-/* Signup Section */
+/* Sign Up Button */
 .signup {
-    margin-bottom: 1.5rem;
-}
-
-.signup-btn {
-    display: inline-block;
+  margin-bottom: 1.5rem;
 }
 
 .signup-btn a {
-    background-color: var(--accent-color);
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .signup-btn a:hover {
-    background-color: darken(var(--accent-color), 10%);
-    transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 210, 0, 0.4);
 }
 
-/* Provider Login Card */
+/* Login Card */
 .user-login {
-    text-align: left;
+  text-align: left;
+  margin-top: 1rem;
 }
 
 .user-login h2 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    position: relative;
+  font-size: 1.6rem;
+  color: #00ffcc;
+  margin-bottom: 1rem;
 }
 
-.user-login h2::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 3px;
-    background-color: var(--accent-color);
-    margin-top: 0.5rem;
-    border-radius: 2px;
-}
-
-/* Form Styles */
 #user-form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #user-form label {
-    font-weight: 600;
-    color: var(--subtext-color);
-    margin-bottom: 0.3rem;
-    margin-top: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+  color: #ccc;
 }
 
 #user-form input[type="email"],
 #user-form input[type="password"] {
-    width: 100%;
-    padding: 0.6rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: var(--radius);
-    background-color: #fafafa;
-    color: var(--text-color);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
 }
 
 #user-form input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  outline: none;
+  box-shadow: 0 0 0 2px #00ffc8;
 }
 
 /* Login Button */
 #user-form button {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    border: none;
-    border-radius: var(--radius);
-    padding: 0.75rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  color: #fff;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #user-form button:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .container {
-        margin: 1.5rem auto;
-        padding: 1.5rem 1rem;
-    }
-
-    .service-heading {
-        font-size: 1.75rem;
-    }
-
-    .tagline {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        width: 95%;
-        margin: 1rem auto;
-        padding: 1rem;
-    }
-
-    .service-heading {
-        font-size: 1.5rem;
-    }
-
-    .signup-btn a {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.95rem;
-    }
-
-    #user-form input[type="email"],
-    #user-form input[type="password"] {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.95rem;
-    }
-
-    #user-form button {
-        padding: 0.65rem;
-        font-size: 0.95rem;
-    }
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(91, 134, 229, 0.4);
 }
