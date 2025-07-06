@@ -16,7 +16,7 @@ async function fetchServies()
   try
    {
      
-      const res = await fetch(`http://localhost:3000/api/providerInfoFetch/${personalName}`, {
+      const res = await fetch(`http://localhost:3000/user/providerInfoFetch/${personalName}`, {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
@@ -69,7 +69,7 @@ async function logOutFunction()
 {
    try 
 	  {
-          const res = await fetch('http://localhost:3000/api/logout',
+          const res = await fetch('http://localhost:3000/user/logout',
 		        {
                   method: 'POST',
                   credentials : 'include',
