@@ -8,7 +8,7 @@ async function conformationSessionCheck()
 {
    try 
 	  {
-          const res = await fetch('http://localhost:3000/api/sessionCheck',
+          const res = await fetch('http://localhost:3000/user/sessionCheck',
 		        {
                   method: 'GET',
                   credentials : 'include',
@@ -37,7 +37,7 @@ async function logOutFunction()
 {
    try 
 	  {
-          const res = await fetch('http://localhost:3000/api/logout',
+          const res = await fetch('http://localhost:3000/user/logout',
 		        {
                   method: 'POST',
                   credentials : 'include',

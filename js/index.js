@@ -14,7 +14,7 @@ async function sendAutenReq(event)
 
 	 try 
 		 {
-      const res = await fetch(`http://localhost:3000/api/userLogin`,
+      const res = await fetch(`http://localhost:3000/user/userLogin`,
 		     {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
