@@ -15,7 +15,7 @@
     <header>
       <nav class="navbar">
         <div>
-          <a href="main.html">Home</a>
+          <a href="serviceDashboard.html">Dashboard</a>
           <a href="contact.html">Contact Us</a>
         </div>
       </nav>
@@ -23,14 +23,15 @@
 
     <main class="main">
       <div class="profile-block">
-        <h2>Name</h2>
+        <h2 id ='providerName'></h2>
+        <h3 id ='currentRate'></h3>
       </div>
 
       <div class="manage-block">
         <div class="hourly-rate-block">
           <h3>Change Hourly Rate</h3>
           <input type="number" id="hourly-rate" placeholder="Enter new hourly rate" />
-          <button class="change-rate-button" onclick="changeHourlyRate()">Change</button>
+          <button class="change-rate-button" id="changeRate">Change</button>
         </div>
       </div>
     </main>
@@ -39,12 +40,8 @@
   <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="js/particles-serviceConfig.js"></script>
+  <script src="js/serviceprovidersetting.js"></script>
 
-  <script>
-    function changeHourlyRate() {
-      const newRate = document.getElementById('hourly-rate').value;
-      alert(`Hourly Rate changed to $${newRate}`);
-    }
-  </script>
+
 </body>
 </html>

@@ -13,24 +13,23 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 
 			 try 
 			   {
-                const res = await fetch('http://localhost:3000/api/serviceUserLogin',
+                const res = await fetch('http://localhost:3000/provider/serviceUserLogin',
 		        {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({email, password })
+				  credentials: 'include', 
+                  body: JSON.stringify({email, password})
                 });
 
                 const result = await res.json();
 				console.log(result);
                  if (res.status == 201)
 				  {
-                   alert("Login successful! with correct creds");
-				   console.log("Validation scuccessfull.");
-				   window.location.href = "../userdashboard.html";
+				   window.location.href = "../serviceDashboard.html";
                   }
 				else 
 				   {
-				   alert("Error: " + result.message + "Incorrect emial and password");
+				   alert("Error: " + result.message + "Incorrect email and password");
                    }
                } 
 			 catch (err) 

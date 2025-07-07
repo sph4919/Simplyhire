@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load services into the job dropdown
   (async function listServices() {
     try {
-      const r = await fetch('http://localhost:3000/api/listServices');
+      const r = await fetch('http://localhost:3000/provider/listServices');
       const data = await r.json();
       data.forEach(svc => {
         const opt = document.createElement('option');
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       // 1) Check if email exists
       const check = await fetch(
-        'http://localhost:3000/api/serviceSignUpCheck',
+        'http://localhost:3000/provider/serviceSignUpCheck',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 2) Sign up
       const signup = await fetch(
-        'http://localhost:3000/api/serviceSignup',
+        'http://localhost:3000/provider/serviceSignup',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

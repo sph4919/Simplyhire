@@ -22,41 +22,13 @@
 
     <div class="dashboard">
       <h1>Job Notifications</h1>
-      <div id="notification-count">
-        You have <span id="notification-number"></span> new notifications
-      </div>
-      <div id="notifications-list"></div>
+      <div id="notifications-container"></div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="js/particles-serviceConfig.js"></script>
-  <script>
-    const notifications = [
-      { customer: "Alice", jobTitle: "Plumber Required", jobDetails: "Fixing kitchen sink leakage", location: "Los Angeles" },
-      { customer: "Bob", jobTitle: "Plumber Required", jobDetails: "Fixing a broken pipe for sink", location: "New York" },
-      { customer: "Charlie", jobTitle: "Carpenter Needed", jobDetails: "Repairing door frame", location: "Chicago" },
-      { customer: "Diana", jobTitle: "Electrician Required", jobDetails: "Install new lighting fixtures", location: "Houston" },
-      { customer: "Edward", jobTitle: "HVAC Service", jobDetails: "Air conditioning maintenance", location: "Phoenix" },
-    ];
-
-    const notificationsList = document.getElementById("notifications-list");
-    const notificationNumber = document.getElementById("notification-number");
-
-    notificationNumber.textContent = notifications.length;
-
-    notifications.forEach(notification => {
-      const notificationCard = document.createElement("div");
-      notificationCard.classList.add("notification");
-      notificationCard.innerHTML = `
-        <h2>${notification.jobTitle}</h2>
-        <p><strong>Customer:</strong> ${notification.customer}</p>
-        <p><strong>Details:</strong> ${notification.jobDetails}</p>
-        <p><strong>Location:</strong> ${notification.location}</p>
-        <button class="accept-button">Accept the Application</button>
-      `;
-      notificationsList.appendChild(notificationCard);
-    });
-  </script>
+  <script src="js/serviceDashboard.js"></script>
+  
 </body>
 </html>

@@ -117,7 +117,7 @@ async function toTheConformation(event) {
     const result = await res.json();
     if (res.status === 201) {
       alert('Request created successfully');
-      window.location.href = '/confirmationPage.html';
+      window.location.href = '/comformationPage.html';
     } else {
       alert('Error: ' + (result.message || res.status));
     }
