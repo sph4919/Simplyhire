@@ -22,7 +22,7 @@ async function getSettingDetail()
     const providerRate = document.getElementById('currentRate');
 
           providerName.innerHTML = data[0].name;
-          providerRate.innerHTML = data[0].rate;
+          providerRate.innerHTML = "$" + data[0].rate;
 
    }
 
@@ -43,18 +43,19 @@ async function updateRate()
      try 
 	 {
       const res = await fetch('http://localhost:3000/provider/updateRate',
-	    {
+	     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({newRate}),
         credentials: 'include'
-      });
+       });
 
         const result = await res.json();
 				console.log(result);
         if (res.status == 200)
 				  {
-				   console.log("Validation scuccessfull.");
+           window.location.reload();
+				   console.log("Rate updated scuccessfull.");
           }
 				else 
 				   {

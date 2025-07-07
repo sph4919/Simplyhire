@@ -170,3 +170,17 @@ body {
     font-size: 1.5rem;
   }
 }
+
+.status-text {
+  font-weight: 600;
+  color: #ffb400;
+}
+
+.accepted .status-text {
+  color: #00ff90;
+}
+
+.accepted .accept-button {
+  background: gray;
+  cursor: not-allowed;
+}
