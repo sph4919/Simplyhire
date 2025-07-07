@@ -26,12 +26,18 @@ body {
   align-items: center;
 }
 
+.logo
+{
+  margin-left: 600px;
+}
+
 /* Top User Login Button */
 .userlogin {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   padding: 1rem 2rem;
+  height:50px;
 }
 
 .userlogin button {
