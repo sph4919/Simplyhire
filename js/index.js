@@ -12,32 +12,39 @@ async function sendAutenReq(event)
   let email = UserEmail.value;
   let password = UserPassword.value;
 
-	 try 
-		 {
+  try{
       const res = await fetch(`http://localhost:3000/user/userLogin`,
 		     {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          credentials: 'include', 
-          body: JSON.stringify({email, password})
-          });
-
-       const result = await res.json();
-       if (res.ok)
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             credentials: 'include', 
+             body: JSON.stringify({email, password})
+             });
+ 
+        const result = await res.json();
+ 
+        if (res.status == 202)
 		{
-             
-			  window.location.href = "/main.html";
+			window.location.href = "/main.html";
         }
-		else 
-		 {
-		  alert("Error: " + result.message + "Incorrect email and password");
+        else if (res.status == 401)
+        {
+            let errorMessage = document.getElementById("errorBox");
+            errorMessage.innerHTML= result.message;
         }
-       } 
-			  catch (err) 
-			   {
-          console.error("Fetch error:", err);
-          alert("Server error");
-         }
+        else
+        {
+            let errorMessage = document.getElementById("errorBox");
+            errorMessage.innerHTML= result.message;
+        }
+    }
+    catch(err)
+     {
+          let errorMessage = document.getElementById("errorBox");
+          errorMessage.innerHTML= "Server : dont disburb me , I am busy taking with my boyfriend. I am feeling low pllz try again..";
+    }
+    
+     
 };
 
 const elements = document.querySelectorAll('.user-login, .signup');

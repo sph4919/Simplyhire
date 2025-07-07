@@ -1,7 +1,11 @@
 
 const params = new URLSearchParams(window.location.search);
 const service = params.get('servicetype');  
-console.log(service);
+if(service===null)
+{
+ window.location.href = "/SmartPage.html";
+}
+
 
 document.addEventListener('DOMContentLoaded', fetchServies);
 

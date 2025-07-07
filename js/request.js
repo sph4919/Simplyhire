@@ -34,6 +34,10 @@ function validatePostalCode(code) {
 
 const params = new URLSearchParams(window.location.search);
 const personalName = params.get('providerName');
+if(personalName===null)
+{
+  window.location.href="/SmartPage.html";
+}
 
 let serviceProviderId;
 
@@ -51,28 +55,23 @@ async function findServiceProviderId() {
         {
           window.location.href = "/ErrorPage.html";
         }
-    const payload = await res.json();
+  const payload = await res.json();
 
-    if (!res.ok) {
-      return alert('Error fetching provider ID: ' + (payload.message || res.status));
-    }
-
-  
-    const rows = payload.result || [];
-    if (!rows.length) {
-      return alert('No provider found for ' + personalName);
-    }
+    if (res.status == 500) 
+      {
+      window.location.href = "/ErrorPage.html";
+      }
 
     serviceProviderId = rows[0].serviceproviderid;
     console.log('Found serviceProviderId =', serviceProviderId);
   }
   catch (err) {
-    console.error('Fetch error:', err);
-    alert('Server error while fetching provider ID');
+    let errorMessage = document.getElementById("errorBox");
+    errorMessage.innerHTML= 'Please Contact us on Contact info you will be short directed to Contact page in 10 sec.';
+    setTimeout(()=>{window.location.href="/contact.html"},10000);
   }
+  
 }
-
-// --------------- Request Submission & Validation ---------------
 
 async function toTheConformation(event) {
   event.preventDefault();
@@ -85,25 +84,31 @@ async function toTheConformation(event) {
 
   // Run validations
   if (!validateStreetAddress(street)) {
-    return alert('Please enter a valid street address (e.g. "123 Main St").');
+    let errorMessage = document.getElementById("errorBox");
+    errorMessage.innerHTML= 'Please enter a valid street address (e.g. "123 Main St").';
   }
   if (!validateCity(city)) {
-    return alert('Please enter a valid city name (letters, spaces, hyphens).');
+    let errorMessage = document.getElementById("errorBox");
+    errorMessage.innerHTML= 'Please enter a valid city name (letters, spaces, hyphens).';
   }
   if (!validateProvince(state)) {
-    return alert('Please enter a valid Canadian province name.');
+    let errorMessage = document.getElementById("errorBox");
+    errorMessage.innerHTML= 'Please enter a valid Canadian province name.';
   }
   if (!validatePostalCode(zip)) {
-    return alert('Please enter a valid Canadian postal code (e.g. A1A 1A1).');
+    let errorMessage = document.getElementById("errorBox");
+    errorMessage.innerHTML= 'Please enter a valid Canadian postal code (e.g. A1A 1A1).';
   }
   if (!validateDescription(description)) {
-    return alert('Please enter at least 10 words in the description.');
+    let errorMessage = document.getElementById("errorBox");
+    errorMessage.innerHTML= 'Please enter at least 10 words in the description.';
   }
   if (!serviceProviderId) {
-    return alert('Service provider ID not set yet. Try reloading the page.');
+    let errorMessage = document.getElementById("errorBox");
+    errorMessage.innerHTML= 'Service provider ID not set yet. Try reloading the page.';
   }
 
-  // All validations passed – submit the request
+  
   try {
     const res = await fetch('http://localhost:3000/user/createRequest', {
       method: 'POST',
@@ -115,12 +120,14 @@ async function toTheConformation(event) {
     });
 
     const result = await res.json();
-    if (res.status === 201) {
-      alert('Request created successfully');
-      window.location.href = '/comformationPage.html';
-    } else {
-      alert('Error: ' + (result.message || res.status));
-    }
+    if (res.status === 201)
+       {
+        window.location.href = '/comformationPage.html';
+       } 
+    else
+       {
+       alert('Error: ' + (result.message || res.status));
+       }
   }
   catch (err) {
     console.error('Fetch error:', err);

@@ -4,57 +4,56 @@ document.addEventListener('DOMContentLoaded', fetchServies);
 async function fetchServies()
 {
    
-  try
-   {
-     
-       const res = await fetch('http://localhost:3000/user/mainFetch', {
+ try{
+      const res = await fetch('http://localhost:3000/user/mainFetch', {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
     });
 
+    let result = await res.json();
+    
     if(res.status == 401)
+      {
+        window.location.href = "/ErrorPage.html";
+      }
+    if(res.status == 500)
+      {
+        let error = document.getElementById('errorBox');
+        error.innerHTML = result.message;
+      }
+
+    if(res.ok)
+      {
+       const serviceContainer = document.getElementById('container');
+       for(let i=0; i< result.length;i++)
         {
-          window.location.href = "/ErrorPage.html";
-        }
-      let data = await res.json();
-      console.log(data);
-
-
-    const serviceContainer = document.getElementById('container');
-
-
-       for(let i=0; i< data.length;i++)
-       {
           const card = document.createElement("div");
           card.classList.add("service-card");
           const h2 = document.createElement('h2');
           h2.classList.add("type-heading");
-          h2.innerHTML = data[i].service_type;
+          h2.innerHTML = result[i].service_type;
           const p = document.createElement('p');
           p.classList.add("type-description");
-          p.innerHTML = data[i].service_description;
+          p.innerHTML = result[i].service_description;
           card.append(h2, p);
           let serviceName = h2.innerHTML;
           card.addEventListener('click',event => toTheProviderlist(serviceName,event))
           serviceContainer.append(card);
-
-       }
-
-   }
-  catch(err)
-   {
-    console.log(err);
-   } 
-
+        }
+      }
+    }
+    catch(err)
+    {
+        let error = document.getElementById('errorBox');
+        error.innerHTML = "Server is down buddy go home and sleep";
+    }
     
 };
 
 function toTheProviderlist(serviceName)
 {
-
-    window.location.href = `../providerlist.html?servicetype=${encodeURIComponent(serviceName)}`;
-
+  window.location.href = `../providerlist.html?servicetype=${encodeURIComponent(serviceName)}`;
 }
 
 let logoutClicked = document.getElementById("logOut");
@@ -62,17 +61,14 @@ logoutClicked.addEventListener('click',logOutFunction);
 
 async function logOutFunction()
 {
-  
-
    try 
-			   {
-          const res = await fetch('http://localhost:3000/user/logout',
-		        {
-                  method: 'POST',
-                  credentials : 'include',
-                  headers: { 'Content-Type': 'application/json' }
-                 
-                });
+		{
+      const res = await fetch('http://localhost:3000/user/logout',
+		    {
+          method: 'POST',
+          credentials : 'include',
+          headers: { 'Content-Type': 'application/json' }
+        });
 
       if (res.ok)
           {
