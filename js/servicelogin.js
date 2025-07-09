@@ -23,7 +23,7 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 
                 const result = await res.json();
 				console.log(result);
-                 if (res.status == 201)
+                 if (res.status == 202)
 				  {
 				   window.location.href = "../serviceDashboard.html";
                   }

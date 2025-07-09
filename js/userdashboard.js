@@ -6,30 +6,29 @@ async function fetchRequests()
    
   try
    {
-      const res = await fetch('http://localhost:3000/api/userReqFetch', {
+      const res = await fetch('http://localhost:3000/user/userReqFetch', {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
     });
+      if(res.status = 200)
+      {
 
       let data = await res.json();
-      console.log(data);
-
-
-    const reqContainer = document.getElementById('reqContainer');
-
+      console.log(data); //for debugging
+      const reqContainer = document.getElementById('reqContainer');
 
        for(let i=0; i< data.length;i++)
        {
           
-           const response = await fetch(`http://localhost:3000/api/providerNameFetch/${data[i].serviceprovider_id}`, {
+           const response = await fetch(`http://localhost:3000/user/providerNameFetch/${data[i].serviceprovider_id}`, {
            method: 'GET',
            credentials: 'include',  
            mode: 'cors'              
          });
 
           let dataName = await response.json();
-          console.log(dataName);
+          console.log(dataName); //for debugging
 
           const reqCard = document.createElement("div");
           reqCard.classList.add("request-card");
@@ -51,10 +50,17 @@ async function fetchRequests()
 
        }
 
+      }
+      else if(res.status==401)
+      {
+        window.location.href='/ErrorPage.html';
+      }
+
    }
   catch(err)
    {
-    console.log(err);
+    let errorMessage = document.getElementById("errorBox");
+    errorMessage.innerHTML= "Server in deep sleep";
    } 
 
     
@@ -67,7 +73,7 @@ async function logOutFunction()
 {
    try 
 	  {
-          const res = await fetch('http://localhost:3000/api/logout',
+          const res = await fetch('http://localhost:3000/user/logout',
 		        {
                   method: 'POST',
                   credentials : 'include',

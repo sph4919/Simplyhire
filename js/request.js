@@ -34,6 +34,7 @@ function validatePostalCode(code) {
 
 const params = new URLSearchParams(window.location.search);
 const personalName = params.get('providerName');
+console.log(personalName);
 if(personalName===null)
 {
   window.location.href="/SmartPage.html";
@@ -62,10 +63,10 @@ async function findServiceProviderId() {
       window.location.href = "/ErrorPage.html";
       }
 
-    serviceProviderId = rows[0].serviceproviderid;
-    console.log('Found serviceProviderId =', serviceProviderId);
+    serviceProviderId = payload.result[0].serviceproviderid;
   }
   catch (err) {
+    console.log("errot :" + err);
     let errorMessage = document.getElementById("errorBox");
     errorMessage.innerHTML= 'Please Contact us on Contact info you will be short directed to Contact page in 10 sec.';
     setTimeout(()=>{window.location.href="/contact.html"},10000);

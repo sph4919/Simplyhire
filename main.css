@@ -64,13 +64,15 @@ header {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-color);
-  margin-right: 1450px;
+  margin-left: -540px;
+ 
 }
 
 .nav-right {
   display: flex;
   align-items: center;
   gap: 1rem;
+ 
 }
 
 /* Buttons */

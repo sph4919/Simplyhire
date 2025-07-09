@@ -42,8 +42,7 @@ async function conformationSessionCheck()
                   method: 'GET',
                   credentials : 'include',
                   mode : 'cors'
-        
-                });
+            });
        if(res.status == 401)
         {
           window.location.href = "/ErrorPage.html";
@@ -52,7 +51,8 @@ async function conformationSessionCheck()
       }
         catch (e) 
         {
-          console.error('Network error on logout:', e);
-          alert('Could not reach server.');
+          let errorMessage = document.getElementById("errorBox");
+          errorMessage.innerHTML= "Server : dont disburb me , I am busy taking with my boyfriend. I am feeling low pllz try again..";
+         
         }
 }
