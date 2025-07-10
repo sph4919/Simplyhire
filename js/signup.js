@@ -58,25 +58,28 @@ async function validateUserSignup(event)
 
 		if (!validateName(userName)) 
 		{
-			window.alert("Invalid name")
+			let error = document.getElementById("errorBox");
+			error.innerHTML = "Invalid User Name / Should not include numbers";
 			formIsValid = false;
 		} 
 	
 		if (!validateEmail( userEmail)) 
         {
-			window.alert("Invalid user email")
+			let error = document.getElementById("errorBox");
+			error.innerHTML = "Invalid Email / Eg - abc@anymail.anydomain";
 			formIsValid = false;
 		} 
 		
 		if (!validatePassword(userPassword )) 
 		{
-            window.alert("Set invalid password")
+           	let error = document.getElementById("errorBox");
+			error.innerHTML = "Invalid User Password must be more than 6 char";
 			formIsValid = false;
 		} 
 
 		if(!formIsValid)
         {
-			console.log("invalid info for signUp");
+			
 			event.preventDefault();
 		}
 		else
@@ -101,19 +104,20 @@ async function validateUserSignup(event)
 				console.log(result);
                 if (res.status == 201)
 				  {
-                   alert("User already exits");
 				   window.location.href = "../index.html";
 				   userBool = true;
                   }
 				 else 
 				   {
-				   alert("Error: " + result.message);
+					let error = document.getElementById("errorBox");
+		            error.innerHTML = result.message;
+				   
                    }
              } 
 			 catch (err) 
 			 {
-                console.error("Fetch error:", err);
-                alert("Server error");
+                	let error = document.getElementById("errorBox");
+			        error.innerHTML = "Server is overloaded by love please try again";
              }
 
 
@@ -135,19 +139,19 @@ async function validateUserSignup(event)
 				console.log(result);
                  if (res.status == 201)
 				  {
-                   alert("Signup successful!");
-				   console.log("Validation scuccessfull.");
+                   
 				   window.location.href = "../index.html";
                   }
 				else 
 				   {
-				   alert("Error: " + result.message);
+				    let error = document.getElementById("errorBox");
+		            error.innerHTML = result.message;
                    }
                } 
 			 catch (err) 
 			   {
-                console.error("Fetch error:", err);
-                alert("Server error");
+                    let error = document.getElementById("errorBox");
+			        error.innerHTML = "Server is overloaded by love please try again";
                }
 			 } 
         };
