@@ -1,4 +1,21 @@
-/* Dark theme with particle background */
+:root {
+  --primary-color: #1e90ff;
+  --primary-hover: #1c7ed6;
+  --accent-color: #ffc107;
+  --background-dark: #121212;
+  --card-background: rgba(30, 30, 30, 0.95);
+  --text-color: #eaeaea;
+  --subtext-color: #aaa;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --radius: 12px;
+}
+
+
+
+/* Dark theme with partic
+
+
+le background */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -49,10 +66,19 @@ body {
   text-decoration: none;
 
 }
-
+.navbar-title
+{
+  margin-left: -900px;
+}
 .nav-btn {
-  background-color: #333;
-  color: #00bcd4;
+   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .section-title {
@@ -62,6 +88,7 @@ body {
   color: #ffffff;
   position: relative;
   z-index: 2;
+  
 }
 
 .request-list {

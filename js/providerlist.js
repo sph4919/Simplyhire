@@ -25,13 +25,16 @@ async function fetchServies()
         {
           window.location.href = "/ErrorPage.html";
         }
-
+       if(res.status == 500)
+      {
+        let error = document.getElementById('errorBox');
+        error.innerHTML = result.message;
+      }
       let data = await res.json();
-      console.log(data);
+      console.log(data);// for debugging
 
 
     const providerContainer = document.getElementById('providerContainer');
-
 
        for(let i=0; i< data.length;i++)
        {
@@ -53,7 +56,7 @@ async function fetchServies()
    }
   catch(err)
    {
-    console.log(err);
+    window.location.href = "/ErrorPage.html";
    } 
 
     
@@ -72,13 +75,13 @@ logoutClicked.addEventListener('click',logOutFunction);
 async function logOutFunction()
 {
    try 
-	  {
-          const res = await fetch('http://localhost:3000/user/logout',
-		        {
-                  method: 'POST',
-                  credentials : 'include',
-                  headers: { 'Content-Type': 'application/json' }   
-                });
+		{
+      const res = await fetch('http://localhost:3000/user/logout',
+		    {
+          method: 'POST',
+          credentials : 'include',
+          headers: { 'Content-Type': 'application/json' }
+        });
 
       if (res.ok)
           {
@@ -86,13 +89,13 @@ async function logOutFunction()
           }
           else 
           {
-            const err = await res.json();
-            alert('Logout failed: ' + err.message);
+            let error = document.getElementById('errorBox');
+            error.innerHTML = result.message;
           }
-      }
+        }
         catch (e) 
         {
-          console.error('Network error on logout:', e);
-          alert('Could not reach server.');
+          let error = document.getElementById('errorBox');
+          error.innerHTML = "Server is high , please contact admin";
         }
-}
+      }

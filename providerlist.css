@@ -62,7 +62,7 @@ header {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-color);
-  margin-right: 1450px;
+  margin-left: -980px;
 }
 
 .nav-links {
@@ -79,6 +79,7 @@ header {
   text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 12px var(--shadow-color);
+  
 }
 
 .nav-btn:hover {

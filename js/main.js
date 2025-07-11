@@ -23,7 +23,7 @@ async function fetchServies()
         error.innerHTML = result.message;
       }
 
-    if(res.ok)
+    if(res.status == 200)
       {
        const serviceContainer = document.getElementById('container');
        for(let i=0; i< result.length;i++)
@@ -45,8 +45,7 @@ async function fetchServies()
     }
     catch(err)
     {
-        let error = document.getElementById('errorBox');
-        error.innerHTML = "Server is down buddy go home and sleep";
+        window.location.href = "/ErrorPage.html";
     }
     
 };
@@ -76,13 +75,13 @@ async function logOutFunction()
           }
           else 
           {
-            const err = await res.json();
-            alert('Logout failed: ' + err.message);
+            let error = document.getElementById('errorBox');
+            error.innerHTML = result.message;
           }
         }
         catch (e) 
         {
-          console.error('Network error on logout:', e);
-          alert('Could not reach server.');
+          let error = document.getElementById('errorBox');
+          error.innerHTML = "Server is high , please contact admin";
         }
       }
