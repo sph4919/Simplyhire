@@ -1,3 +1,11 @@
+const params = new URLSearchParams(window.location.search);
+const personalName = params.get('providerName');
+console.log(personalName);
+if(personalName===null)
+{
+  window.location.href="/SmartPage.html";
+}
+
 
 // Description: at least 10 words
 function validateDescription(text) {
@@ -32,13 +40,7 @@ function validatePostalCode(code) {
 
 // --------------- Service Provider ID Fetch ---------------
 
-const params = new URLSearchParams(window.location.search);
-const personalName = params.get('providerName');
-console.log(personalName);
-if(personalName===null)
-{
-  window.location.href="/SmartPage.html";
-}
+
 
 let serviceProviderId;
 
@@ -66,7 +68,6 @@ async function findServiceProviderId() {
     serviceProviderId = payload.result[0].serviceproviderid;
   }
   catch (err) {
-    console.log("errot :" + err);
     let errorMessage = document.getElementById("errorBox");
     errorMessage.innerHTML= 'Please Contact us on Contact info you will be short directed to Contact page in 10 sec.';
     setTimeout(()=>{window.location.href="/contact.html"},10000);
@@ -83,33 +84,42 @@ async function toTheConformation(event) {
   const zip         = document.getElementById('zip').value;
   const description = document.getElementById('reqDescription').value;
 
+  let invalidValues = false;
+
   // Run validations
   if (!validateStreetAddress(street)) {
     let errorMessage = document.getElementById("errorBox");
     errorMessage.innerHTML= 'Please enter a valid street address (e.g. "123 Main St").';
+    invalidValues =  true;
   }
   if (!validateCity(city)) {
     let errorMessage = document.getElementById("errorBox");
     errorMessage.innerHTML= 'Please enter a valid city name (letters, spaces, hyphens).';
+    invalidValues =  true;
   }
   if (!validateProvince(state)) {
     let errorMessage = document.getElementById("errorBox");
     errorMessage.innerHTML= 'Please enter a valid Canadian province name.';
+    invalidValues =  true;
   }
   if (!validatePostalCode(zip)) {
     let errorMessage = document.getElementById("errorBox");
     errorMessage.innerHTML= 'Please enter a valid Canadian postal code (e.g. A1A 1A1).';
+    invalidValues =  true;
   }
   if (!validateDescription(description)) {
     let errorMessage = document.getElementById("errorBox");
     errorMessage.innerHTML= 'Please enter at least 10 words in the description.';
+    invalidValues =  true;
   }
   if (!serviceProviderId) {
     let errorMessage = document.getElementById("errorBox");
-    errorMessage.innerHTML= 'Service provider ID not set yet. Try reloading the page.';
+    errorMessage.innerHTML= 'Contact the admin. Try to login again page.';
+    invalidValues =  true;
   }
 
-  
+  if(invalidValues==true)
+  {
   try {
     const res = await fetch('http://localhost:3000/user/createRequest', {
       method: 'POST',
@@ -123,18 +133,21 @@ async function toTheConformation(event) {
     const result = await res.json();
     if (res.status === 201)
        {
-        window.location.href = '/comformationPage.html';
+        window.location.href = '/confirm.html';
        } 
     else
        {
-       alert('Error: ' + (result.message || res.status));
+         let errorMessage = document.getElementById("errorBox");
+         errorMessage.innerHTML= 'Request generation error plz contact admin or login again';
        }
   }
   catch (err) {
-    console.error('Fetch error:', err);
-    alert('Server error while creating request');
-  }
+          let error = document.getElementById('errorBox');
+          error.innerHTML = "Server is high , please contact admin";
+        }
 }
+}
+
 
 // Wire up the "Submit Request" button
 const reqBtn = document.getElementById('reqButton');
@@ -142,29 +155,35 @@ if (reqBtn) {
   reqBtn.addEventListener('click', toTheConformation);
 }
 
-// --------------- Logout Functionality ---------------
+async function logOutFunction()
+{
+   try 
+		{
+      const res = await fetch('http://localhost:3000/user/logout',
+		    {
+          method: 'POST',
+          credentials : 'include',
+          headers: { 'Content-Type': 'application/json' }
+        });
 
-async function logOutFunction() {
-  try {
-    const res = await fetch('http://localhost:3000/user/logout', {
-      method: 'POST',
-      credentials: 'include',
-      headers: { 'Content-Type': 'application/json' }
-    });
+      if (res.ok)
+          {
+            window.location.href = '/index.html';
+          }
+          else 
+          {
+            let error = document.getElementById('errorBox');
+            error.innerHTML = result.message;
+          }
+        }
+        catch (e) 
+        {
+          let error = document.getElementById('errorBox');
+          error.innerHTML = "Server is high , please contact admin";
+        }
+      }
 
-    if (res.ok) {
-      window.location.href = '/index.html';
-    }
-    else {
-      const err = await res.json();
-      alert('Logout failed: ' + err.message);
-    }
-  }
-  catch (e) {
-    console.error('Network error on logout:', e);
-    alert('Could not reach server.');
-  }
-}
+
 
 const logoutBtn = document.getElementById('logOut');
 if (logoutBtn) {

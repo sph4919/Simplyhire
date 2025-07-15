@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Confirmation Page</title>
-  <link rel="stylesheet" href="conformationPage.css" />
+  <link rel="stylesheet" href="confirm.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -12,10 +12,13 @@
   <div id="particles-js"></div>
 
   <!-- Navigation -->
-  <header>
+   <header>
     <nav class="navbar">
       <img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" height="40px"/>
-      <div class="nav-right">
+      <span class="brand">SimplyHire</span>
+      <div class="nav-links">
+        <a href="userdashboard.html" class="nav-btn">Dashboard</a>
+        <a href="contact.html" class="nav-btn">Contact</a>
         <button class="logout-btn" id="logOut">Logout</button>
       </div>
     </nav>
@@ -31,7 +34,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="js/particles-config.js"></script>
-  <script src="js/conformationPage.js"></script>
+  <script src="js/confirm.js"></script>
   
 </body>
 </html>

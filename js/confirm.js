@@ -31,18 +31,16 @@ async function conformationSessionCheck()
 
 
 
-
-
 async function logOutFunction()
 {
    try 
-	  {
-          const res = await fetch('http://localhost:3000/user/logout',
-		        {
-                  method: 'POST',
-                  credentials : 'include',
-                  headers: { 'Content-Type': 'application/json' }   
-                });
+		{
+      const res = await fetch('http://localhost:3000/user/logout',
+		    {
+          method: 'POST',
+          credentials : 'include',
+          headers: { 'Content-Type': 'application/json' }
+        });
 
       if (res.ok)
           {
@@ -50,13 +48,13 @@ async function logOutFunction()
           }
           else 
           {
-            const err = await res.json();
-            alert('Logout failed: ' + err.message);
+            let error = document.getElementById('errorBox');
+            error.innerHTML = result.message;
           }
-      }
+        }
         catch (e) 
         {
-          console.error('Network error on logout:', e);
-          alert('Could not reach server.');
+          let error = document.getElementById('errorBox');
+          error.innerHTML = "Server is high , please contact admin";
         }
-}
+      }
