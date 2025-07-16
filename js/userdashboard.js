@@ -1,3 +1,6 @@
+
+ const API_BASE = 'https://simplyhirebackend.onrender.com';
+
 document.addEventListener('DOMContentLoaded', fetchRequests);
 
 
@@ -6,7 +9,7 @@ async function fetchRequests()
    
   try
    {
-      const res = await fetch('http://localhost:3000/user/userReqFetch', {
+      const res = await fetch(`${API_BASE}/user/userReqFetch`, {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
@@ -21,7 +24,7 @@ async function fetchRequests()
        for(let i=0; i< data.length;i++)
        {
           
-           const response = await fetch(`http://localhost:3000/user/providerNameFetch/${data[i].serviceprovider_id}`, {
+           const response = await fetch(`${API_BASE}/user/providerNameFetch/${data[i].serviceprovider_id}`, {
            method: 'GET',
            credentials: 'include',  
            mode: 'cors'              
@@ -71,7 +74,7 @@ async function logOutFunction()
 {
    try 
 		{
-      const res = await fetch('http://localhost:3000/user/logout',
+      const res = await fetch(`${API_BASE}/user/logout`,
 		    {
           method: 'POST',
           credentials : 'include',

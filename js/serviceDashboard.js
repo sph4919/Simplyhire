@@ -1,10 +1,12 @@
+ const API_BASE = 'https://simplyhirebackend.onrender.com';
+
 document.addEventListener('DOMContentLoaded', fetchDash);
 
 async function fetchDash()
 {
   try
    {
-      const res = await fetch('http://localhost:3000/provider/serviceDashboardFetch', {
+      const res = await fetch(`${API_BASE}/provider/serviceDashboardFetch`, {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
@@ -48,7 +50,7 @@ async function acceptedFunction(reqId, event) {
   const statusText = button.previousElementSibling.querySelector('.status-text');
 
   try {
-    const res = await fetch('http://localhost:3000/provider/requestAccepted', {
+    const res = await fetch(`${API_BASE}/provider/requestAccepted`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ reqId }),
@@ -81,7 +83,7 @@ async function logOutFunction()
 {
    try 
 		{
-      const res = await fetch('http://localhost:3000/provider/logout',
+      const res = await fetch(`${API_BASE}/provider/logout`,
 		    {
           method: 'POST',
           credentials : 'include',

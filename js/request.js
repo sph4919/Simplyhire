@@ -1,3 +1,5 @@
+ const API_BASE = 'https://simplyhirebackend.onrender.com';
+
 const params = new URLSearchParams(window.location.search);
 const personalName = params.get('providerName');
 console.log(personalName);
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', findServiceProviderId);
 
 async function findServiceProviderId() {
   try {
-    const res = await fetch('http://localhost:3000/user/findServiceProviderId', {
+    const res = await fetch(`${API_BASE}/user/findServiceProviderId`, {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -121,7 +123,7 @@ async function toTheConformation(event) {
   if(invalidValues==true)
   {
   try {
-    const res = await fetch('http://localhost:3000/user/createRequest', {
+    const res = await fetch(`${API_BASE}/user/createRequest`, {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -159,7 +161,7 @@ async function logOutFunction()
 {
    try 
 		{
-      const res = await fetch('http://localhost:3000/user/logout',
+      const res = await fetch(`${API_BASE}/user/logout`,
 		    {
           method: 'POST',
           credentials : 'include',

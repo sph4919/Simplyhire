@@ -1,3 +1,5 @@
+ const API_BASE = 'https://simplyhirebackend.onrender.com';
+
 document.addEventListener('DOMContentLoaded', fetchServies);
 
 

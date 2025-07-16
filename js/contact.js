@@ -1,3 +1,5 @@
+ const API_BASE = 'https://simplyhirebackend.onrender.com';
+
 let logoutClicked = document.getElementById("logOut");
 logoutClicked.addEventListener('click',logOutFunction);
 
@@ -5,7 +7,7 @@ async function logOutFunction()
 {
    try 
 		{
-      const res = await fetch('http://localhost:3000/user/logout',
+      const res = await fetch(`${API_BASE}/user/logout`,
 		    {
           method: 'POST',
           credentials : 'include',
@@ -36,7 +38,7 @@ async function conformationSessionCheck()
 {
    try 
 	  {
-          const res = await fetch('http://localhost:3000/user/sessionCheck',
+          const res = await fetch(`${API_BASE}/user/sessionCheck`,
 		        {
                   method: 'GET',
                   credentials : 'include',

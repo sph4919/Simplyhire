@@ -1,3 +1,5 @@
+ const API_BASE = 'https://simplyhirebackend.onrender.com';
+
 document.addEventListener('DOMContentLoaded', () => {
   const form  = document.getElementById('service-signupform');
   const nameI = document.getElementById('service-user-name');
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load services into the job dropdown
   (async function listServices() {
     try {
-      const r = await fetch('http://localhost:3000/provider/listServices');
+      const r = await fetch(`${API_BASE}/provider/listServices`);
       const data = await r.json();
       data.forEach(svc => {
         const opt = document.createElement('option');
@@ -70,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("check the user exist or not"); //for debugging
  
           const check = await fetch(
-          'http://localhost:3000/provider/serviceSignUpCheck',
+          `${API_BASE}/provider/serviceSignUpCheck`,
           {
            method: 'POST',
            headers: { 'Content-Type': 'application/json' },
@@ -95,8 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
        if(userExist===false)
        {
         console.log("creating req");
-         const signup = await fetch(
-        'http://localhost:3000/provider/serviceSignup',
+         const signup = await fetch(`${API_BASE}/provider/serviceSignup`,
          {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

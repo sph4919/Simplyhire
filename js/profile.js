@@ -1,3 +1,4 @@
+ const API_BASE = 'https://simplyhirebackend.onrender.com';
 
 const params = new URLSearchParams(window.location.search);
 const personalName = params.get('providerName');  
@@ -20,7 +21,7 @@ async function fetchServies()
     
   try
    { 
-      const res = await fetch(`http://localhost:3000/user/providerInfoFetch/${personalName}`, {
+      const res = await fetch(`${API_BASE}/user/providerInfoFetch/${personalName}`, {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
@@ -75,7 +76,7 @@ async function logOutFunction()
 {
    try 
 		{
-      const res = await fetch('http://localhost:3000/user/logout',
+      const res = await fetch(`${API_BASE}/user/logout`,
 		    {
           method: 'POST',
           credentials : 'include',

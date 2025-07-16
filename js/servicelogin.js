@@ -1,3 +1,7 @@
+
+
+ const API_BASE = 'https://simplyhirebackend.onrender.com';
+
 let userlogin = document.getElementById("user-form");
 userlogin.addEventListener("submit",serviceValidateLoginUser);
 
@@ -12,7 +16,7 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 
 			 try 
 			   {
-                const res = await fetch('http://localhost:3000/provider/serviceUserLogin',
+                const res = await fetch(`${API_BASE}/provider/serviceUserLogin`,
 		        {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
@@ -50,7 +54,7 @@ document.addEventListener("DOMContentLoaded",sessionHandler);
 
 			 try 
 			   {
-                const res = await fetch('http://localhost:3000/provider/sessionChecker',
+                const res = await fetch(`${API_BASE}/provider/sessionChecker`,
 		        {
 				  credentials: 'include'
                 });
