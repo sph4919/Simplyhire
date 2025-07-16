@@ -53,6 +53,18 @@ body {
   border-radius: 50%;
 }
 
+.logout-btn {
+  background: none;
+  color: #ff4d4f;
+  border: 2px solid #ff4d4f;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
 .nav-links a {
   text-decoration: none;
   color: #ffffff;

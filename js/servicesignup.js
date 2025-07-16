@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const shortI= document.getElementById('short-description');
   const descI = document.getElementById('service-description');
   const rateI = document.getElementById('per-hour-rate-service');
+ 
 
   // Load services into the job dropdown
   (async function listServices() {
@@ -20,28 +21,36 @@ document.addEventListener('DOMContentLoaded', () => {
         jobI.append(opt);
       });
     } catch (e) {
-      console.error('Could not load services', e);
+        let error = document.getElementById("errorBox");
+			error.innerHTML = 'Server is on smoke break plz try it again';
     }
   })();
 
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
 
-    // Basic client-side validations
+  form.addEventListener('submit', async e => 
+    {
+     e.preventDefault();
+     let formIsValid = true;
+
     if (!/^[A-Za-z ]+$/.test(nameI.value)) {
       let error = document.getElementById("errorBox");
 			error.innerHTML = "'Please enter a valid name";
 			formIsValid = false;
-     
     }
     if (!/^\S+@\S+\.\S+$/.test(emailI.value)) {
-      return alert('Please enter a valid email');
+      let error = document.getElementById("errorBox");
+		  error.innerHTML = "'Please enter a valid email";
+			formIsValid = false;
     }
     if (passI.value.length < 6) {
-      return alert('Password must be at least 6 chars');
+      let error = document.getElementById("errorBox");
+			error.innerHTML = 'Password must be at least 6 chars';
+			formIsValid = false;
     }
     if (descI.value.trim().split(/\s+/).length < 10) {
-      return alert('Description must be at least 10 words');
+      let error = document.getElementById("errorBox");
+			error.innerHTML = 'Description must be at least 10 words';
+			formIsValid = false;
     }
 
     const payload = {
@@ -54,47 +63,64 @@ document.addEventListener('DOMContentLoaded', () => {
       rate:             Number(rateI.value)
     };
 
-    try {
-      // 1) Check if email exists
-      const check = await fetch(
-        'http://localhost:3000/provider/serviceSignUpCheck',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: payload.email })
-        }
-      );
+    if(formIsValid===true)
+    {
+      let userExist = false;
+       try {
+        console.log("check the user exist or not"); //for debugging
+ 
+          const check = await fetch(
+          'http://localhost:3000/provider/serviceSignUpCheck',
+          {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body: JSON.stringify({ email: payload.email })
+          }
+         );
+         console.log(check.json()); //for degugging
 
-      if (check.status === 409) {
-        alert('Email already registered. Redirecting to login…');
-        return window.location.href = '/serviceLogin.html';
-      }
-      if (!check.ok) {
-        const err = await check.json();
-        return alert(`Error ${check.status}: ${err.message}`);
-      }
-
-      // 2) Sign up
-      const signup = await fetch(
+        if (check.status === 409)
+         {
+           console.log("User exist "); //for debugging
+           let error = document.getElementById("errorBox");
+		    	 error.innerHTML = 'Email already registered. ';
+		       userExist = true;
+         }
+        if (check.status === 500)
+         {
+           let error = document.getElementById("errorBox");
+		     	 error.innerHTML = "server error plz contact the admin";
+         }
+   
+       if(userExist===false)
+       {
+        console.log("creating req");
+         const signup = await fetch(
         'http://localhost:3000/provider/serviceSignup',
-        {
+         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
-        }
-      );
+         }
+       );
 
-      const result = await signup.json();
-      if (signup.status === 201) {
-        alert('Signup successful! Redirecting to login…');
-        window.location.href = '/serviceLogin.html';
-      } else {
-        alert(`Error ${signup.status}: ${result.message}`);
+         const result = await signup.json();
+         if (signup.status === 201)
+           {
+             window.location.href = '/serviceLogin.html';
+           } 
+         else 
+           {
+            let error = document.getElementById("errorBox");
+		       	error.innerHTML = result.message;
+           }
       }
     }
-    catch (err) {
-      console.error('Network error:', err);
-      alert('Server unreachable');
+    catch (err) 
+    {
+      let error = document.getElementById("errorBox");
+			error.innerHTML = 'Server is on smoke break plz try it again';
     }
+  }
   });
 });

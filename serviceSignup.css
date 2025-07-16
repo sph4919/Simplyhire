@@ -4,6 +4,10 @@
   margin: 0;
   padding: 0;
 }
+.logo
+{
+  border-radius: 50%;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -74,6 +78,12 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
   color: #ccc;
+}
+
+#errorBox
+{
+  color: red;
+  text-align: center;
 }
 
 input[type="text"],

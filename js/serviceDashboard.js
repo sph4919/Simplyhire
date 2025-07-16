@@ -24,6 +24,7 @@ async function fetchDash()
          <p><strong>Location:</strong> ${data[i].address}, ${data[i].city}, ${data[i].state} ${data[i].zip}</p>
          <p><strong>Status:</strong> <span class="status-text">${data[i].status}</span></p>
          <button class="accept-button">Accept the Application</button>
+         <br> <br> <br>
 `;
 
           notificationContainer.append(notificationCard);
@@ -35,7 +36,8 @@ async function fetchDash()
    }
   catch(err)
    {
-    console.log(err);
+    let error = document.getElementById('errorBox');
+    error.innerHTML = "Server is high , please contact admin";
    } 
 
 };
@@ -54,7 +56,7 @@ async function acceptedFunction(reqId, event) {
     });
 
     const result = await res.json();
-    console.log(result);
+    console.log(result); // For debugging
 
     if (res.ok) {
       statusText.textContent = "confirm";
@@ -65,7 +67,41 @@ async function acceptedFunction(reqId, event) {
       button.style.cursor = "not-allowed";
     }
   } catch (err) {
-    console.error("Fetch error:", err);
-    alert("Server error");
+       let error = document.getElementById('errorBox');
+       error.innerHTML = "Server is high , please contact admin";
+   
   }
 }
+
+let logoutClicked = document.getElementById("logOut");
+logoutClicked.addEventListener('click',logOutFunction);
+
+
+async function logOutFunction()
+{
+   try 
+		{
+      const res = await fetch('http://localhost:3000/provider/logout',
+		    {
+          method: 'POST',
+          credentials : 'include',
+          headers: { 'Content-Type': 'application/json' }
+        });
+
+      if (res.ok)
+          {
+            window.location.href = '/index.html';
+          }
+          else 
+          {
+            let error = document.getElementById('errorBox');
+            error.innerHTML = result.message;
+          }
+        }
+        catch (e) 
+        {
+          let error = document.getElementById('errorBox');
+          error.innerHTML = "Server is high , please contact admin";
+        }
+      }
+
