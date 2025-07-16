@@ -67,3 +67,36 @@ elements.forEach(el => {
     el.style.transform = 'translateY(30px)';
     observer.observe(el);
 });
+
+
+
+document.addEventListener("DOMContentLoaded",sessionHandler);
+
+
+ async function sessionHandler(event)
+{
+
+
+			 try 
+			   {
+                const res = await fetch('http://localhost:3000/user/sessionChecker',
+		        {
+				  credentials: 'include'
+                });
+
+                const result = await res.json();
+				
+                 if (res.status == 200)
+				  {
+				   console.log("session removed"); //new session started
+                  }
+	
+			 }
+			 catch (err) 
+			   {
+                 let errorMessage = document.getElementById("errorBox");
+                 errorMessage.innerHTML= 'Server error plz contact admin if that mf is sleeping';
+               }
+
+
+}

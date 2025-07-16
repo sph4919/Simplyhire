@@ -29,7 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Basic client-side validations
     if (!/^[A-Za-z ]+$/.test(nameI.value)) {
-      return alert('Please enter a valid name');
+      let error = document.getElementById("errorBox");
+			error.innerHTML = "'Please enter a valid name";
+			formIsValid = false;
+     
     }
     if (!/^\S+@\S+\.\S+$/.test(emailI.value)) {
       return alert('Please enter a valid email');

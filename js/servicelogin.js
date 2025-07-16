@@ -1,7 +1,6 @@
 let userlogin = document.getElementById("user-form");
 userlogin.addEventListener("submit",serviceValidateLoginUser);
 
-
  async function serviceValidateLoginUser(event)
 {
         event.preventDefault();
@@ -22,20 +21,52 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
                 });
 
                 const result = await res.json();
+				console.log("request intialedd"); // for debugging
 				console.log(result);
                  if (res.status == 202)
 				  {
 				   window.location.href = "../serviceDashboard.html";
                   }
 				else 
-				   {
-				   alert("Error: " + result.message + "Incorrect email and password");
-                   }
-               } 
+				{
+				    let errorMessage = document.getElementById("errorBox");
+                    errorMessage.innerHTML= 'Plz enter the valid creds or contact admin if facing error';
+                } 
+			 }
 			 catch (err) 
 			   {
-                console.error("Fetch error:", err);
-                alert("Server error");
+                 let errorMessage = document.getElementById("errorBox");
+                 errorMessage.innerHTML= 'Server error plz contact admin if that mf is sleeping';
+               }
+
+}
+
+
+document.addEventListener("DOMContentLoaded",sessionHandler);
+
+ async function sessionHandler(event)
+{
+
+
+			 try 
+			   {
+                const res = await fetch('http://localhost:3000/provider/sessionChecker',
+		        {
+				  credentials: 'include'
+                });
+
+                const result = await res.json();
+				
+                 if (res.status == 200)
+				  {
+				   console.log("session removed"); //new session started
+                  }
+	
+			 }
+			 catch (err) 
+			   {
+                 let errorMessage = document.getElementById("errorBox");
+                 errorMessage.innerHTML= 'Server error plz contact admin if that mf is sleeping';
                }
 
 

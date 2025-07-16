@@ -18,7 +18,7 @@ async function fetchDash()
        {
           const notificationCard = document.createElement("div");
           notificationCard.classList.add("notification-card");
-         notificationCard.innerHTML = `
+          notificationCard.innerHTML = `
          <h2>Request ID: ${data[i].request_id}</h2>
          <p><strong>Description:</strong> ${data[i].description}</p>
          <p><strong>Location:</strong> ${data[i].address}, ${data[i].city}, ${data[i].state} ${data[i].zip}</p>

@@ -56,6 +56,12 @@ body {
   color: #00d9ff;
 }
 
+.user-signup h1{
+  
+  margin-bottom: 25px;
+  color: #00d9ff;
+}
+
 /* Form Styling */
 form {
  display: flex;
