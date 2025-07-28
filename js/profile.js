@@ -5,7 +5,7 @@ const personalName = params.get('providerName');
 
 if(personalName===null)
 {
- window.location.href = "/SmartPage.html";
+ window.location.href = "/Simplyhire/SmartPage.html";
 }
 
 
@@ -28,7 +28,7 @@ async function fetchServies()
     });
    if(res.status == 401)
         {
-          window.location.href = "/ErrorPage.html";
+          window.location.href = "/Simplyhire/ErrorPage.html";
         }
       let data = await res.json();
         if(res.status == 500)
@@ -56,7 +56,7 @@ async function fetchServies()
   catch(err)
    {
     
-        window.location.href = "/ErrorPage.html";
+        window.location.href = "/Simplyhire/ErrorPage.html";
         
    } 
 
@@ -65,7 +65,7 @@ async function fetchServies()
 
 function toTheRequest(personalName)
 {
-    window.location.href = `../request.html?providerName=${encodeURIComponent(personalName)}`;
+    window.location.href = `/Simplyhire/request.html?providerName=${encodeURIComponent(personalName)}`;
 }
 
 let logoutClicked = document.getElementById("logOut");
@@ -85,7 +85,7 @@ async function logOutFunction()
 
       if (res.ok)
           {
-            window.location.href = '/index.html';
+            window.location.href = '/Simplyhire/index.html';
           }
           else 
           {

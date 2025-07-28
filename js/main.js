@@ -16,7 +16,7 @@ async function fetchServies()
     
     if(res.status == 401)
       {
-        window.location.href = "/ErrorPage.html";
+        window.location.href = "/Simplyhire/ErrorPage.html";
       }
     if(res.status == 500)
       {
@@ -46,14 +46,14 @@ async function fetchServies()
     }
     catch(err)
     {
-        window.location.href = "/ErrorPage.html";
+        window.location.href = "/Simplyhire/ErrorPage.html";
     }
     
 };
 
 function toTheProviderlist(serviceName)
 {
-  window.location.href = `../providerlist.html?servicetype=${encodeURIComponent(serviceName)}`;
+  window.location.href = `/Simplyhire/providerlist.html?servicetype=${encodeURIComponent(serviceName)}`;
 }
 
 let logoutClicked = document.getElementById("logOut");
@@ -72,7 +72,7 @@ async function logOutFunction()
 
       if (res.ok)
           {
-            window.location.href = '/index.html';
+            window.location.href = '/Simplyhire/index.html';
           }
           else 
           {

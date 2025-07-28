@@ -29,7 +29,7 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 				console.log(result);
                  if (res.status == 202)
 				  {
-				   window.location.href = "../serviceDashboard.html";
+				   window.location.href = "/Simplyhire/serviceDashboard.html";
                   }
 				else 
 				{
