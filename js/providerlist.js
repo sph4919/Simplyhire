@@ -47,7 +47,7 @@ async function fetchServies()
           h2.innerHTML = data[i].name;
           const p = document.createElement('p');
           p.classList.add("personalDescription");
-          p.innerHTML = data[i].short_description;
+          p.innerHTML = data[i].shortdescription;
           let providerName = h2.innerHTML;
           providerCard.addEventListener('click',event => toTheProfile(providerName,event))
           providerCard.append(h2, p);

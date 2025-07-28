@@ -1,5 +1,4 @@
  const API_BASE = 'https://simplyhirebackend.onrender.com';
-
 document.addEventListener('DOMContentLoaded', fetchServies);
 
 
@@ -7,7 +6,7 @@ async function fetchServies()
 {
    
  try{
-      const res = await fetch('http://localhost:3000/user/mainFetch', {
+      const res = await fetch(`${API_BASE}/user/mainFetch`, {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
@@ -37,7 +36,7 @@ async function fetchServies()
           h2.innerHTML = result[i].service_type;
           const p = document.createElement('p');
           p.classList.add("type-description");
-          p.innerHTML = result[i].service_description;
+          p.innerHTML = result[i].servicedescription;
           card.append(h2, p);
           let serviceName = h2.innerHTML;
           card.addEventListener('click',event => toTheProviderlist(serviceName,event))
@@ -64,7 +63,7 @@ async function logOutFunction()
 {
    try 
 		{
-      const res = await fetch('http://localhost:3000/user/logout',
+      const res = await fetch(`${API_BASE}/user/logout`,
 		    {
           method: 'POST',
           credentials : 'include',
