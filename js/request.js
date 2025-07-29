@@ -58,13 +58,15 @@ async function findServiceProviderId() {
     });
  if(res.status == 401)
         {
-          window.location.href = "/Simplyhire/ErrorPage.html";
+          // window.location.href = "/Simplyhire/ErrorPage.html";
+            window.location.href = "/ErrorPage.html";
         }
   const payload = await res.json();
 
     if (res.status == 500) 
       {
-      window.location.href = "/Simplyhire/ErrorPage.html";
+      // window.location.href = "/Simplyhire/ErrorPage.html";
+      window.location.href = "/ErrorPage.html";
       }
 
     serviceProviderId = payload.result[0].serviceproviderid;
@@ -72,7 +74,8 @@ async function findServiceProviderId() {
   catch (err) {
     let errorMessage = document.getElementById("errorBox");
     errorMessage.innerHTML= 'Please Contact us on Contact info you will be short directed to Contact page in 10 sec.';
-    setTimeout(()=>{window.location.href="/Simplyhire/contact.html"},10000);
+    // setTimeout(()=>{window.location.href="/Simplyhire/contact.html"},10000);
+    setTimeout(()=>{window.location.href="/contact.html"},10000);
   }
   
 }
@@ -135,7 +138,8 @@ async function toTheConformation(event) {
     const result = await res.json();
     if (res.status === 201)
        {
-        window.location.href = '/Simplyhire/confirm.html';
+        // window.location.href = '/Simplyhire/confirm.html';
+         window.location.href = '/confirm.html';
        } 
     else
        {
@@ -170,7 +174,9 @@ async function logOutFunction()
 
       if (res.ok)
           {
-            window.location.href = '/Simplyhire/index.html';
+            // window.location.href = '/Simplyhire/index.html';
+               window.location.href = '/index.html';
+            
           }
           else 
           {

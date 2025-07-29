@@ -106,7 +106,8 @@ async function validateUserSignup(event)
 				console.log(result);
                 if (res.status == 201)
 				  {
-				   window.location.href = "/Simplyhire/index.html";
+			    	//    window.location.href = "/Simplyhire/index.html";
+				   window.location.href = "/index.html";
 				   userBool = true;
                   }
 				 else 
@@ -140,8 +141,8 @@ async function validateUserSignup(event)
 				console.log(result);
                  if (res.status == 201)
 				  {
-                   
-				   window.location.href = "/Simplyhire/index.html";
+				    // window.location.href = "/Simplyhire/index.html";
+				    window.location.href = "/index.html";
                   }
 				else 
 				   {

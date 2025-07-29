@@ -108,7 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
          const result = await signup.json();
          if (signup.status === 201)
            {
-             window.location.href = '/Simplyhire/serviceLogin.html';
+            //  window.location.href = '/Simplyhire/serviceLogin.html';
+              window.location.href = '/serviceLogin.html';
            } 
          else 
            {

@@ -46,7 +46,8 @@ async function logOutFunction()
 
       if (res.ok)
           {
-            window.location.href = '/Simplyhire/index.html';
+            // window.location.href = '/Simplyhire/index.html';
+             window.location.href = '/index.html';
           }
           else 
           {

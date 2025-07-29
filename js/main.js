@@ -16,7 +16,8 @@ async function fetchServies()
     
     if(res.status == 401)
       {
-        window.location.href = "/Simplyhire/ErrorPage.html";
+        // window.location.href = "/Simplyhire/ErrorPage.html";
+         window.location.href = "/ErrorPage.html";
       }
     if(res.status == 500)
       {
@@ -46,7 +47,8 @@ async function fetchServies()
     }
     catch(err)
     {
-        window.location.href = "/Simplyhire/ErrorPage.html";
+        // window.location.href = "/Simplyhire/ErrorPage.html";
+         window.location.href = "/ErrorPage.html";
     }
     
 };
@@ -72,7 +74,8 @@ async function logOutFunction()
 
       if (res.ok)
           {
-            window.location.href = '/Simplyhire/index.html';
+            // window.location.href = '/Simplyhire/index.html';
+             window.location.href = '/index.html';
           }
           else 
           {

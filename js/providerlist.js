@@ -5,7 +5,8 @@ const params = new URLSearchParams(window.location.search);
 const service = params.get('servicetype');  
 if(service===null)
 {
- window.location.href = "/Simplyhire/SmartPage.html";
+//  window.location.href = "/Simplyhire/SmartPage.html";
+ window.location.href = "/SmartPage.html";
 }
 
 
@@ -25,7 +26,8 @@ async function fetchServies()
     });
      if(res.status == 401)
         {
-          window.location.href = "/Simplyhire/ErrorPage.html";
+          //window.location.href = "/Simplyhire/ErrorPage.html";
+            window.location.href = "/ErrorPage.html";
         }
        if(res.status == 500)
       {
@@ -58,7 +60,8 @@ async function fetchServies()
    }
   catch(err)
    {
-    window.location.href = "/Simplyhire/ErrorPage.html";
+    // window.location.href = "/Simplyhire/ErrorPage.html";
+    window.location.href = "/ErrorPage.html";
    } 
 
     
@@ -67,7 +70,8 @@ async function fetchServies()
 function toTheProfile(providerName)
 {
 
-    window.location.href = `/Simplyhire/profile.html?providerName=${encodeURIComponent(providerName)}`;
+    // window.location.href = `/Simplyhire/profile.html?providerName=${encodeURIComponent(providerName)}`;
+    window.location.href = `/profile.html?providerName=${encodeURIComponent(providerName)}`;
 
 }
 
@@ -87,7 +91,8 @@ async function logOutFunction()
 
       if (res.ok)
           {
-            window.location.href = '/Simplyhire/index.html';
+            // window.location.href = '/Simplyhire/index.html';
+               window.location.href = '/index.html';
           }
           else 
           {
