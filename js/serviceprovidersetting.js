@@ -15,7 +15,8 @@ async function getSettingDetail()
     if(res.status == 401)
         {
           // window.location.href = "/Simplyhire/ErrorPage.html";
-             window.location.href = "/ErrorPage.html";
+            //  window.location.href = "/ErrorPage.html";
+               console.log("no cokkiee");
         }
       let data = await res.json();
       console.log(data);

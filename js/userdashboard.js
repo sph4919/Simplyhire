@@ -56,7 +56,8 @@ async function fetchRequests()
       else if(res.status==401)
       {
         // window.location.href='/Simplyhire/ErrorPage.html';
-         window.location.href='/ErrorPage.html';
+        //  window.location.href='/ErrorPage.html';
+           console.log("no cokkiee");
       }
 
    }

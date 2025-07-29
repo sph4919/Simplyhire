@@ -27,7 +27,8 @@ async function fetchServies()
      if(res.status == 401)
         {
           //window.location.href = "/Simplyhire/ErrorPage.html";
-            window.location.href = "/ErrorPage.html";
+            // window.location.href = "/ErrorPage.html";
+              console.log("no cokkiee");
         }
        if(res.status == 500)
       {
@@ -93,6 +94,7 @@ async function logOutFunction()
           {
             // window.location.href = '/Simplyhire/index.html';
                window.location.href = '/index.html';
+               
           }
           else 
           {
