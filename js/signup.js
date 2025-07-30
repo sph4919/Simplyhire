@@ -129,6 +129,7 @@ async function validateUserSignup(event)
 		
 		     try 
 			   {
+				console.log("inserting in db");
                 const res = await fetch(`${API_BASE}/user/signup`,
 		        {
                   method: 'POST',
