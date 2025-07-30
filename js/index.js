@@ -26,8 +26,8 @@ async function sendAutenReq(event)
  
         if (res.status == 202)
 		{
-			// window.location.href = "/Simplyhire/main.html";
-            window.location.href = "/main.html";
+			 window.location.href = "/Simplyhire/main.html";
+            
         }
         else if (res.status == 401)
         {

@@ -14,9 +14,8 @@ async function fetchDash()
 
       if(res.status == 401)
         {
-          // window.location.href = "/Simplyhire/ErrorPage.html";
-            //  window.location.href = "/ErrorPage.html";
-               console.log("no cokkiee");
+          window.location.href = "/Simplyhire/ErrorPage.html";
+               
         }
 
       let data = await res.json();
@@ -99,8 +98,7 @@ async function logOutFunction()
 
       if (res.ok)
           {
-            // window.location.href = '/Simplyhire/index.html';
-              window.location.href = '/index.html';
+            window.location.href = '/Simplyhire/index.html';
           }
           else 
           {
