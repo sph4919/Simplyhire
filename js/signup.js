@@ -122,14 +122,14 @@ async function validateUserSignup(event)
                 	let error = document.getElementById("errorBox");
 			        error.innerHTML = "Server is overloaded by love please try again";
              }
-
+             console.log(userBool); // for degubbing
 
              if(userBool==false)
 			 {
 		
 		     try 
 			   {
-				console.log("inserting in db");
+				console.log("inserting in db"); // for debugging 
                 const res = await fetch(`${API_BASE}/user/signup`,
 		        {
                   method: 'POST',
@@ -138,8 +138,8 @@ async function validateUserSignup(event)
                 });
 
                 const result = await res.json();
-				console.log(result);
-                 if (res.status == 201)
+				console.log(result); // for debugging                
+				 if (res.status == 201)
 				  {
 				     window.location.href = "/Simplyhire/index.html";
                   }
