@@ -81,7 +81,6 @@ async function validateUserSignup(event)
 
 		if(!formIsValid)
         {
-			
 			event.preventDefault();
 		}
 		else
@@ -89,8 +88,11 @@ async function validateUserSignup(event)
 		  let name = userName.value;
 		  let email = userEmail.value;
 		  let password = userPassword.value;
+		  console.log(name);
+		    console.log(email);
+			  console.log(password);
+		  
            
-
         let userBool = false;
 			 try 
 			 {
@@ -107,7 +109,7 @@ async function validateUserSignup(event)
                 if (res.status == 201)
 				  {
 			    	   window.location.href = "/Simplyhire/index.html";
-				   userBool = true;
+				       userBool = true;
                   }
 				 else 
 				   {
@@ -120,8 +122,6 @@ async function validateUserSignup(event)
                 	let error = document.getElementById("errorBox");
 			        error.innerHTML = "Server is overloaded by love please try again";
              }
-
-
 
 
              if(userBool==false)
@@ -141,7 +141,6 @@ async function validateUserSignup(event)
                  if (res.status == 201)
 				  {
 				     window.location.href = "/Simplyhire/index.html";
-			
                   }
 				else 
 				   {
@@ -155,7 +154,7 @@ async function validateUserSignup(event)
 			        error.innerHTML = "Server is overloaded by love please try again";
                }
 			 } 
-        };
+        }
 			
 }
 
