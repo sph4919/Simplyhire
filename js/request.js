@@ -67,8 +67,8 @@ async function findServiceProviderId() {
       {
        window.location.href = "/Simplyhire/ErrorPage.html";
       }
-
-    serviceProviderId = payload.result[0].serviceproviderid;
+     console.log(payload.result[0].serviceprovider_id);  //for debugging
+    serviceProviderId = payload.result[0].serviceprovider_id;
   }
   catch (err) {
     let errorMessage = document.getElementById("errorBox");
