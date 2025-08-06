@@ -84,6 +84,7 @@ header {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
 }
 
 .logout-btn:hover {

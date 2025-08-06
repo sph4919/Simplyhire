@@ -135,6 +135,7 @@ async function toTheConformation(event) {
     });
 
     const result = await res.json();
+    console.log(result); //for debugging
     if (res.status === 201)
        {
         window.location.href = '/Simplyhire/confirm.html';
