@@ -122,7 +122,7 @@ async function toTheConformation(event) {
     invalidValues =  true;
   }
 
-  if(invalidValues==true)
+  if(invalidValues==false)
   {
   try {
     const res = await fetch(`${API_BASE}/user/createRequest`, {
