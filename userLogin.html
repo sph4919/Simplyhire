@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="index.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li>
+        <img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" />
+        <span class="brand-text">Simpleyhire</span>
+      </li>
+    </ul>
+    <a href="serviceLogin.html" class="service-btn">
+      <span class="service-btntext">Service Agent Interface</span>
+    </a>
+  </nav>
+
+  <!-- Main Login Content -->
+  <div class="container">
+    <p id = "errorBox"></p>
+    <br>
+    <div class="user-login">
+      <h2>User Login</h2>
+      <form id="user-form">
+        <label for="user-email">Email:</label>
+        <input type="email" id="user-email" name="user-email" placeholder="Enter your email" /><br/>
+        <label for="user-password">Password:</label>
+        <input type="password" id="user-password" name="user-password" placeholder="Enter your password" /><br />
+        <button type="submit" id="userLogin">Login</button>
+      </form>
+    </div>
+    <div class="signup">
+      <p>Don't have an account? <a href="signup.html" class="signup-link">Sign Up</a></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

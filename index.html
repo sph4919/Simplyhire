@@ -2,50 +2,205 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login Page</title>
-  <link rel="stylesheet" href="index.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SimpleHire — Find Providers Fast, Pay Less</title>
+  <meta name="description" content="SimpleHire connects users who need services now with service providers ready to work for a lower price." />
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <!-- Particle Background -->
-  <div id="particles-js"></div>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <ul>
-      <li>
-        <img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" />
-        <span class="brand-text">Simpleyhire</span>
-      </li>
-    </ul>
-    <a href="serviceLogin.html" class="service-btn">
-      <span class="service-btntext">Service Agent Interface</span>
+  <!-- NAVBAR -->
+  <header class="nav" role="banner">
+    <a href="#" class="brand" aria-label="SimpleHire home">
+      <img src="
+      <div>
+        <div class="name">SimpleHire</div>
+        <div class="tag">simple • fast • lower price</div>
+      </div>
     </a>
-  </nav>
 
-  <!-- Main Login Content -->
-  <div class="container">
-    <p id = "errorBox"></p>
-    <br>
-    <div class="user-login">
-      <h2>User Login</h2>
-      <form id="user-form">
-        <label for="user-email">Email:</label>
-        <input type="email" id="user-email" name="user-email" placeholder="Enter your email" /><br/>
-        <label for="user-password">Password:</label>
-        <input type="password" id="user-password" name="user-password" placeholder="Enter your password" /><br />
-        <button type="submit" id="userLogin">Login</button>
-      </form>
-    </div>
-    <div class="signup">
-      <p>Don't have an account? <a href="signup.html" class="signup-link">Sign Up</a></p>
-    </div>
-  </div>
+    <nav class="nav-actions" aria-label="Account actions">
+      <div class="stacked">
+        <a class="btn-square b1" href="#login-user" aria-label="User Login">User<br/>Login</a>
+        <a class="btn-square b2" href="#login-provider" aria-label="Service Provider Login">Provider<br/>Login</a>
+        <a class="btn-square b3" href="#signup-user" aria-label="User Sign Up">User<br/>Sign Up</a>
+        <a class="btn-square b4" href="#signup-provider" aria-label="Service Provider Sign Up">Provider<br/>Sign Up</a>
+      </div>
+    </nav>
+  </header>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="js/particles-config.js"></script>
-  <script src="js/index.js"></script>
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="orbs" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div>
+          <h1>Find a service provider <span class="accent-orange">immediately</span> — for a <span class="accent-green">lower price</span>.</h1>
+          <p>SimpleHire is the instant marketplace where users post urgent needs and providers nearby accept fast. Transparent pricing, live availability, and a powerful dashboard for both sides.</p>
+          <div class="cta">
+            <a class="pill primary" href="#create-request">Create a Request</a>
+            <a class="pill" href="#explore-providers">Find Service Providers</a>
+          </div>
+        </div>
+        <div class="panel" aria-hidden="true">
+          <div class="mock short">
+            <div class="bar" style="width: 60%"></div>
+            <div class="bar" style="width: 42%"></div>
+          </div>
+          <div class="dash-preview">
+            <div class="mock">
+              <div class="bar" style="width:40%"></div>
+              <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+              </div>
+              <div class="row mt">
+                <div class="tile span-2"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+              </div>
+            </div>
+            <div class="mock">
+              <div class="bar" style="width:75%"></div>
+              <div class="bar" style="width:55%"></div>
+              <div class="bar" style="width:35%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="usp" aria-label="Key selling points">
+        <div class="chip">⚡ Immediate matching</div>
+        <div class="chip">💸 Lower prices, transparent offers</div>
+        <div class="chip">📍 Local providers, real-time</div>
+      </div>
+    </section>
+
+    <!-- ANIMATED CARDS STRIPE -->
+    <section class="stripe" aria-label="Highlights">
+      <div class="grid">
+        <article class="card" tabindex="0" aria-label="Effective Service">
+          <span class="badge">Top pick</span>
+          <div class="icon" aria-hidden="true">🧰</div>
+          <h3>Effective Service</h3>
+          <p>Vetted providers with strong ratings deliver reliably.</p>
+        </article>
+        <article class="card" tabindex="0" aria-label="Low Cost">
+          <span class="badge">Hot</span>
+          <div class="icon" aria-hidden="true">💵</div>
+          <h3>Low Cost</h3>
+          <p>Best offers surface first so you save without hassle.</p>
+        </article>
+        <article class="card" tabindex="0" aria-label="Rapid Response">
+          <span class="badge">New</span>
+          <div class="icon" aria-hidden="true">⏱️</div>
+          <h3>Rapid Response</h3>
+          <p>Requests go live in seconds; providers can accept instantly.</p>
+        </article>
+        <article class="card" tabindex="0" aria-label="Quality Providers">
+          <span class="badge">Pro</span>
+          <div class="icon" aria-hidden="true">🏆</div>
+          <h3>Quality Providers</h3>
+          <p>Profiles include portfolios, verifications, and reviews.</p>
+        </article>
+        <article class="card" tabindex="0" aria-label="Bid-Based Pricing">
+          <span class="badge">Deal</span>
+          <div class="icon" aria-hidden="true">📉</div>
+          <h3>Bid-Based Pricing</h3>
+          <p>Compete for your job—prices trend down, not up.</p>
+        </article>
+        <article class="card" tabindex="0" aria-label="Real-Time Status">
+          <span class="badge">Live</span>
+          <div class="icon" aria-hidden="true">📡</div>
+          <h3>Real‑Time Status</h3>
+          <p>Track acceptance, ETAs, and updates in your dashboard.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" aria-labelledby="features-title">
+      <div class="inner">
+        <h2 id="features-title">Everything you need, whether you're hiring or providing.</h2>
+        <div class="grid-2">
+          <div class="panel" aria-labelledby="users-title">
+            <h3 id="users-title">For Users</h3>
+            <div class="feature-list">
+              <div class="feature"><div class="fi" aria-hidden="true">📝</div><div>
+                <strong>Create Requests</strong><br/>
+                Describe your need, set your budget & timeframe.
+              </div></div>
+              <div class="feature"><div class="fi" aria-hidden="true">🔍</div><div>
+                <strong>Find Service Providers</strong><br/>
+                Filter by price, rating, distance, skills.
+              </div></div>
+              <div class="feature"><div class="fi" aria-hidden="true">📊</div><div>
+                <strong>View Won Requests</strong><br/>
+                A dashboard summarizes accepted offers and progress.
+              </div></div>
+              <div class="feature"><div class="fi" aria-hidden="true">🧾</div><div>
+                <strong>Provider Descriptions</strong><br/>
+                Open detailed profiles with portfolios & reviews.
+              </div></div>
+            </div>
+          </div>
+
+          <div class="panel" aria-labelledby="providers-title">
+            <h3 id="providers-title">For Service Providers</h3>
+            <div class="feature-list">
+              <div class="feature"><div class="fi" aria-hidden="true">💼</div><div>
+                <strong>Earn More, Faster</strong><br/>
+                Instantly see nearby jobs and accept in one tap.
+              </div></div>
+              <div class="feature"><div class="fi" aria-hidden="true">📈</div><div>
+                <strong>Income Overview</strong><br/>
+                See summary of income, requests, and win‑rate.
+              </div></div>
+              <div class="feature"><div class="fi" aria-hidden="true">🖊️</div><div>
+                <strong>Edit Profile</strong><br/>
+                Change your description, skills, and display name anytime.
+              </div></div>
+              <div class="feature"><div class="fi" aria-hidden="true">✅</div><div>
+                <strong>Accept Requests</strong><br/>
+                Real‑time notifications for new opportunities.
+              </div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIA SHOWCASE WITH ANIMATED BG (placeholders) -->
+    <section class="section" aria-labelledby="screens-title">
+      <div class="inner">
+        <h2 id="screens-title">Interactive Features & Screens</h2>
+        <p class="muted">Drop your photos or screenshots into the frames below. The background animates subtly to keep the page lively.</p>
+        <div class="grid-2">
+          <figure class="mock tall" aria-label="Screenshot frame">
+            <div class="bar" style="width: 40%"></div>
+            <div class="row">
+              <div class="tile span-2 big"></div>
+              <div class="tile big"></div>
+              <div class="tile big"></div>
+            </div>
+          </figure>
+          <figure class="mock tall" aria-label="Screenshot frame">
+            <div class="bar" style="width: 70%"></div>
+            <div class="bar" style="width: 55%"></div>
+            <div class="bar" style="width: 30%"></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> SimpleHire • Built for speed, price, and trust.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
