@@ -113,6 +113,8 @@ a{ color: inherit; text-decoration: none; }
   padding: 16px; height: 180px; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden;
   position:relative;
   animation: bob 3.5s ease-in-out infinite;
+  margin-left: 120px;
+  width: 200px;
 }
 .card:nth-child(odd){ animation-direction: alternate-reverse; }
 .card:nth-child(even){ animation-direction: alternate; }
