@@ -231,6 +231,13 @@ body {
   text-decoration: underline;
 }
 
+.forgotPassBtn
+{
+  text-decoration: none;
+  color : var(--primary-color);
+  font-size: large;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .navbar {

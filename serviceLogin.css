@@ -172,3 +172,13 @@ body {
   transform: scale(1.03);
   box-shadow: 0 4px 12px rgba(91, 134, 229, 0.4);
 }
+
+.forgotPassBtn
+{
+  text-decoration: none;
+  color : #00d9ff;
+  font-size: large;
+  text-align: center;
+  margin-top:20px;
+
+}
