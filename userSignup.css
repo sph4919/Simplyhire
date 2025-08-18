@@ -119,6 +119,14 @@ body {
   flex-wrap: wrap;
 }
 
+.errorClass
+{
+  color: red;
+  font-size: 30px;
+  border-style: solid;
+  border-color: white;
+}
+
 /* Welcome Message */
 .welcome-message {
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));

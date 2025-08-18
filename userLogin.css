@@ -126,6 +126,14 @@ body {
   transition: all 0.8s ease;
 }
 
+.errorClass
+{
+  color: red;
+  font-size: 30px;
+  border-style: solid;
+  border-color: white;
+}
+
 .user-login h2 {
   font-size: 2rem;
   color: var(--primary-color);

@@ -58,13 +58,15 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  height: 80px;
 }
 
 .nav-left .brand {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-color);
-  margin-left: -540px;
+  margin-left: -290px;
+
  
 }
 
@@ -79,12 +81,17 @@ header {
 .nav-btn {
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   padding: 0.5rem 1rem;
-  border-radius: var(--radius);
+  height: 47px;
+  text-align: center;
   color: #fff;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 12px var(--shadow-color);
+  width: 150px;
+  padding: 0.5rem 1rem;
+
+  
 }
 
 .nav-btn:hover {
@@ -97,11 +104,12 @@ header {
   background: none;
   color: #ff4d4f;
   border: 2px solid #ff4d4f;
-  border-radius: var(--radius);
+  height: 50px;
   padding: 0.5rem 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
+  width: 150px;
 }
 
 .logout-btn:hover {
@@ -159,6 +167,17 @@ header {
   color: var(--subtext-color);
   line-height: 1.5;
    text-align: center;
+}
+
+.errorClass
+{
+  color: red;
+  font-size: 25px;
+  border-style: solid;
+  border-color: white;
+  font-weight: 600;
+   padding: 5px , 5px , 5px, 5px;
+
 }
 
 /* Responsive */
