@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Settings • SimplyHire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- System-safe stack first; Inter as a light enhancement -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="userSetting.css" />
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="SimplyHire home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-text">SimplyHire</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="/">Home</a></li>
+          <li><a class="nav-link" href="/Simplyhire/userdashboard.html">Dashboard</a></li>
+          <li><a class="nav-link" href="/Simplyhire/contact.html">Contact</a></li>
+          <li><a class="nav-link btn-logout" href="">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>User Settings</h1>
+      <p class="subtle">Manage your account information below.</p>
+    </div>
+  </section>
+
+  <main class="container grid-2">
+    <!-- Current info card -->
+    <section class="card">
+      <div class="card-head">
+        <h2 class="card-title">Current Information</h2>
+      </div>
+      <div class="info-row">
+        <div class="info">
+          <span class="label">Name</span>
+          <!-- Replace with server data -->
+          <span class="value">Jane Doe</span>
+        </div>
+       
+      </div>
+
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <div class="info-row">
+        <div class="info">
+          <span class="label">Email</span>
+          <!-- Replace with server data -->
+          <span class="value">jane.doe@example.com</span>
+        </div>
+   
+      </div>
+
+  
+    </section>
+
+    <!-- Update form -->
+    <section class="card">
+      <div class="card-head">
+        <h2 class="card-title">Update Details</h2>
+        <p class="subtle">Enter a new name and/or email, then choose <strong>Change</strong>.</p>
+      </div>
+
+      <form action="#" method="post" class="form">
+        <div class="field">
+          <label for="new-name">New Name</label>
+          <input id="new-name" name="new_name" type="text" placeholder="Enter new name" autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="new-email">New Email</label>
+          <input id="new-email" name="new_email" type="email" placeholder="you@company.com" autocomplete="email" />
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Change</button>
+          <a href="#" class="btn subtle" role="button">Cancel</a>
+        </div>
+
+ 
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2025</span> SimplyHire. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
