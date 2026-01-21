@@ -7,11 +7,12 @@
   <meta name="description" content="SimpleHire connects users who need services now with service providers ready to work for a lower price." />
   <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
   <!-- NAVBAR -->
   <header class="nav" role="banner">
     <a href="#" class="brand" aria-label="SimpleHire home">
-      <img src="imgs/SimpleHireV2Logo.png" height="40px" alt="SimpleHire Logo">
+      <img src="imgs/SimpleHireV2Logo.png" class="logo" alt="SimpleHire Logo">
       <div>
         <div class="name">SimpleHire</div>
         <div class="tag">simple • fast • lower price</div>
@@ -32,21 +33,59 @@
     <!-- HERO -->
     <section class="hero">
       <div class="orbs" aria-hidden="true"></div>
+
       <div class="hero-inner">
-        <div>
-          <h1>Find a service provider <span class="accent-orange">immediately</span> — for a <span class="accent-green">lower price</span>.</h1>
-          <p>SimpleHire is the instant marketplace where users post urgent needs and providers nearby accept fast. Transparent pricing, live availability, and a powerful dashboard for both sides.</p>
+        <div class="hero-copy">
+          <div class="kicker">Instant marketplace for urgent services</div>
+          <h1>
+            Find a service provider <span class="accent-orange">immediately</span>
+            <span class="soft">for a</span>
+            <span class="accent-green">lower price</span>.
+          </h1>
+
+          <p>
+            SimpleHire is the instant marketplace where users post urgent needs and providers nearby accept fast.
+            Transparent pricing, live availability, and dashboards for both sides.
+          </p>
+
           <div class="cta">
             <a class="pill primary" href="userLogin.html">Create a Request</a>
             <a class="pill" href="serviceLogin.html">Be a Service Provider</a>
           </div>
-        </div>
-      </div>
 
-      <div class="usp" aria-label="Key selling points">
-        <div class="chip"> Fast search</div>
-        <div class="chip"> Lower prices, transparent offers</div>
-        <div class="chip"> Local providers, real-time</div>
+          <div class="trust">
+            <div class="trust-item">⚡ Post in seconds</div>
+            <div class="trust-item">🧾 Transparent offers</div>
+            <div class="trust-item">📍 Local providers</div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Preview card">
+          <div class="mini-top">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <div class="mini-title">Live Requests</div>
+
+          <div class="mini-list">
+            <div class="mini-row">
+              <div class="pill-tag">Cleaning</div>
+              <div class="mini-meta">$45 • 1.2 km</div>
+            </div>
+            <div class="mini-row">
+              <div class="pill-tag">Plumbing</div>
+              <div class="mini-meta">$80 • 3.4 km</div>
+            </div>
+            <div class="mini-row">
+              <div class="pill-tag">Moving</div>
+              <div class="mini-meta">$120 • 2.0 km</div>
+            </div>
+          </div>
+
+          <div class="mini-bottom">
+            <div class="mini-badge">Live</div>
+            <div class="mini-note">Updated just now</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -57,24 +96,27 @@
           <span class="badge">Top pick</span>
           <div class="icon" aria-hidden="true">🧰</div>
           <h3>Effective Service</h3>
-          <p>Vetted providers who deliver reliably.</p>
+          <p>Reliable providers with clear profiles and ratings.</p>
         </article>
+
         <article class="card" tabindex="0" aria-label="Low Cost">
           <span class="badge">Hot</span>
           <div class="icon" aria-hidden="true">💵</div>
           <h3>Low Cost</h3>
-          <p>Best offers, so you save without hassle.</p>
+          <p>Compare offers easily and pick what fits your budget.</p>
         </article>
+
         <article class="card" tabindex="0" aria-label="Rapid Response">
           <span class="badge">New</span>
           <div class="icon" aria-hidden="true">⏱️</div>
           <h3>Rapid Response</h3>
-          <p>Requests go live in seconds.</p>
+          <p>Requests go live instantly, providers respond fast.</p>
         </article>
+
         <article class="card" tabindex="0" aria-label="Real-Time Status">
           <span class="badge">Live</span>
           <div class="icon" aria-hidden="true">📡</div>
-          <h3>Real‑Time Status</h3>
+          <h3>Real-Time Status</h3>
           <p>Track acceptance, ETAs, and updates in your dashboard.</p>
         </article>
       </div>
@@ -84,73 +126,83 @@
     <section class="section" aria-labelledby="features-title">
       <div class="inner">
         <h2 id="features-title">Everything you need, whether you're hiring or providing.</h2>
+
         <div class="grid-2">
           <div class="panel" aria-labelledby="users-title">
             <h3 id="users-title">For Users</h3>
             <div class="feature-list">
-              <div class="feature"><div class="fi" aria-hidden="true">📝</div><div>
-                <strong>Create Requests</strong><br/>
-                Describe your need, set your budget & timeframe.
-              </div></div>
-              <div class="feature"><div class="fi" aria-hidden="true">🔍</div><div>
-                <strong>Find Service Providers</strong><br/>
-                Filter by price, rating, distance, skills.
-              </div></div>
-              <div class="feature"><div class="fi" aria-hidden="true">📊</div><div>
-                <strong>View Won Requests</strong><br/>
-                A dashboard summarizes accepted offers and progress.
-              </div></div>
-              <div class="feature"><div class="fi" aria-hidden="true">🧾</div><div>
-                <strong>Provider Descriptions</strong><br/>
-                Open detailed profiles with portfolios & reviews.
-              </div></div>
+              <div class="feature">
+                <div class="fi" aria-hidden="true">📝</div>
+                <div>
+                  <strong>Create Requests</strong><br/>
+                  Describe your need, set your budget & timeframe.
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="fi" aria-hidden="true">🔍</div>
+                <div>
+                  <strong>Find Service Providers</strong><br/>
+                  Filter by price, rating, distance, skills.
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="fi" aria-hidden="true">📊</div>
+                <div>
+                  <strong>View Won Requests</strong><br/>
+                  Dashboard shows accepted offers and progress.
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="fi" aria-hidden="true">🧾</div>
+                <div>
+                  <strong>Provider Descriptions</strong><br/>
+                  Open detailed profiles with portfolios & reviews.
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="panel" aria-labelledby="providers-title">
             <h3 id="providers-title">For Service Providers</h3>
             <div class="feature-list">
-              <div class="feature"><div class="fi" aria-hidden="true">💼</div><div>
-                <strong>Earn More, Faster</strong><br/>
-                Instantly see nearby jobs and accept in one tap.
-              </div></div>
-              <div class="feature"><div class="fi" aria-hidden="true">📈</div><div>
-                <strong>Income Overview</strong><br/>
-                See summary of income, requests, and win‑rate.
-              </div></div>
-              <div class="feature"><div class="fi" aria-hidden="true">🖊️</div><div>
-                <strong>Edit Profile</strong><br/>
-                Change your description, skills, and display name anytime.
-              </div></div>
-              <div class="feature"><div class="fi" aria-hidden="true">✅</div><div>
-                <strong>Accept Requests</strong><br/>
-                Real‑time notifications for new opportunities.
-              </div></div>
+              <div class="feature">
+                <div class="fi" aria-hidden="true">💼</div>
+                <div>
+                  <strong>Earn More, Faster</strong><br/>
+                  See nearby jobs and accept in one tap.
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="fi" aria-hidden="true">📈</div>
+                <div>
+                  <strong>Income Overview</strong><br/>
+                  Summary of income, requests, and win-rate.
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="fi" aria-hidden="true">🖊️</div>
+                <div>
+                  <strong>Edit Profile</strong><br/>
+                  Update skills, bio, and display name anytime.
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="fi" aria-hidden="true">✅</div>
+                <div>
+                  <strong>Accept Requests</strong><br/>
+                  Real-time notifications for new opportunities.
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- MEDIA SHOWCASE -->
-    <section class="section" aria-labelledby="screens-title">
-      <div class="inner">
-        <h2 id="screens-title">Interactive Features & Screens</h2>
-        <div class="grid-2">
-          <figure class="mock tall" aria-label="Screenshot frame">
-            <div class="bar" style="width: 40%"></div>
-            <div class="row">
-              <div class="tile span-2 big"></div>
-              <div class="tile big"></div>
-              <div class="tile big"></div>
-            </div>
-          </figure>
-          <figure class="mock tall" aria-label="Screenshot frame">
-            <div class="bar" style="width: 70%"></div>
-            <div class="bar" style="width: 55%"></div>
-            <div class="bar" style="width: 30%"></div>
-          </figure>
-        </div>
       </div>
     </section>
   </main>
