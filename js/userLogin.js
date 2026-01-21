@@ -25,8 +25,8 @@ async function sendAutenReq(event)
         const result = await res.json();
  
         if (res.status == 202)
-		{
-			 window.location.href = "/Simplyhire/main.html";
+		{   console.log(result.userId);
+			 window.location.href = `/Simplyhire/main.html?userid=${encodeURIComponent(result.userId)}`;
             
         }
         else if (res.status == 401)
@@ -43,62 +43,11 @@ async function sendAutenReq(event)
     catch(err)
      {
           let errorMessage = document.getElementById("errorBox");
-          errorMessage.innerHTML= "Server : dont disburb me , I am busy taking with my boyfriend. I am feeling low pllz try again..";
+          errorMessage.innerHTML= "Server : dont disburb me , I am busy talking with my boyfriend. I am feeling low pllz try again..";
     }
     
-     
 };
 
-const elements = document.querySelectorAll('.user-login, .signup');
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-            entry.target.style.transition = 'all 0.8s ease';
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.1
-});
-
-elements.forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(30px)';
-    observer.observe(el);
-});
 
 
 
-document.addEventListener("DOMContentLoaded",sessionHandler);
-
-
- async function sessionHandler(event)
-{
-
-
-			 try 
-			   {
-                const res = await fetch(`${API_BASE}/user/sessionChecker`,
-		        {
-				  credentials: 'include'
-                });
-
-                const result = await res.json();
-				
-                 if (res.status == 200)
-				  {
-				   console.log("session removed"); //new session started
-                  }
-	
-			 }
-			 catch (err) 
-			   {
-                 let errorMessage = document.getElementById("errorBox");
-                 errorMessage.innerHTML= 'Server error plz contact admin if that mf is sleeping';
-               }
-
-
-}
