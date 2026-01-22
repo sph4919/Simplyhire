@@ -1,5 +1,5 @@
  const API_BASE = 'https://simplyhirebackend.onrender.com';
-document.addEventListener('DOMContentLoaded', fetchServies);
+document.addEventListener('DOMContentLoaded', fetchinfo);
 
 const params = new URLSearchParams(window.location.search);
 const userId = params.get('userId');  
@@ -45,6 +45,8 @@ async function fetchinfo()
     
 };
 
+let changeClicked = document.getElementById("changeButton")
+changeClicked.addEventListener('submit',changeinfo)
 
 
 // async function Changeinfo(event)
