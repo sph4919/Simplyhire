@@ -28,7 +28,7 @@ async function sendAutenReq(event)
 		{   console.log(result.userId);
 
             const url = new URL(window.location.href);
-            url.searchParams.set("userId", userId);
+            url.searchParams.set("userId", result.userId);
             window.location.href = url.toString();
              
             

@@ -8,8 +8,7 @@ if(userId===null)
   window.location.href = "/Simplyhire/SmartPage.html";
 }
 
- params.set("service", serviceName);         // add/replace service
-window.location.href = "details.html?" + params.toString();
+
 
 async function fetchServies()
 {
@@ -64,7 +63,9 @@ async function fetchServies()
 
 function toTheProviderlist(serviceName)
 {
-    window.location.href = `/Simplyhire/providerlist.html?servicetype=${encodeURIComponent(serviceName)}`;
+  const url = new URL(window.location.href);
+  url.searchParams.set("servicetype", serviceName);
+  window.location.href = url.toString();
 
 }
 
