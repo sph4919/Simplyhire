@@ -1,32 +1,25 @@
  const API_BASE = 'https://simplyhirebackend.onrender.com';
 
 document.addEventListener("DOMContentLoaded",conformationSessionCheck);
+const params = new URLSearchParams(window.location.search);
+const userId = params.get('userId');  
 
 let logoutClicked = document.getElementById("logOut");
 logoutClicked.addEventListener('click',logOutFunction);
 
-
-async function conformationSessionCheck()
+ function logOutFunction()
 {
-   try 
-	  {
-          const res = await fetch(`${API_BASE}/user/sessionCheck`,
-		        {
-                  method: 'GET',
-                  credentials : 'include',
-                  mode : 'cors'
-        
-                });
-
- 
-         
-      }
-        catch (e) 
-        {
-          console.error('Network error on logout:', e);
-          alert('Could not reach server.');
-        }
+    window.location.href = '/Simplyhire/index.html'
 }
 
 
+let mainBtn = document.getElementById("mainBtn");
+mainBtn.addEventListener('click',mainBtnfun);
 
+ function mainBtnfun()
+{
+     const params = new URLSearchParams();
+     params.set("userId", userId);
+     window.location.href = `/Simplyhire/main.html?${params.toString()}`
+
+}
