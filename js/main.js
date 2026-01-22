@@ -76,3 +76,36 @@ async function logOutFunction()
     window.location.href = '/Simplyhire/index.html'
 }
 
+
+let settingClicked = document.getElementById("ProfileButton");
+settingClicked.addEventListener('click',moveToUsesrsetting);
+
+async function logOutFunction()
+{
+     const params = new URLSearchParams();
+     params.set("userId", userId);
+     window.location.href = `/Simplyhire/userSetting.html?${params.toString()}`
+
+}
+
+
+let dashBoardClicked = document.getElementById("DashboardButton");
+dashBoardClicked.addEventListener('click',moveToUserDash);
+
+async function moveToUserDash()
+{
+    const params = new URLSearchParams();
+    params.set("userId", userId);
+    window.location.href = `/Simplyhire/userdashboard.html?${params.toString()}`
+}
+
+
+let contactClicked = document.getElementById("ContactButton");
+contactClicked.addEventListener('click',moveToContact);
+
+async function moveToContact()
+{   
+    const params = new URLSearchParams();
+    params.set("userId", userId);
+    window.location.href = `/Simplyhire/conatact.html?${params.toString()}`
+}
