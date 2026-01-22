@@ -70,12 +70,12 @@ function toTheProviderlist(serviceName)
 
 
 
-
 let profileClicked = document.getElementById("ProfileButton");
 dashBoardClicked.addEventListener('click',moveTouserSetting);
 
-async function moveTouserSetting()
+function moveTouserSetting()
 {
+  console.log("clicked profile")
     const params = new URLSearchParams();
     params.set("userId", userId);
     window.location.href = `/Simplyhire/userSetting.html?${params.toString()}`
@@ -86,9 +86,9 @@ async function moveTouserSetting()
 
 let dashBoardClicked = document.getElementById("DashboardButton");
 dashBoardClicked.addEventListener('click',moveToUserDash);
-
-async function moveToUserDash()
+function moveToUserDash()
 {
+  console.log("clicked das")
     const params = new URLSearchParams();
     params.set("userId", userId);
     window.location.href = `/Simplyhire/userdashboard.html?${params.toString()}`
@@ -98,8 +98,9 @@ async function moveToUserDash()
 let contactClicked = document.getElementById("ContactButton");
 contactClicked.addEventListener('click',moveToContact);
 
-async function moveToContact()
+ function moveToContact()
 {   
+  console.log("clicked contact")
     const params = new URLSearchParams();
     params.set("userId", userId);
     window.location.href = `/Simplyhire/conatact.html?${params.toString()}`
@@ -108,8 +109,7 @@ async function moveToContact()
 
 let logoutClicked = document.getElementById("logOut");
 logoutClicked.addEventListener('click',logOutFunction);
-
-async function logOutFunction()
+function logOutFunction()
 {
     window.location.href = '/Simplyhire/index.html'
 }
