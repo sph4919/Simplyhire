@@ -1,8 +1,10 @@
  const API_BASE = 'https://simplyhirebackend.onrender.com';
 
 const params = new URLSearchParams(window.location.search);
-const personalName = params.get('providerName');
-console.log(personalName);
+const userId = params.get('userId');  
+const service = params.get('servicetype');  
+const personalName = params.get('providerName');  
+
 if(personalName===null)
 {
   window.location.href="/SmartPage.html";
@@ -56,11 +58,7 @@ async function findServiceProviderId() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ personalName })
     });
- if(res.status == 401)
-        {
-          window.location.href = "/Simplyhire/ErrorPage.html";
-  
-        }
+
   const payload = await res.json();
 
     if (res.status == 500) 
@@ -68,7 +66,7 @@ async function findServiceProviderId() {
        window.location.href = "/Simplyhire/ErrorPage.html";
       }
      console.log(payload.result[0].serviceprovider_id);  //for debugging
-    serviceProviderId = payload.result[0].serviceprovider_id;
+     serviceProviderId = payload.result[0].serviceprovider_id;
   }
   catch (err) {
     let errorMessage = document.getElementById("errorBox");
@@ -162,36 +160,5 @@ if (reqBtn) {
 
 async function logOutFunction()
 {
-   try 
-		{
-      const res = await fetch(`${API_BASE}/user/logout`,
-		    {
-          method: 'POST',
-          credentials : 'include',
-          headers: { 'Content-Type': 'application/json' }
-        });
-
-      if (res.ok)
-          {
-            window.location.href = '/Simplyhire/index.html';
-            
-          }
-          else 
-          {
-            let error = document.getElementById('errorBox');
-            error.innerHTML = result.message;
-          }
-        }
-        catch (e) 
-        {
-          let error = document.getElementById('errorBox');
-          error.innerHTML = "Server is high , please contact admin";
-        }
-      }
-
-
-
-const logoutBtn = document.getElementById('logOut');
-if (logoutBtn) {
-  logoutBtn.addEventListener('click', logOutFunction);
+    window.location.href = '/Simplyhire/index.html'
 }

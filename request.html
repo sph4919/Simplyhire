@@ -4,51 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Job Request</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"/>
   <link rel="stylesheet" href="request.css"/>
 </head>
 <body>
-  <!-- Particle Background -->
+  <!-- Particle Background (DO NOT CHANGE) -->
   <div id="particles-js"></div>
 
   <!-- Navigation -->
   <header>
     <nav class="navbar">
-      <img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" height="40px"/>
-      <span class="brand">SimplyHire</span>
+      <!-- LEFT: logo + brand together -->
+      <div class="nav-left">
+        <img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" height="40px"/>
+        <span class="brand">SimplyHire</span>
+      </div>
+
+      <!-- RIGHT -->
       <div class="nav-links">
         <a href="/Simplyhire/userdashboard.html" class="nav-btn">Dashboard</a>
         <a href="/Simplyhire/main.html" class="nav-btn">List of Service</a>
         <a href="/Simplyhire/contact.html" class="nav-btn">Contact</a>
-
         <button class="logout-btn" id="logOut">Logout</button>
       </div>
     </nav>
   </header>
 
   <!-- Form Container -->
-  <div class="container">
-    <p id = "errorBox"></p>
+  <main class="container">
+    <p id="errorBox"></p>
+
     <h2 class="service-heading">Request Description</h2>
     <textarea placeholder="Enter job description..." rows="6" id="reqDescription"></textarea>
 
     <h3>Address Information</h3>
+
     <form>
-      <label for="street"><i class="fas fa-home"></i> Street Address</label>
+      <label for="street">Street Address</label>
       <input type="text" id="street" name="street" placeholder="Enter street address" />
 
-      <label for="city"><i class="fas fa-city"></i> City</label>
+      <label for="city">City</label>
       <input type="text" id="city" name="city" placeholder="Enter city" />
 
-      <label for="state"><i class="fas fa-map-marked-alt"></i> State</label>
+      <label for="state">State</label>
       <input type="text" id="state" name="state" placeholder="Enter state" />
 
-      <label for="zip"><i class="fas fa-envelope"></i> Zip Code</label>
+      <label for="zip">Zip Code</label>
       <input type="text" id="zip" name="zip" placeholder="Enter zip code" />
 
       <button type="submit" id="reqButton">Submit</button>
     </form>
-  </div>
+  </main>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>

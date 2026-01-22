@@ -28,10 +28,7 @@ async function fetchServies()
       credentials: 'include',  
       mode: 'cors'              
     });
-   if(res.status == 401)
-        {
-           window.location.href = "/Simplyhire/ErrorPage.html";
-        }
+   
       let data = await res.json();
         if(res.status == 500)
       {
