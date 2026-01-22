@@ -68,8 +68,8 @@ async function findServiceProviderId() {
   }
   catch (err) {
     let errorMessage = document.getElementById("errorBox");
-    errorMessage.innerHTML= 'Please Contact us on Contact info you will be short directed to Contact page in 10 sec.';
-    // setTimeout(()=>{window.location.href="/Simplyhire/contact.html"},10000);
+    errorMessage.innerHTML= 'Please Contact us on Contact info .';
+    
 
   }
   
@@ -121,7 +121,7 @@ async function toTheConformation(event) {
   if(invalidValues==false)
   {
   try {
-    const res = await fetch(`${API_BASE}/user/createRequest`, {
+    const res = await fetch(`${API_BASE}/user/createRequest/${userId}`, {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -134,7 +134,9 @@ async function toTheConformation(event) {
     console.log(result); //for debugging
     if (res.status === 201)
        {
-        window.location.href = '/Simplyhire/confirm.html';
+        const params = new URLSearchParams();
+        params.set("userId", userId);
+        window.location.href = `/Simplyhire/confirm.html?${params.toString()}`
        } 
     else
        {
@@ -152,7 +154,8 @@ async function toTheConformation(event) {
 
 // Wire up the "Submit Request" button
 const reqBtn = document.getElementById('reqButton');
-if (reqBtn) {
+if (reqBtn) 
+{
   reqBtn.addEventListener('click', toTheConformation);
 }
 

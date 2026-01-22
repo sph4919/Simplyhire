@@ -2,6 +2,8 @@
  const API_BASE = 'https://simplyhirebackend.onrender.com';
 
 document.addEventListener('DOMContentLoaded', fetchRequests);
+const params = new URLSearchParams(window.location.search);
+const userId = params.get('userId');  
 
 
 async function fetchRequests()
@@ -9,7 +11,7 @@ async function fetchRequests()
    
   try
    {
-      const res = await fetch(`${API_BASE}/user/userReqFetch`, {
+      const res = await fetch(`${API_BASE}/user/userReqFetch/${userId}`, {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
@@ -53,11 +55,7 @@ async function fetchRequests()
        }
 
       }
-      else if(res.status==401)
-      {
-         window.location.href='/Simplyhire/ErrorPage.html';
-
-      }
+  
 
    }
   catch(err)
@@ -73,29 +71,5 @@ logoutClicked.addEventListener('click',logOutFunction);
 
 async function logOutFunction()
 {
-   try 
-		{
-      const res = await fetch(`${API_BASE}/user/logout`,
-		    {
-          method: 'POST',
-          credentials : 'include',
-          headers: { 'Content-Type': 'application/json' }
-        });
-
-      if (res.ok)
-          {
-             window.location.href = '/Simplyhire/index.html';
-           
-          }
-          else 
-          {
-            let error = document.getElementById('errorBox');
-            error.innerHTML = result.message;
-          }
-        }
-        catch (e) 
-        {
-          let error = document.getElementById('errorBox');
-          error.innerHTML = "Server is high , please contact admin";
-        }
-      }
+    window.location.href = '/Simplyhire/index.html'
+}

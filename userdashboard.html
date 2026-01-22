@@ -5,26 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>User Dashboard - SimplyHire</title>
   <link rel="stylesheet" href="userdashboard.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-  <!-- Particle background -->
+  <!-- Particle background (DO NOT CHANGE) -->
   <div id="particles-js"></div>
 
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" height="50px"/>
-    <div class="navbar-title">SimplyHire</div>
-    <div class="navbar-actions">
-      <a href="/Simplyhire/main.html" class="nav-btn">List of Services </a>
-      <a href="/Simplyhire/contact.html" class="nav-btn">Contact</a>
-
-       <button id="logOut" class="nav-btn">Logout</button>
+    <!-- LEFT: logo + brand together -->
+    <div class="nav-left">
+      <img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" height="50px"/>
+      <div class="navbar-title">SimplyHire</div>
     </div>
-   
+
+    <!-- RIGHT: actions -->
+    <div class="navbar-actions">
+      <a href="/Simplyhire/main.html" class="nav-btn">List of Services</a>
+      <a href="/Simplyhire/contact.html" class="nav-btn">Contact</a>
+      <button id="logOut" class="nav-btn">Logout</button>
+    </div>
   </nav>
 
   <main>
-     <p id = "errorBox"></p>
+    <p id="errorBox"></p>
     <h1 class="section-title">Your Requests</h1>
     <div class="request-list" id="reqContainer"></div>
   </main>
