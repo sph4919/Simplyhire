@@ -26,7 +26,11 @@ async function sendAutenReq(event)
  
         if (res.status == 202)
 		{   console.log(result.userId);
-			 window.location.href = `/Simplyhire/main.html?userid=${encodeURIComponent(result.userId)}`;
+
+            const url = new URL(window.location.href);
+            url.searchParams.set("userId", userId);
+            window.location.href = url.toString();
+             
             
         }
         else if (res.status == 401)

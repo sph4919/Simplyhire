@@ -1,6 +1,15 @@
  const API_BASE = 'https://simplyhirebackend.onrender.com';
 document.addEventListener('DOMContentLoaded', fetchServies);
 
+const params = new URLSearchParams(window.location.search);
+const userId = params.get('userId');  
+if(userId===null)
+{
+  window.location.href = "/Simplyhire/SmartPage.html";
+}
+
+ params.set("service", serviceName);         // add/replace service
+window.location.href = "details.html?" + params.toString();
 
 async function fetchServies()
 {
