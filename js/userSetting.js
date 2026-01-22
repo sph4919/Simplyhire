@@ -67,7 +67,7 @@ changeClicked.addEventListener('submit',changeinfo)
 //         const result = await res.json();
  
 //         if (res.status == 202)
-// 		{   console.log(result.userId);
+// 	 	     {   console.log(result.userId);
         
 //            const params = new URLSearchParams();
 //            params.set("userId", result.userId);
@@ -93,12 +93,10 @@ changeClicked.addEventListener('submit',changeinfo)
 
 
 
-
-
 let mainClicked = document.getElementById("mainButton");
 mainClicked.addEventListener('click',moveToMain);
 
-async function moveToMain()
+function moveToMain()
 {
      const params = new URLSearchParams();
      params.set("userId", userId);

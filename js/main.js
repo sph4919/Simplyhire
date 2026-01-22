@@ -71,7 +71,7 @@ function toTheProviderlist(serviceName)
 
 
 let profileClicked = document.getElementById("ProfileButton");
-dashBoardClicked.addEventListener('click',moveTouserSetting);
+profileClicked.addEventListener('click',moveTouserSetting);
 
 function moveTouserSetting()
 {
@@ -103,7 +103,7 @@ contactClicked.addEventListener('click',moveToContact);
   console.log("clicked contact")
     const params = new URLSearchParams();
     params.set("userId", userId);
-    window.location.href = `/Simplyhire/conatact.html?${params.toString()}`
+    window.location.href = `/Simplyhire/contact.html?${params.toString()}`
 }
 
 
