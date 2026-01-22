@@ -2,12 +2,15 @@
  const API_BASE = 'https://simplyhirebackend.onrender.com';
 
 const params = new URLSearchParams(window.location.search);
-const service = params.get('servicetype');  
+const service = params.get('servicetype'); 
+const userId = params.get('userId');   
 if(service===null)
 {
   window.location.href = "/Simplyhire/SmartPage.html";
 
 }
+
+     
 
 
 document.addEventListener('DOMContentLoaded', fetchServies);
@@ -69,8 +72,11 @@ async function fetchServies()
 
 function toTheProfile(providerName)
 {
-
-     window.location.href = `/Simplyhire/profile.html?providerName=${encodeURIComponent(providerName)}`;
+     const params = new URLSearchParams();
+     params.set("userId", userId);
+     params.set("servicetype", serviceName);
+     params.set("providerName", providerName);
+     window.location.href = `/Simplyhire/profile.html?${params.toString()}`
 
 
 }
@@ -80,29 +86,5 @@ logoutClicked.addEventListener('click',logOutFunction);
 
 async function logOutFunction()
 {
-   try 
-		{
-      const res = await fetch(`${API_BASE}user/logout`,
-		    {
-          method: 'POST',
-          credentials : 'include',
-          headers: { 'Content-Type': 'application/json' }
-        });
-
-      if (res.ok)
-          {
-             window.location.href = '/Simplyhire/index.html';
-               
-          }
-          else 
-          {
-            let error = document.getElementById('errorBox');
-            error.innerHTML = result.message;
-          }
-        }
-        catch (e) 
-        {
-          let error = document.getElementById('errorBox');
-          error.innerHTML = "Server is high , please contact admin";
-        }
-      }
+    window.location.href = '/Simplyhire/index.html'
+}
