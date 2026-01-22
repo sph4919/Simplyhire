@@ -18,10 +18,7 @@ async function conformationSessionCheck()
         
                 });
 
-       if(res.status == 401)
-        {
-          window.location.href = "/Simplyhire/ErrorPage.html";
-        }
+ 
          
       }
         catch (e) 
@@ -33,31 +30,3 @@ async function conformationSessionCheck()
 
 
 
-async function logOutFunction()
-{
-   try 
-		{
-      const res = await fetch(`${API_BASE}/user/logout`,
-		    {
-          method: 'POST',
-          credentials : 'include',
-          headers: { 'Content-Type': 'application/json' }
-        });
-
-      if (res.ok)
-          {
-             window.location.href = '/Simplyhire/index.html';
-            
-          }
-          else 
-          {
-            let error = document.getElementById('errorBox');
-            error.innerHTML = result.message;
-          }
-        }
-        catch (e) 
-        {
-          let error = document.getElementById('errorBox');
-          error.innerHTML = "Server is high , please contact admin";
-        }
-      }

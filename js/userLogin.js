@@ -32,11 +32,6 @@ async function sendAutenReq(event)
            
             
         }
-        else if (res.status == 401)
-        {
-            let errorMessage = document.getElementById("errorBox");
-            errorMessage.innerHTML= result.message;
-        }
         else
         {
             let errorMessage = document.getElementById("errorBox");

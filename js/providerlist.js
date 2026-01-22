@@ -23,11 +23,7 @@ async function fetchServies()
       credentials: 'include',  
       mode: 'cors'              
     });
-     if(res.status == 401)
-        {
-          window.location.href = "/Simplyhire/ErrorPage.html";
-          
-        }
+   
        if(res.status == 500)
       {
         let error = document.getElementById('errorBox');
