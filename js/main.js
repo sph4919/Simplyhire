@@ -63,9 +63,12 @@ async function fetchServies()
 
 function toTheProviderlist(serviceName)
 {
-  const url = new URL(window.location.href);
-  url.searchParams.set("servicetype", serviceName);
-  window.location.href = url.toString();
+     const params = new URLSearchParams();
+     params.set("userId", userId);
+     params.set("servicetype", serviceName);
+     window.location.href = `/Simplyhire/providerlist.html?${params.toString()}`
+
+  
 
 }
 
