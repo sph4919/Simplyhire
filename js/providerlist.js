@@ -2,8 +2,8 @@
  const API_BASE = 'https://simplyhirebackend.onrender.com';
 
 const params = new URLSearchParams(window.location.search);
-const service = params.get('servicetype'); 
-const userId = params.get('userId');   
+const userId = params.get('userId');  
+const service = params.get('servicetype');   
 if(service===null)
 {
   window.location.href = "/Simplyhire/SmartPage.html";
@@ -67,11 +67,12 @@ async function fetchServies()
 };
 
 function toTheProfile(providerName)
-{
+{    console.log("clicked")
      const params = new URLSearchParams();
      params.set("userId", userId);
      params.set("servicetype", service);
      params.set("providerName", providerName);
+     console.log(service)
      window.location.href = `/Simplyhire/profile.html?${params.toString()}`
 
 
