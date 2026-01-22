@@ -70,7 +70,7 @@ function toTheProfile(providerName)
 {
      const params = new URLSearchParams();
      params.set("userId", userId);
-     params.set("servicetype", serviceName);
+     params.set("servicetype", service);
      params.set("providerName", providerName);
      window.location.href = `/Simplyhire/profile.html?${params.toString()}`
 
