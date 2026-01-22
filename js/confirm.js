@@ -2,21 +2,15 @@
 
 const params = new URLSearchParams(window.location.search);
 const userId = params.get('userId');  
-
-let logoutClicked = document.getElementById("logOut");
-logoutClicked.addEventListener('click',logOutFunction);
-
- function logOutFunction()
-{
-    window.location.href = '/Simplyhire/index.html'
-}
+console.log(userId)
 
 
 let mainBtn = document.getElementById("mainBtn");
 mainBtn.addEventListener('click',mainBtnfun);
-
+console.log(" Not Clicked")
  function mainBtnfun()
 {
+    console.log("Clicked")
      const params = new URLSearchParams();
      params.set("userId", userId);
      window.location.href = `/Simplyhire/main.html?${params.toString()}`
