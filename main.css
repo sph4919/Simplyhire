@@ -62,45 +62,45 @@ header {
   margin: 0 auto;
 
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center; /* ✅ ensures logo + brand align perfectly */
   gap: 1rem;
 
   padding: 0.9rem 1.1rem;
   min-height: 76px;
 }
 
-/* ✅ logo polish */
+/* LEFT group: logo + brand together */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem; /* controls space between logo and brand */
+  min-width: fit-content;
+}
+
 .logo {
-  display: block; /* prevents baseline weird spacing */
-  height: 40px;   /* keeps stable even if height attr changes */
+  display: block;
+  height: 40px;
   width: auto;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
 }
 
-/* ✅ brand alignment polish (NO negative margins) */
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.nav-left .brand {
+.brand {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--primary-color);
-  letter-spacing: 0.2px;
-  margin-left: 0; /* ✅ was -290px, removed */
-  line-height: 1; /* ✅ cleaner vertical alignment */
+  letter-spacing: 0.3px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-/* Right side */
+/* RIGHT buttons */
 .nav-right {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.75rem;
   flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 /* ===== BUTTONS ===== */
@@ -128,7 +128,6 @@ header {
   filter: brightness(1.05);
 }
 
-/* Logout */
 .logout-btn {
   display: inline-flex;
   align-items: center;
@@ -265,12 +264,6 @@ header {
 #errorBox:not(:empty) { display: block; }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .navbar { padding: 0.85rem 1rem; }
-  .nav-right { gap: 0.6rem; }
-  .nav-btn, .logout-btn { min-width: 118px; }
-}
-
 @media (max-width: 640px) {
   .navbar {
     flex-direction: column;
@@ -278,7 +271,9 @@ header {
     gap: 0.75rem;
   }
 
-  .nav-left { justify-content: center; }
+  .nav-left {
+    justify-content: center; /* looks clean on mobile */
+  }
 
   .nav-right {
     width: 100%;
@@ -290,12 +285,11 @@ header {
     min-width: 0;
   }
 
-  .main { padding: 1.8rem 0.95rem 2.8rem; }
   .container { grid-template-columns: 1fr; }
   .service-card { padding: 1.05rem; }
 }
 
 @media (max-width: 380px) {
   .nav-btn, .logout-btn { width: 100%; }
-  .nav-left .brand { font-size: 1.1rem; }
+  .brand { font-size: 1.1rem; }
 }
