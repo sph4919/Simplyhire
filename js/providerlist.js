@@ -67,12 +67,11 @@ async function fetchServies()
 };
 
 function toTheProfile(providerName)
-{    console.log("clicked")
+{    
      const params = new URLSearchParams();
      params.set("userId", userId);
      params.set("servicetype", service);
      params.set("providerName", providerName);
-     console.log(service)
      window.location.href = `/Simplyhire/profile.html?${params.toString()}`
 
 
