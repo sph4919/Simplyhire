@@ -10,11 +10,7 @@ if(service===null)
 
 }
 
-     
-
-
 document.addEventListener('DOMContentLoaded', fetchServies);
-
 
 async function fetchServies()
 {
