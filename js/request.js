@@ -52,11 +52,9 @@ document.addEventListener('DOMContentLoaded', findServiceProviderId);
 
 async function findServiceProviderId() {
   try {
-    const res = await fetch(`${API_BASE}/user/findServiceProviderId`, {
-      method: 'POST',
+    const res = await fetch(`${API_BASE}/user/findServiceProviderId/${personalName}`, {
+      method: 'GET',
       credentials: 'include',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ personalName })
     });
 
   const payload = await res.json();
@@ -71,7 +69,7 @@ async function findServiceProviderId() {
   catch (err) {
     let errorMessage = document.getElementById("errorBox");
     errorMessage.innerHTML= 'Please Contact us on Contact info you will be short directed to Contact page in 10 sec.';
-    setTimeout(()=>{window.location.href="/Simplyhire/contact.html"},10000);
+    // setTimeout(()=>{window.location.href="/Simplyhire/contact.html"},10000);
 
   }
   
