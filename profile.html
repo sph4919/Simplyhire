@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Service Provider Profile</title>
   <link rel="stylesheet" href="profile.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- Particle Background -->
+  <!-- Particle Background (DO NOT CHANGE) -->
   <div id="particles-js"></div>
 
   <!-- Header -->
   <header>
     <nav class="navbar">
-      <img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" height="40px"/>
-      <span class="brand">SimplyHire</span>
+      <!-- LEFT: logo + brand together -->
+      <div class="nav-left">
+        <img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" height="40px"/>
+        <span class="brand">SimplyHire</span>
+      </div>
+
+      <!-- RIGHT -->
       <div class="nav-links">
         <a href="/Simplyhire/userdashboard.html" class="nav-btn">Dashboard</a>
         <a href="/Simplyhire/main.html" class="nav-btn">List of Service</a>
         <a href="/Simplyhire/contact.html" class="nav-btn">Contact</a>
-        
         <button class="logout-btn" id="logOut">Logout</button>
       </div>
     </nav>
@@ -28,12 +32,14 @@
 
   <!-- Main Section -->
   <main class="main">
-     <p id = "errorBox"></p>
-     <br>
+    <p id="errorBox"></p>
+    <br>
     <h1 class="main-heading">Service Provider Profile</h1>
+
     <div class="profile-box" id="profileBox">
       <!-- Dynamic content inserted via JS -->
     </div>
+
     <button class="appointment-button" id="createReqButton">Book an Appointment</button>
   </main>
 
