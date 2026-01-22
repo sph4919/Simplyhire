@@ -20,10 +20,11 @@
       </a>
       <nav aria-label="Primary">
         <ul class="nav-list">
-          <li><a class="nav-link" href="/">Home</a></li>
-          <li><a class="nav-link" href="/Simplyhire/userdashboard.html">Dashboard</a></li>
-          <li><a class="nav-link" href="/Simplyhire/contact.html">Contact</a></li>
-          <li><a class="nav-link btn-logout" href="">Logout</a></li>
+          <li><button class="nav-btn" id="Home">Home</button></li>
+          <li><button class="nav-btn" id="DashboardButton">Dashboard</button></li>
+          <li><button class="nav-btn" id="ContactButton">contact</button></li>
+          <li><button class="logout-btn" id="logOut">Logout</button></li>
+          
         </ul>
       </nav>
     </div>
@@ -47,7 +48,7 @@
         <div class="info">
           <span class="label">Name</span>
           <!-- Replace with server data -->
-          <span class="value">Jane Doe</span>
+          <span class="value" id="currentName"></span>
         </div>
        
       </div>
@@ -58,7 +59,7 @@
         <div class="info">
           <span class="label">Email</span>
           <!-- Replace with server data -->
-          <span class="value">jane.doe@example.com</span>
+          <span class="value" id="currentEmail"></span>
         </div>
    
       </div>
@@ -79,11 +80,6 @@
           <input id="new-name" name="new_name" type="text" placeholder="Enter new name" autocomplete="name" />
         </div>
 
-        <div class="field">
-          <label for="new-email">New Email</label>
-          <input id="new-email" name="new_email" type="email" placeholder="you@company.com" autocomplete="email" />
-        </div>
-
         <div class="actions">
           <button type="submit" class="btn primary">Change</button>
           <a href="#" class="btn subtle" role="button">Cancel</a>
@@ -99,5 +95,6 @@
       <p>© <span id="year">2025</span> SimplyHire. All rights reserved.</p>
     </div>
   </footer>
+   <script src="js/userSetting.js"></script>
 </body>
 </html>
