@@ -1,6 +1,5 @@
  const API_BASE = 'https://simplyhirebackend.onrender.com';
 
-document.addEventListener("DOMContentLoaded",conformationSessionCheck);
 const params = new URLSearchParams(window.location.search);
 const userId = params.get('userId');  
 
