@@ -55,6 +55,7 @@ async function changeinfo(event)
   event.preventDefault();
   let newName = document.getElementById("new-name");
   let changedName = newName.value;
+  console.log(changedName)
 
   try{
       const res = await fetch(`${API_BASE}/user/changedInfo`,
@@ -62,7 +63,7 @@ async function changeinfo(event)
              method: 'POST',
              headers: { 'Content-Type': 'application/json' },
              credentials: 'include', 
-             body: JSON.stringify({changedName})
+             body: JSON.stringify({changedName,userId})
              });
  
         const result = await res.json();
