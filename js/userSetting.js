@@ -50,47 +50,40 @@ let changeClicked = document.getElementById("changeButton")
 changeClicked.addEventListener('submit',changeinfo)
 
 
-// async function Changeinfo(event)
-//  {
-//   event.preventDefault();
-//   let newName = document.getElementById("new-name");
-//   let changedName = newName.value;
+async function Changeinfo(event)
+ {
+  event.preventDefault();
+  let newName = document.getElementById("new-name");
+  let changedName = newName.value;
 
-//   try{
-//       const res = await fetch(`${API_BASE}/user/changedInfo`,
-// 		     {
-//              method: 'POST',
-//              headers: { 'Content-Type': 'application/json' },
-//              credentials: 'include', 
-//              body: JSON.stringify({changedName})
-//              });
+  try{
+      const res = await fetch(`${API_BASE}/user/changedInfo`,
+		     {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             credentials: 'include', 
+             body: JSON.stringify({changedName})
+             });
  
-//         const result = await res.json();
+        const result = await res.json();
  
-//         if (res.status == 202)
-// 	 	     {   console.log(result.userId);
-        
-//            const params = new URLSearchParams();
-//            params.set("userId", result.userId);
-//            window.location.href = `/Simplyhire/main.html?${params.toString()}`;
-           
-            
-//         }
-//         else
-//         {
-//             let errorMessage = document.getElementById("errorBox");
-//             errorMessage.innerHTML= result.message;
-//         }
-//     }
-//     catch(err)
-//      {
-//           let errorMessage = document.getElementById("errorBox");
-//           errorMessage.innerHTML= "Server : dont disburb me , I am busy talking with my boyfriend. I am feeling low pllz try again..";
-//     }
+        if (res.status == 200)
+	 	     {   
+            window.location.reload();
+         }
+        else
+        {
+            let errorMessage = document.getElementById("errorBox");
+            errorMessage.innerHTML= result.message;
+        }
+    }
+    catch(err)
+     {
+          let errorMessage = document.getElementById("errorBox");
+          errorMessage.innerHTML= "Server : dont disburb me , I am busy talking with my boyfriend. I am feeling low pllz try again..";
+    }
     
-// };
-
-
+};
 
 
 
