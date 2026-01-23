@@ -31,7 +31,7 @@ async function fetchinfo()
     if(res.status == 200)
       {
         console.log(result)
-        let name = document.getElementById("CurrentName")
+        let name = document.getElementById("currentName")
         let email = document.getElementById("currentEmail")
         name.innerHTML = result[0].name;
         email.innerHTML = result[0].email;
