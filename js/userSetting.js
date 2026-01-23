@@ -58,7 +58,7 @@ async function changeinfo(event)
   console.log(changedName)
 
   try{
-      const res = await fetch(`${API_BASE}/user/changedInfo`,
+      const res = await fetch(`${API_BASE}/user/changedName`,
 		     {
              method: 'POST',
              headers: { 'Content-Type': 'application/json' },
