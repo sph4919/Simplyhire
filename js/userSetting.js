@@ -50,7 +50,7 @@ let changeClicked = document.getElementById("changeButton")
 changeClicked.addEventListener('submit',changeinfo)
 
 
-async function Changeinfo(event)
+async function changeinfo(event)
  {
   event.preventDefault();
   let newName = document.getElementById("new-name");
