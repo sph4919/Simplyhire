@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', fetchinfo);
 
 const params = new URLSearchParams(window.location.search);
 const userId = params.get('userId');  
-if(userId===null)
+if(userId==null)
 {
   window.location.href = "/Simplyhire/SmartPage.html";
 }
@@ -39,7 +39,8 @@ async function fetchinfo()
     }
     catch(err)
     {
-         window.location.href = "/Simplyhire/ErrorPage.html";
+        console.log(err)
+        //  window.location.href = "/Simplyhire/ErrorPage.html";
     
     }
     

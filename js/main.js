@@ -75,7 +75,7 @@ profileClicked.addEventListener('click',moveTouserSetting);
 
 function moveTouserSetting()
 {
-  console.log("clicked profile")
+ 
     const params = new URLSearchParams();
     params.set("userId", userId);
     window.location.href = `/Simplyhire/userSetting.html?${params.toString()}`
@@ -88,7 +88,7 @@ let dashBoardClicked = document.getElementById("DashboardButton");
 dashBoardClicked.addEventListener('click',moveToUserDash);
 function moveToUserDash()
 {
-  console.log("clicked das")
+ 
     const params = new URLSearchParams();
     params.set("userId", userId);
     window.location.href = `/Simplyhire/userdashboard.html?${params.toString()}`
@@ -100,7 +100,7 @@ contactClicked.addEventListener('click',moveToContact);
 
  function moveToContact()
 {   
-  console.log("clicked contact")
+ 
     const params = new URLSearchParams();
     params.set("userId", userId);
     window.location.href = `/Simplyhire/contact.html?${params.toString()}`
