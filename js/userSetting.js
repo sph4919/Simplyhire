@@ -46,8 +46,8 @@ async function fetchinfo()
     
 };
 
-let changeClicked = document.getElementById("changeButton")
-changeClicked.addEventListener('submit',changeinfo)
+let requestSubmited = document.getElementById("changeNameRequest")
+ requestSubmited.addEventListener('submit',changeinfo)
 
 
 async function changeinfo(event)
@@ -118,7 +118,7 @@ async function moveToContact()
 {   
     const params = new URLSearchParams();
     params.set("userId", userId);
-    window.location.href = `/Simplyhire/conatact.html?${params.toString()}`
+    window.location.href = `/Simplyhire/contact.html?${params.toString()}`
 }
 
 let logoutClicked = document.getElementById("logOut");
