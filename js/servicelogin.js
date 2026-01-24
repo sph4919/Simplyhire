@@ -27,8 +27,8 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
                 const result = await res.json();
 				console.log("request intialedd"); // for debugging
 				console.log(result);
-				let providerId = result[0].serviceprovider_id
-				console.log(providerId)
+				let providerId = result[0].serviceprovider_id;
+				console.log(providerId);
                  if (res.status == 202)
 				  {
 				//    window.location.href = "/Simplyhire/serviceDashboard.html";
