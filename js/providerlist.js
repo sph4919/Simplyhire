@@ -73,6 +73,30 @@ function toTheProfile(providerName)
 
 }
 
+
+
+let mainClicked = document.getElementById("mainButton");
+mainClicked.addEventListener('click',moveToMain);
+
+function moveToMain()
+{
+     const params = new URLSearchParams();
+     params.set("userId", userId);
+     window.location.href = `/Simplyhire/main.html?${params.toString()}`
+
+}
+
+let contactClicked = document.getElementById("ContactButton");
+contactClicked.addEventListener('click',moveToContact);
+
+async function moveToContact()
+{   
+    const params = new URLSearchParams();
+    params.set("userId", userId);
+    window.location.href = `/Simplyhire/contact.html?${params.toString()}`
+}
+
+
 let logoutClicked = document.getElementById("logOut");
 logoutClicked.addEventListener('click',logOutFunction);
 

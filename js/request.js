@@ -159,6 +159,31 @@ if (reqBtn)
   reqBtn.addEventListener('click', toTheConformation);
 }
 
+
+
+let mainClicked = document.getElementById("mainButton");
+mainClicked.addEventListener('click',moveToMain);
+
+function moveToMain()
+{
+     const params = new URLSearchParams();
+     params.set("userId", userId);
+     window.location.href = `/Simplyhire/main.html?${params.toString()}`
+
+}
+
+let contactClicked = document.getElementById("ContactButton");
+contactClicked.addEventListener('click',moveToContact);
+
+async function moveToContact()
+{   
+    const params = new URLSearchParams();
+    params.set("userId", userId);
+    window.location.href = `/Simplyhire/contact.html?${params.toString()}`
+}
+
+
+
 async function logOutFunction()
 {
     window.location.href = '/Simplyhire/index.html'
