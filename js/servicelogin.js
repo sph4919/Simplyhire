@@ -28,12 +28,14 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 				console.log("request intialedd"); // for debugging
 				console.log(result);
 				let providerId = result.results[0].serviceprovider_id;
+				let proId = result.serviceprovider_id;
+				console.log(proId);
 				console.log(providerId);
                  if (res.status == 202)
 				  {
 			       const params = new URLSearchParams();
                    params.set("providerId", result.providerId);
-                   window.location.href = `/Simplyhire/serviceDashboard.html?${params.toString()}`;
+                //    window.location.href = `/Simplyhire/serviceDashboard.html?${params.toString()}`;
                   }
 				else 
 				{
