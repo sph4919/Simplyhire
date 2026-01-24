@@ -32,6 +32,9 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
                  if (res.status == 202)
 				  {
 				//    window.location.href = "/Simplyhire/serviceDashboard.html";
+		// 		 const params = new URLSearchParams();
+        //    params.set("userId", result.userId);
+        //    window.location.href = `/Simplyhire/main.html?${params.toString()}`;
                   }
 				else 
 				{
