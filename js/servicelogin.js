@@ -27,14 +27,13 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
                 const result = await res.json();
 				console.log("request intialedd"); // for debugging
 				console.log(result);
-				let providerId = result[0].serviceprovider_id;
+				let providerId = result.results[0].serviceprovider_id;
 				console.log(providerId);
                  if (res.status == 202)
 				  {
-				//    window.location.href = "/Simplyhire/serviceDashboard.html";
-		// 		 const params = new URLSearchParams();
-        //    params.set("userId", result.userId);
-        //    window.location.href = `/Simplyhire/main.html?${params.toString()}`;
+			       const params = new URLSearchParams();
+                   params.set("providerId", result.providerId);
+                   window.location.href = `/Simplyhire/serviceDashboard.html?${params.toString()}`;
                   }
 				else 
 				{
