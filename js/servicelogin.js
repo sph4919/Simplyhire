@@ -46,36 +46,3 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 }
 
 
-document.addEventListener("DOMContentLoaded",sessionHandler);
-
- async function sessionHandler(event)
-{
-
-
-			 try 
-			   {
-                const res = await fetch(`${API_BASE}/provider/sessionChecker`,
-		        {
-				  credentials: 'include'
-                });
-
-                const result = await res.json();
-				
-                 if (res.status == 200)
-				  {
-				   console.log("session removed"); //new session started
-                  }
-	
-			 }
-			 catch (err) 
-			   {
-                 let errorMessage = document.getElementById("errorBox");
-                 errorMessage.innerHTML= 'Server error plz contact admin if that mf is sleeping';
-               }
-
-
-}
-
-
-
-
