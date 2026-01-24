@@ -28,9 +28,12 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 				console.log("request intialedd"); // for debugging
 				console.log(result);
 				let providerId = result.results[0].serviceprovider_id;
-				let proId = result.serviceprovider_id;
-				console.log(proId);
 				console.log(providerId);
+				let proId = result[0].serviceprovider_id;
+				console.log(proId);
+				let pId = result.serviceprovider_id;
+				console.log(pId);
+				\
                  if (res.status == 202)
 				  {
 			       const params = new URLSearchParams();
