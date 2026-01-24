@@ -5,6 +5,7 @@
   <title>Service Provider Sign Up</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="serviceSignup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="js/servicesignup.js" defer></script>
 </head>
 <body>
@@ -16,11 +17,15 @@
   <div class="overlay">
     <div class="container">
       <div class="user-signup">
-        <h1><img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" height="40px"  />   SignUp &</h1>
-        
+        <h1>
+          <img src="imgs/SimpleHireV2Logo.png" alt="Simpleyhire Logo" class="logo" height="40px" />
+          SignUp &
+        </h1>
+
         <h2>Get on board Provider's</h2>
-           <p id = "errorBox"></p>
-           <br>
+        <p id="errorBox"></p>
+        <br>
+
         <form id="service-signupform">
           <label for="service-user-name">Name:</label>
           <input type="text" id="service-user-name" placeholder="Enter your name">
@@ -45,6 +50,7 @@
 
           <button type="submit">Sign Up</button>
         </form>
+
         <p class="login-link">
           Already have an account?
           <a href="/serviceLogin.html">Login here</a>
@@ -55,6 +61,6 @@
 
   <!-- Particle Script -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="js/particles-serviceConfig.js"></script> <!-- Reuse the same as login -->
+  <script src="js/particles-serviceConfig.js"></script>
 </body>
 </html>
