@@ -1,12 +1,21 @@
  const API_BASE = 'https://simplyhirebackend.onrender.com';
 
+
+const params = new URLSearchParams(window.location.search);
+const providerId = params.get('providerId');  
+if(providerId==null)
+{
+  window.location.href = "/Simplyhire/SmartPage.html";
+}
+
+
 document.addEventListener('DOMContentLoaded', fetchDash);
 
 async function fetchDash()
 {
   try
    {
-      const res = await fetch(`${API_BASE}/provider/serviceDashboardFetch`, {
+      const res = await fetch(`${API_BASE}/provider/serviceDashboardFetch/${providerId}`, {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
