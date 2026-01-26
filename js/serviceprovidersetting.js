@@ -20,13 +20,10 @@ async function getSettingDetail()
       mode: 'cors'              
     });
 
-    if(res.status == 401)
-        {
-          window.location.href = "/Simplyhire/ErrorPage.html";
-
-        }
+    
       let data = await res.json();
       console.log(data);
+
 
     const providerName = document.getElementById('providerName');
     const providerRate = document.getElementById('currentRate');

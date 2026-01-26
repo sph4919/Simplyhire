@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 :root{
   --bg:#070a12;
   --glass: rgba(255,255,255,0.08);
@@ -54,7 +56,6 @@ header{
   box-shadow: 0 16px 42px rgba(0,0,0,0.45);
 }
 
-/* neon top line */
 header::before{
   content:"";
   display:block;
@@ -84,35 +85,41 @@ header::before{
   box-shadow: 0 18px 40px rgba(0,0,0,0.35);
 }
 
-/* right side controls container (your existing <div>) */
+/* Right side controls container (your existing <div>) */
 .navbar div{
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-/* links */
-.navbar a{
-  text-decoration: none;
+/* ✅ NEW: style buttons */
+.nav-btn{
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
   color: var(--text);
-  font-weight: 800;
-  font-size: 0.95rem;
 
   padding: 0.65rem 1rem;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
 
-  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  font-weight: 900;
+  font-size: 0.95rem;
+  cursor: pointer;
+
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, filter 160ms ease;
 }
 
-.navbar a:hover{
+.nav-btn:hover{
   transform: translateY(-2px);
   background: rgba(255,255,255,0.10);
   border-color: rgba(0,217,255,0.35);
+  filter: brightness(1.03);
 }
 
-/* logout */
+.nav-btn:active{
+  transform: translateY(0);
+}
+
+/* Logout */
 .logout-btn{
   background: transparent;
   color: var(--danger);
@@ -128,6 +135,7 @@ header::before{
   background: rgba(255, 77, 79, 0.14);
   transform: translateY(-2px);
 }
+.logout-btn:active{ transform: translateY(0); }
 
 /* ===== MAIN LAYOUT ===== */
 .main{
@@ -152,7 +160,6 @@ header::before{
   overflow: hidden;
 }
 
-/* glow strip */
 .profile-block::before,
 .manage-block::before{
   content:"";
@@ -187,7 +194,6 @@ header::before{
   background: linear-gradient(90deg, var(--cyan), var(--orange), var(--mint));
 }
 
-/* Current rate */
 #currentRate{
   text-align: center;
   font-size: 1.05rem;
@@ -271,7 +277,7 @@ header::before{
     align-items: stretch;
   }
 
-  .navbar a,
+  .nav-btn,
   .logout-btn{
     width: 100%;
     text-align: center;
