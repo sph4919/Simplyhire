@@ -60,7 +60,8 @@ async function fetchDash()
 };
 
 
-async function acceptedFunction(reqId, event) {
+async function acceptedFunction(reqId, event) 
+{
 const button = event.target;
 const statusText = button.previousElementSibling.querySelector('.status-text');
 
@@ -98,7 +99,7 @@ function moveToUserEdit()
  
     const params = new URLSearchParams();
     params.set("serviceproviderId", serviceproviderId);
-    window.location.href = `/Simplyhire/serviceProviderSetting.html?${params.toString()}`
+    window.location.href = `/Simplyhire/serviceProviderSetting.html?${params.toString()}`;
 }
 
 
@@ -106,29 +107,16 @@ let contactClicked = document.getElementById("ContactButton");
 contactClicked.addEventListener('click',moveToContact);
 
  function moveToContact()
-{   
- 
+ {   
     const params = new URLSearchParams();
     params.set("serviceproviderId", serviceproviderId);
-    window.location.href = `/Simplyhire/contact.html?${params.toString()}`
-}
-
-
-
-
-
-
-
-
-
-
-
-
+    window.location.href = `/Simplyhire/contact.html?${params.toString()}`;
+ }
 
 let logoutClicked = document.getElementById("logOut");
 logoutClicked.addEventListener('click',logOutFunction);
 
 function logOutFunction()
 {
-    window.location.href = '/Simplyhire/index.html'
+    window.location.href = '/Simplyhire/index.html';
 }
