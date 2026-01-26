@@ -46,6 +46,7 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 			 catch (err) 
 			   {
                  let errorMessage = document.getElementById("errorBox");
+				 console.log(err);
                  errorMessage.innerHTML= 'Server error plz contact admin if that mf is sleeping';
                }
 
