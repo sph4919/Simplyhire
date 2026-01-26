@@ -1,4 +1,5 @@
 
+console.log("HI script working");
 
  const API_BASE = 'https://simplyhirebackend.onrender.com';
 
