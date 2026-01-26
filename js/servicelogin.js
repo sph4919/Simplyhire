@@ -33,7 +33,7 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 				console.log(proId);
 				let pId = result.serviceprovider_id;
 				console.log(pId);
-				\
+				
                  if (res.status == 202)
 				  {
 			       const params = new URLSearchParams();
