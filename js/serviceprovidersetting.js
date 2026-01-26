@@ -2,11 +2,19 @@
 document.addEventListener('DOMContentLoaded', getSettingDetail);
 
 
+const params = new URLSearchParams(window.location.search);
+const serviceproviderId = params.get('serviceproviderId');  
+if(serviceproviderId==null)
+{
+  window.location.href = "/Simplyhire/SmartPage.html";
+}
+
+
 async function getSettingDetail()
 {
   try
    {
-      const res = await fetch(`${API_BASE}/provider/getSettingDetail`, {
+      const res = await fetch(`${API_BASE}/provider/getSettingDetail/${serviceproviderId}`, {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
@@ -48,7 +56,7 @@ async function updateRate()
 	     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({newRate}),
+        body: JSON.stringify({newRate,serviceproviderId}),
         credentials: 'include'
        });
 
@@ -71,3 +79,35 @@ async function updateRate()
           }
 	 } 
     
+
+
+
+   
+let dashboardClicked = document.getElementById("DashButton");
+ dashboardClicked.addEventListener('click',moveToUserDash);
+function moveToUserDash()
+{
+ 
+    const params = new URLSearchParams();
+    params.set("serviceproviderId", serviceproviderId);
+    window.location.href = `/Simplyhire/servicedashboard.html?${params.toString()}`;
+}
+
+
+let contactClicked = document.getElementById("ContactButton");
+contactClicked.addEventListener('click',moveToContact);
+
+ function moveToContact()
+ {   
+    const params = new URLSearchParams();
+    params.set("serviceproviderId", serviceproviderId);
+    window.location.href = `/Simplyhire/contact.html?${params.toString()}`;
+ }
+
+let logoutClicked = document.getElementById("logOut");
+logoutClicked.addEventListener('click',logOutFunction);
+
+function logOutFunction()
+{
+    window.location.href = '/Simplyhire/index.html';
+}
