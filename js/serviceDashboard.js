@@ -2,8 +2,8 @@
 
 
 const params = new URLSearchParams(window.location.search);
-const providerId = params.get('providerId');  
-if(providerId==null)
+const serviceproviderId = params.get('serviceproviderId');  
+if(serviceproviderId==null)
 {
   window.location.href = "/Simplyhire/SmartPage.html";
 }
@@ -15,7 +15,7 @@ async function fetchDash()
 {
   try
    {
-      const res = await fetch(`${API_BASE}/provider/serviceDashboardFetch/${providerId}`, {
+      const res = await fetch(`${API_BASE}/provider/serviceDashboardFetch/${serviceproviderId}`, {
       method: 'GET',
       credentials: 'include',  
       mode: 'cors'              
@@ -28,7 +28,7 @@ async function fetchDash()
         }
 
       let data = await res.json();
-      console.log(data);
+      console.log(data); // for dedugging
       const notificationContainer = document.getElementById('notifications-container');
 
        for(let i=0; i< data.length;i++)
@@ -61,8 +61,8 @@ async function fetchDash()
 
 
 async function acceptedFunction(reqId, event) {
-  const button = event.target;
-  const statusText = button.previousElementSibling.querySelector('.status-text');
+const button = event.target;
+const statusText = button.previousElementSibling.querySelector('.status-text');
 
   try {
     const res = await fetch(`${API_BASE}/provider/requestAccepted`, {
@@ -90,35 +90,45 @@ async function acceptedFunction(reqId, event) {
   }
 }
 
+
+let editClicked = document.getElementById("EditButton");
+editClicked.addEventListener('click',moveToUserEdit);
+function moveToUserEdit()
+{
+ 
+    const params = new URLSearchParams();
+    params.set("serviceproviderId", serviceproviderId);
+    window.location.href = `/Simplyhire/serviceProviderSetting.html?${params.toString()}`
+}
+
+
+let contactClicked = document.getElementById("ContactButton");
+contactClicked.addEventListener('click',moveToContact);
+
+ function moveToContact()
+{   
+ 
+    const params = new URLSearchParams();
+    params.set("serviceproviderId", serviceproviderId);
+    window.location.href = `/Simplyhire/contact.html?${params.toString()}`
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 let logoutClicked = document.getElementById("logOut");
 logoutClicked.addEventListener('click',logOutFunction);
 
-
-async function logOutFunction()
+function logOutFunction()
 {
-   try 
-		{
-      const res = await fetch(`${API_BASE}/provider/logout`,
-		    {
-          method: 'POST',
-          credentials : 'include',
-          headers: { 'Content-Type': 'application/json' }
-        });
-
-      if (res.ok)
-          {
-            window.location.href = '/Simplyhire/index.html';
-          }
-          else 
-          {
-            let error = document.getElementById('errorBox');
-            error.innerHTML = result.message;
-          }
-        }
-        catch (e) 
-        {
-          let error = document.getElementById('errorBox');
-          error.innerHTML = "Server is high , please contact admin";
-        }
-      }
-
+    window.location.href = '/Simplyhire/index.html'
+}

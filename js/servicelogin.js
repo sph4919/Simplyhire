@@ -35,7 +35,7 @@ userlogin.addEventListener("submit",serviceValidateLoginUser);
 				  {
 			       const params = new URLSearchParams();
                    params.set("providerId", serviceproviderId);
-                  window.location.href = `/Simplyhire/serviceDashboard.html?${params.toString()}`;
+                   window.location.href = `/Simplyhire/serviceDashboard.html?${params.toString()}`;
                   }
 				else 
 				{
